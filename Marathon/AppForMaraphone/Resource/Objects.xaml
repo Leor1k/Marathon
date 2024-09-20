@@ -3,4 +3,13 @@
     <Style TargetType="Rectangle">
         <Setter Property="Fill" Value="{StaticResource grayCol}"/>
     </Style>
+    <Style TargetType="Button">
+        <Setter Property="Foreground" Value="{StaticResource grayCol}"/>
+        <Setter Property="FontSize" Value="36"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="18"/>
+            </Style>
+        </Style.Resources>
+    </Style>
 </ResourceDictionary>

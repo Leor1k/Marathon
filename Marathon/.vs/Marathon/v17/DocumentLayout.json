@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|c:\\users\\medvedskijae\\desktop\\mbave\\marathon\\marathon\\appformaraphone\\resource\\objects.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|solutionrelative:appformaraphone\\resource\\objects.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|c:\\users\\medvedskijae\\desktop\\mbave\\marathon\\marathon\\appformaraphone\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|solutionrelative:appformaraphone\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|c:\\users\\medvedskijae\\desktop\\mbave\\marathon\\marathon\\appformaraphone\\forms\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|solutionrelative:appformaraphone\\forms\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|c:\\users\\medvedskijae\\desktop\\mbave\\marathon\\marathon\\appformaraphone\\forms\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|solutionrelative:appformaraphone\\forms\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|c:\\users\\medvedskijae\\desktop\\mbave\\marathon\\marathon\\appformaraphone\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|solutionrelative:appformaraphone\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,42 +22,44 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Objects.xaml",
-              "DocumentMoniker": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\Resource\\Objects.xaml",
-              "RelativeDocumentMoniker": "AppForMaraphone\\Resource\\Objects.xaml",
-              "ToolTip": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\Resource\\Objects.xaml",
-              "RelativeToolTip": "AppForMaraphone\\Resource\\Objects.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-09-19T08:56:02.291Z",
+              "DocumentIndex": 2,
+              "Title": "DataBase.cs",
+              "DocumentMoniker": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\DataBase.cs",
+              "RelativeDocumentMoniker": "AppForMaraphone\\DataBase.cs",
+              "ToolTip": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\DataBase.cs",
+              "RelativeToolTip": "AppForMaraphone\\DataBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T08:00:08.349Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\App.xaml",
-              "RelativeDocumentMoniker": "AppForMaraphone\\App.xaml",
-              "ToolTip": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\App.xaml",
-              "RelativeToolTip": "AppForMaraphone\\App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-09-19T08:23:14.002Z",
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\Forms\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "AppForMaraphone\\Forms\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\Forms\\MainWindow.xaml.cs",
+              "RelativeToolTip": "AppForMaraphone\\Forms\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAvwFkAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T06:35:53.834Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\Forms\\MainWindow.xaml",
               "RelativeDocumentMoniker": "AppForMaraphone\\Forms\\MainWindow.xaml",
               "ToolTip": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\Forms\\MainWindow.xaml",
               "RelativeToolTip": "AppForMaraphone\\Forms\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-09-19T08:21:43.373Z",
+              "WhenOpened": "2024-09-20T05:50:02.95Z",
               "EditorCaption": ""
             }
           ]

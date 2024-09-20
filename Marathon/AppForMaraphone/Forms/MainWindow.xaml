@@ -6,10 +6,93 @@
         xmlns:local="clr-namespace:AppForMaraphone"
         mc:Ignorable="d"
         Title="MainWindow" WindowState="Maximized" WindowStyle="None" Height="1080" Width="1920">
-    <Grid Background="{DynamicResource backGround}">
-        <Grid x:Name="first_grid">
-            <Rectangle HorizontalAlignment="Left" Height="100" Margin="1230,246,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+    <Grid x:Name="AllIn" Background="{DynamicResource backGround}">
+        <Rectangle Margin="20,1000,20,13"/>
+        <Rectangle Height="960" Margin="20,40,20,0" Fill="{StaticResource LightWhite}" VerticalAlignment="Top" />
+        <TextBlock HorizontalAlignment="Center" Margin="0,1012,0,0" TextWrapping="Wrap" Text=".... до старта марафона!" VerticalAlignment="Top" Foreground="{DynamicResource LightWhite}" FontSize="36"/>
+        <Ellipse HorizontalAlignment="Left" Height="24" Fill="{StaticResource LightWhite}" Margin="20,10,0,0" VerticalAlignment="Top" Width="25"/>
+        <TextBlock HorizontalAlignment="Left" Margin="55,8,0,0" TextWrapping="Wrap" Text="Marathon Skills 2016" VerticalAlignment="Top" Foreground="{DynamicResource LightWhite}" FontSize="24"/>
+        <TextBlock x:Name="matat_text" HorizontalAlignment="Left" Margin="304,6,0,0" TextWrapping="Wrap" Text="Marathon Skills 2016" VerticalAlignment="Top" Foreground="{DynamicResource LightWhite}" FontSize="24"/>
+        <Grid x:Name="first_grid" d:IsLocked="True" d:IsHidden="True">
+            <Rectangle Height="270" Margin="20,40,20,0" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,190,0,0" Foreground="{StaticResource localText}" Text="Москва, Россия&#xA;среда 21 Октября 2016" VerticalAlignment="Top" FontStyle="Italic" FontSize="36" Width="413" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="0.157"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="0.331"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <Button x:Name="be_runner_bt" Content="Я хочу стать бегуном" HorizontalAlignment="Center" Margin="0,356,0,0" VerticalAlignment="Top" Height="154" Width="682" Click="be_runner_bt_Click"/>
+            <Button Content="Я хочу стать спонсором бегуна" HorizontalAlignment="Center" Margin="0,540,0,0" VerticalAlignment="Top" Height="154" Width="682"/>
+            <Button Content="Я хочу узнать больше о событии" HorizontalAlignment="Center" Margin="0,727,0,0" VerticalAlignment="Top" Height="154" Width="682"/>
+            <Button x:Name="log_bt" Content="Login" HorizontalAlignment="Left" Margin="1578,893,0,0" VerticalAlignment="Top" Width="206" Height="72" RenderTransformOrigin="0.5,0.5" FontSize="24" Click="log_bt_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="exit_bt" Content="X" HorizontalAlignment="Left" Margin="1881,0,0,0" VerticalAlignment="Top" Height="34" Width="39" Foreground="#FFF3EBEB" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="24" Click="exit_bt_Click" />
+            <TextBlock HorizontalAlignment="Center" Margin="0,89,0,0" TextWrapping="Wrap" Text="MATATHON SKILLS 2016" Foreground="{StaticResource LightWhite}" VerticalAlignment="Top" FontSize="68" Width="864" TextAlignment="Center" FontWeight="Bold"/>
         </Grid>
+        <Grid x:Name="Register0as0a0runner">
+            <Rectangle Height="148" Margin="20,40,20,0" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="323,76,0,0" TextWrapping="Wrap" Text="MATATHON SKILLS 2016" Foreground="{StaticResource LightWhite}" VerticalAlignment="Top" FontSize="68" Width="864" TextAlignment="Center" FontWeight="Bold"/>
+            <Button Content="Назад" HorizontalAlignment="Left" Margin="66,80,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="Button_Click"/>
+            <Button x:Name="old_runner" Content="Я учавствовал ранее" HorizontalAlignment="Center" Margin="0,325,0,0" VerticalAlignment="Top" Height="151" Width="720" FontStyle="Italic" Click="old_runner_Click"/>
+            <Button x:Name="regis_bt" Content="Я новый участник" HorizontalAlignment="Center" Margin="0,520,0,0" VerticalAlignment="Top" Height="151" Width="720" FontStyle="Italic" Click="regis_bt_Click"/>
+        </Grid>
+        <Grid x:Name="Login" d:IsLocked="True" d:IsHidden="True">
+            <Rectangle Height="148" Margin="20,40,20,0" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="323,76,0,0" TextWrapping="Wrap" Text="MATATHON SKILLS 2016" Foreground="{StaticResource LightWhite}" VerticalAlignment="Top" FontSize="68" Width="864" TextAlignment="Center" FontWeight="Bold"/>
+            <Button Content="Назад" HorizontalAlignment="Left" Margin="66,80,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="Button_Click"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,233,0,0" Text="Форма авторизации" VerticalAlignment="Top" Height="141" Width="860" FontSize="68" TextAlignment="Center" TextWrapping="Wrap"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,351,0,0" Text="Пожалуйста, авторизируйтес в системе, используя ваш адресс электронной почты и пароль." VerticalAlignment="Top" Height="141" Width="1846" FontSize="45" TextAlignment="Center" TextWrapping="Wrap"/>
+            <TextBlock HorizontalAlignment="Left" Margin="576,514,0,0" TextWrapping="Wrap" Text="Email:" VerticalAlignment="Top" FontSize="36"/>
+            <TextBlock HorizontalAlignment="Left" Margin="512,636,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" FontSize="36"/>
+            <TextBox x:Name="email_tv" HorizontalAlignment="Left" Margin="673,506,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="600" Height="60" FontSize="36"/>
+            <TextBox x:Name="pass_tv" HorizontalAlignment="Left" Margin="673,628,0,0" TextWrapping="Wrap" Visibility="Hidden" FontSize="36" VerticalAlignment="Top" Width="600" Height="60"/>
+            <Button Content="Login" HorizontalAlignment="Left" Margin="755,760,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="Button_Click"/>
+            <Button Content="Canel" HorizontalAlignment="Left" Margin="972,760,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="Button_Click"/>
+            <PasswordBox x:Name="pass_pb" FontSize="36" HorizontalAlignment="Left" Margin="673,628,0,0" VerticalAlignment="Top" Width="600" Height="60"/>
+            <CheckBox x:Name="check_pass" Content="Показать пароль" HorizontalAlignment="Left" Margin="1296,649,0,0" VerticalAlignment="Top" Height="18" Width="132" Checked="check_pass_Checked" Unchecked="check_pass_Unchecked"/>
+        </Grid>
+        <Grid x:Name="Register0as0a0runner0" d:IsHidden="True">
+            <Rectangle Height="148" Margin="20,40,20,0" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="323,76,0,0" TextWrapping="Wrap" Text="MATATHON SKILLS 2016" Foreground="{StaticResource LightWhite}" VerticalAlignment="Top" FontSize="68" Width="864" TextAlignment="Center" FontWeight="Bold"/>
+            <Button Content="Назад" HorizontalAlignment="Left" Margin="66,80,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="Button_Click"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,233,0,0" Text="Регистрация бегуна" VerticalAlignment="Top" Height="141" Width="860" FontSize="68" TextAlignment="Center" TextWrapping="Wrap"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,335,0,0" Text="Пожалуйста, заполните всю информацию, чтобы зарегестрироваться в качестве бегуна" VerticalAlignment="Top" Height="141" Width="1702" FontSize="45" TextAlignment="Center" TextWrapping="Wrap"/>
+            <TextBlock HorizontalAlignment="Left" Margin="343,0,0,0" TextWrapping="Wrap" Text="Email:" VerticalAlignment="Center" FontSize="36"/>
+            <TextBlock HorizontalAlignment="Left" Margin="305,608,0,0" TextWrapping="Wrap" Text="Пароль:" VerticalAlignment="Top" FontSize="36"/>
+            <TextBlock HorizontalAlignment="Left" Margin="122,700,0,0" TextWrapping="Wrap" Text="Повторите пароль:" VerticalAlignment="Top" FontSize="36"/>
+            <TextBlock HorizontalAlignment="Left" Margin="357,788,0,0" TextWrapping="Wrap" Text="Имя:" VerticalAlignment="Top" FontSize="36"/>
+            <TextBlock HorizontalAlignment="Left" Margin="1217,0,0,0" TextWrapping="Wrap" Text="Пол:" VerticalAlignment="Center" FontSize="36"/>
+            <TextBlock HorizontalAlignment="Left" Margin="1029,608,0,0" TextWrapping="Wrap" Text="Дата рождения:" VerticalAlignment="Top" FontSize="36"/>
+            <TextBlock HorizontalAlignment="Left" Margin="1167,700,0,0" TextWrapping="Wrap" Text="Страна:" VerticalAlignment="Top" FontSize="36"/>
+            <TextBox x:Name="Email_tb" HorizontalAlignment="Left" Margin="441,515,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="600" Height="43" FontSize="36"/>
+            <TextBox x:Name="Password_tb" HorizontalAlignment="Left" Margin="441,608,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Height="43" FontSize="36"/>
+            <TextBox x:Name="repeat_password_tb" HorizontalAlignment="Left" Margin="441,700,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Height="43" FontSize="36"/>
+            <TextBox x:Name="Name_tb" HorizontalAlignment="Left" Margin="441,788,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Height="43" FontSize="36" Text=""/>
+            <ComboBox x:Name="Gender_cb" HorizontalAlignment="Left" Width="400" Height="43" FontSize="36" IsEditable="False" Margin="1322,515,0,0" VerticalAlignment="Top" BorderBrush="{DynamicResource LightWhite}" Background="{DynamicResource LightWhite}">
+                <ComboBoxItem>
+                    <TextBlock>Мужской</TextBlock>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock>Женский</TextBlock>
+                </ComboBoxItem>
 
+            </ComboBox>
+            <TextBox x:Name="Date_birth" HorizontalAlignment="Left" Margin="1322,608,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Height="43" FontSize="36"/>
+            <ComboBox x:Name="Country_cb" HorizontalAlignment="Left" Width="400" Height="43" FontSize="36" IsEditable="False" Margin="1322,700,0,0" VerticalAlignment="Top" BorderBrush="{DynamicResource LightWhite}" Background="{DynamicResource LightWhite}"/>
+            <Button x:Name="Registration_bt" Content="Регистрация" HorizontalAlignment="Left" Margin="586,887,0,0" VerticalAlignment="Top" Height="68" Width="310"/>
+            <Button x:Name="Canel_bt" Content="Отмена" HorizontalAlignment="Left" Margin="980,887,0,0" VerticalAlignment="Top" Height="68" Width="249" Click="Button_Click"/>
+        </Grid>
     </Grid>
 </Window>
