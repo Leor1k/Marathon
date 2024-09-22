@@ -80,4 +80,7 @@
   <ItemGroup>
     <RefactorLog Include="Marathon.refactorlog" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Marathon.publish.xml" />
+  </ItemGroup>
 </Project>

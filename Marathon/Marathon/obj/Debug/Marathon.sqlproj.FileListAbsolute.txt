@@ -18,3 +18,13 @@ C:\Users\medvedskijae\Desktop\Mbave\Ranner\Marathon\Marathon\obj\Debug\postdeplo
 C:\Users\medvedskijae\Desktop\Mbave\Ranner\Marathon\Marathon\obj\Debug\predeploy.sql
 C:\Users\medvedskijae\Desktop\Mbave\Ranner\Marathon\Marathon\obj\Debug\Marathon.dll
 C:\Users\medvedskijae\Desktop\Mbave\Ranner\Marathon\Marathon\obj\Debug\Marathon.pdb
+C:\Users\Poncho\Desktop\projects\Marathon\Marathon\Marathon\bin\Debug\Marathon.dacpac
+C:\Users\Poncho\Desktop\projects\Marathon\Marathon\Marathon\bin\Debug\Marathon.dll
+C:\Users\Poncho\Desktop\projects\Marathon\Marathon\Marathon\bin\Debug\Marathon.pdb
+C:\Users\Poncho\Desktop\projects\Marathon\Marathon\Marathon\obj\Debug\Marathon.sqlproj.AssemblyReference.cache
+C:\Users\Poncho\Desktop\projects\Marathon\Marathon\Marathon\obj\Debug\Model.xml
+C:\Users\Poncho\Desktop\projects\Marathon\Marathon\Marathon\obj\Debug\refactor.xml
+C:\Users\Poncho\Desktop\projects\Marathon\Marathon\Marathon\obj\Debug\postdeploy.sql
+C:\Users\Poncho\Desktop\projects\Marathon\Marathon\Marathon\obj\Debug\predeploy.sql
+C:\Users\Poncho\Desktop\projects\Marathon\Marathon\Marathon\obj\Debug\Marathon.dll
+C:\Users\Poncho\Desktop\projects\Marathon\Marathon\Marathon\obj\Debug\Marathon.pdb

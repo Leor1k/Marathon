@@ -4,5 +4,5 @@
     [Password] VARCHAR(50) NOT NULL, 
     [FirstName] NCHAR(10) NOT NULL, 
     [LastName] NCHAR(10) NOT NULL, 
-    [RoleId] INT NOT NULL Foreign key references [Role] ([RoleId])
+    [RoleId] char NOT NULL Foreign key references [Role] ([RoleId])
 )
