@@ -4,8 +4,7 @@
     [FirstName] VARCHAR(20) NOT NULL, 
     [LastName] VARCHAR(20) NOT NULL, 
     [DateOfBirth] DATE NOT NULL, 
-    [Gender] CHAR(10) NOT NULL, 
+    [Gender] CHAR(1) NOT NULL, 
     [PositionId] int not NULL foreign key references [Position] ([PositionId]), 
-    [Email] NCHAR(10) NOT NULL, 
-    [Comments] VARCHAR(50) NOT NULL,
+    [Email] VARCHAR(50) NOT NULL
 )

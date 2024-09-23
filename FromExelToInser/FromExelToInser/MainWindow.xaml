@@ -8,6 +8,8 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Button Content="User" HorizontalAlignment="Left" Margin="99,0,0,0" VerticalAlignment="Center" Click="Button_Click" Height="54" Width="170" FontSize="36"/>
+        <Button x:Name="position_bt" Content="Position" HorizontalAlignment="Center" VerticalAlignment="Center" Height="54" Width="170" FontSize="36" Click="position_bt_Click"/>
+        <Button x:Name="staff" Content="Staff" HorizontalAlignment="Left" VerticalAlignment="Center" Height="54" Width="170" FontSize="36" Margin="562,0,0,0" Click="staff_Click"/>
 
     </Grid>
 </Window>

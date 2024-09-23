@@ -4,6 +4,6 @@
     [PositionName] VARCHAR(30) NOT NULL, 
     [PositionDescription] VARCHAR(MAX) NOT NULL, 
     [PayPeriod] VARCHAR(50) NOT NULL, 
-    [PayRate] INT NOT NULL
+    [PayRate] CHAR(1) NOT NULL
 
 )

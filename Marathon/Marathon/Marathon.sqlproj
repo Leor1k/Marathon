@@ -82,6 +82,5 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Marathon.publish.xml" />
-    <None Include="Marathon_1.publish.xml" />
   </ItemGroup>
 </Project>
