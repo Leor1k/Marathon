@@ -12,7 +12,7 @@
 		</CustomData>
 		<CustomData Category="Reference" Type="Assembly">
 			<Metadata Name="LogicalName" Value="Marathon.dll" />
-			<Metadata Name="FileName" Value="C:\USERS\PONCHO\DESKTOP\PROJECTS\MARATHON\MARATHON\MARATHON\OBJ\DEBUG\MARATHON.DLL" />
+			<Metadata Name="FileName" Value="C:\USERS\MEDVEDSKIJAE\DESKTOP\MBAVE\MARATHON\MARATHON\MARATHON\OBJ\DEBUG\MARATHON.DLL" />
 			<Metadata Name="AssemblyName" Value="Marathon" />
 			<Metadata Name="PermissionSet" Value="SAFE" />
 			<Metadata Name="Owner" Value="" />
@@ -20,7 +20,7 @@
 			<Metadata Name="IsVisible" Value="True" />
 			<Metadata Name="IsModelAware" Value="True" />
 			<Metadata Name="SkipCreationIfEmpty" Value="True" />
-			<Metadata Name="AssemblySymbolsName" Value="C:\Users\Poncho\Desktop\projects\Marathon\Marathon\Marathon\obj\Debug\Marathon.pdb" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Users\medvedskijae\Desktop\Mbave\Marathon\Marathon\Marathon\obj\Debug\Marathon.pdb" />
 		</CustomData>
 		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
 	</Header>
@@ -768,7 +768,7 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[Role].[RoleId]" />
+								<References Name="[dbo].[User].[Email]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -776,7 +776,7 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[Role]" />
+					<References Name="[dbo].[User]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="37" />
@@ -787,7 +787,7 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[User].[Email]" />
+								<References Name="[dbo].[Role].[RoleId]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -795,7 +795,7 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[User]" />
+					<References Name="[dbo].[Role]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="38" />
@@ -1705,7 +1705,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="37" />
+						<AttachedAnnotation Disambiguator="38" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2144,7 +2144,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="38" />
+						<AttachedAnnotation Disambiguator="37" />
 					</Element>
 				</Entry>
 				<Entry>

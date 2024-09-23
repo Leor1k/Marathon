@@ -1,0 +1,34 @@
+﻿<Window x:Class="AppForMaraphone.Forms.RunnerMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppForMaraphone.Forms"
+        mc:Ignorable="d"
+        Title="RunnerMenu"  WindowState="Maximized" WindowStyle="None" Height="1080" Width="1920">
+    <Grid x:Name="MainRunnerGrid" Background="{DynamicResource backGround}">
+        <Grid x:Name="Ranner0menu">
+            <Rectangle Margin="20,1000,20,13"/>
+            <Rectangle Height="960" Margin="20,40,20,0" Fill="{StaticResource LightWhite}" VerticalAlignment="Top" />
+            <TextBlock HorizontalAlignment="Center" Margin="0,1012,0,0" TextWrapping="Wrap" Text=".... до старта марафона!" VerticalAlignment="Top" Foreground="{DynamicResource LightWhite}" FontSize="36"/>
+            <Ellipse HorizontalAlignment="Left" Height="24" Fill="{StaticResource LightWhite}" Margin="20,10,0,0" VerticalAlignment="Top" Width="25"/>
+            <TextBlock HorizontalAlignment="Left" Margin="55,8,0,0" TextWrapping="Wrap" Text="Marathon Skills 2016" VerticalAlignment="Top" Foreground="{DynamicResource LightWhite}" FontSize="24"/>
+            <TextBlock x:Name="matat_text" HorizontalAlignment="Left" Margin="304,6,0,0" TextWrapping="Wrap" Text="Marathon Skills 2016" VerticalAlignment="Top" Foreground="{DynamicResource LightWhite}" FontSize="24"/>
+            <Rectangle Height="148" Margin="20,40,20,0" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="323,76,0,0" TextWrapping="Wrap" Text="MATATHON SKILLS 2016" Foreground="{StaticResource LightWhite}" VerticalAlignment="Top" FontSize="68" Width="864" TextAlignment="Center" FontWeight="Bold"/>
+            <Button x:Name="back_to_first_button" Content="Назад" HorizontalAlignment="Left" Margin="66,80,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="back_to_first_button_Click"/>
+            <Button x:Name="regis_bt"  HorizontalAlignment="Left" Margin="265,369,0,0" VerticalAlignment="Top" Height="151" Width="646" FontStyle="Italic">
+                <TextBlock TextAlignment="Center" Text="Регистрация на &#10;марафон"/>
+            </Button>
+            <TextBlock HorizontalAlignment="Center" Margin="0,233,0,0" Text="Меню бегуна" VerticalAlignment="Top" Height="81" Width="830" FontSize="48" TextAlignment="Center" TextWrapping="Wrap"/>
+            <Button x:Name="logOut" Content="Logout" HorizontalAlignment="Left" Margin="1670,76,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="logOut_Click"/>
+            <Button x:Name="regis_bt_Копировать" Content="Мои результаты" HorizontalAlignment="Left" Margin="960,369,0,0" VerticalAlignment="Top" Height="151" Width="646" FontStyle="Italic"/>
+            <Button x:Name="regis_bt_Копировать1" Content="Мой спонсор" HorizontalAlignment="Left" Margin="960,540,0,0" VerticalAlignment="Top" Height="151" Width="646" FontStyle="Italic"/>
+            <Button x:Name="regis_bt_Копировать2" HorizontalAlignment="Left" Margin="265,540,0,0" VerticalAlignment="Top" Height="151" Width="646" FontStyle="Italic">
+                <TextBlock Text="Редактирование &#x0a;профиля" TextAlignment="Center"/>
+            </Button>
+            <Button x:Name="regis_bt_Копировать3" Content="Контакты" HorizontalAlignment="Left" Margin="265,709,0,0" VerticalAlignment="Top" Height="151" Width="646" FontStyle="Italic"/>
+            <Button x:Name="exit_bt" Content="X" HorizontalAlignment="Left" Margin="1881,0,0,0" VerticalAlignment="Top" Height="34" Width="39" Foreground="#FFF3EBEB" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="24" Click="exit_bt_Click" />
+        </Grid>
+    </Grid>
+</Window>

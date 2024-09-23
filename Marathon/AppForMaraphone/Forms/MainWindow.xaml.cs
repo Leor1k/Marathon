@@ -1,7 +1,7 @@
 ﻿using AppForMaraphone.Classes;
+using AppForMaraphone.Forms;
 using System;
 using System.Windows;
-using System.Windows.Controls;
 
 
 namespace AppForMaraphone
@@ -14,43 +14,24 @@ namespace AppForMaraphone
         public MainWindow()
         {
             InitializeComponent();
-            HideGrid(first_grid);
+            Grids.HideGrid(first_grid, matat_text, AllIn);
         }
         private void exit_bt_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-        public void HideGrid(Grid selectedGrid)
-        {
-            foreach (var grid in AllIn.Children)
-            {
-                if (grid.GetType() == typeof(Grid))
-                {
-                    Grid grid1 = grid as Grid;
-                    grid1.Visibility = Visibility.Hidden;
-                }
-            }
-            selectedGrid.Visibility = Visibility.Visible;
-            if(selectedGrid.Name =="first_grid")
-            {
-                matat_text.Text = "";
-            }
-            else
-            {
-                matat_text.Text = selectedGrid.Name.Replace('0',' ');
-            }
-        }
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            HideGrid(first_grid);       
+            Grids.HideGrid(first_grid, matat_text, AllIn);
         }
         private void be_runner_bt_Click(object sender, RoutedEventArgs e)
         {
-            HideGrid(Register0as0a0runner);
+            Grids.HideGrid(Register0as0a0runner, matat_text, AllIn);
         }
         private void old_runner_Click(object sender, RoutedEventArgs e)
         {
-            HideGrid(Login);
+            Grids.HideGrid(Login, matat_text, AllIn);
         }
         private void check_pass_Checked(object sender, RoutedEventArgs e)
         {
@@ -66,17 +47,17 @@ namespace AppForMaraphone
         }
         private void log_bt_Click(object sender, RoutedEventArgs e)
         {
-            HideGrid(Login);
+            Grids.HideGrid(Login, matat_text, AllIn);
         }
         private void regis_bt_Click(object sender, RoutedEventArgs e)
         {
-            HideGrid(Register0as0a0runner0);
+            Grids.HideGrid(Register0as0a0runner0, matat_text, AllIn);
         }
         private void login_bt_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                if(email_tv.Text.Length == 0)
+                if (email_tv.Text.Length == 0)
                 {
                     throw new Exception("Поле Email обязательно к заполнению");
                 }
@@ -97,17 +78,27 @@ namespace AppForMaraphone
                     }
                     pass = pass_pb.Password.Trim();
                 }
-                User enteredUser = DataBase.UserEnter(email_tv.Text.Trim(), pass); 
+                User enteredUser = DataBase.UserEnter(email_tv.Text.Trim(), pass);
                 if (enteredUser == null)
                 {
                     throw new Exception("Неверный логин или пароль.");
                 }
-                MessageBox.Show($"Vse good");
+                if (enteredUser.RoleId == 'R')
+                {
+                    RunnerMenu yeap = new RunnerMenu(enteredUser);
+                    yeap.Show();
+                    this.Close();       
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Ошибка: {ex.Message}"); 
             }
+        }
+
+        private void more_info_button_Click(object sender, RoutedEventArgs e)
+        {
+            Grids.HideGrid(Find0out0more0information, matat_text, AllIn);
         }
     }
 }

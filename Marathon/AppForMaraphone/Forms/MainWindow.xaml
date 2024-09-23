@@ -13,7 +13,8 @@
         <Ellipse HorizontalAlignment="Left" Height="24" Fill="{StaticResource LightWhite}" Margin="20,10,0,0" VerticalAlignment="Top" Width="25"/>
         <TextBlock HorizontalAlignment="Left" Margin="55,8,0,0" TextWrapping="Wrap" Text="Marathon Skills 2016" VerticalAlignment="Top" Foreground="{DynamicResource LightWhite}" FontSize="24"/>
         <TextBlock x:Name="matat_text" HorizontalAlignment="Left" Margin="304,6,0,0" TextWrapping="Wrap" Text="Marathon Skills 2016" VerticalAlignment="Top" Foreground="{DynamicResource LightWhite}" FontSize="24"/>
-        <Grid x:Name="first_grid" d:IsLocked="True" d:IsHidden="True">
+        <Button x:Name="exit_bt" Content="X" HorizontalAlignment="Left" Margin="1881,0,0,0" VerticalAlignment="Top" Height="34" Width="39" Foreground="#FFF3EBEB" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="24" Click="exit_bt_Click" />
+        <Grid x:Name="first_grid" d:IsLocked="True">
             <Rectangle Height="270" Margin="20,40,20,0" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Center" Margin="0,190,0,0" Foreground="{StaticResource localText}" Text="Москва, Россия&#xA;среда 21 Октября 2016" VerticalAlignment="Top" FontStyle="Italic" FontSize="36" Width="413" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
                 <TextBlock.RenderTransform>
@@ -27,7 +28,7 @@
             </TextBlock>
             <Button x:Name="be_runner_bt" Content="Я хочу стать бегуном" HorizontalAlignment="Center" Margin="0,356,0,0" VerticalAlignment="Top" Height="154" Width="682" Click="be_runner_bt_Click"/>
             <Button Content="Я хочу стать спонсором бегуна" HorizontalAlignment="Center" Margin="0,540,0,0" VerticalAlignment="Top" Height="154" Width="682"/>
-            <Button Content="Я хочу узнать больше о событии" HorizontalAlignment="Center" Margin="0,727,0,0" VerticalAlignment="Top" Height="154" Width="682"/>
+            <Button x:Name="more_info_button" Content="Я хочу узнать больше о событии" HorizontalAlignment="Center" Margin="0,727,0,0" VerticalAlignment="Top" Height="154" Width="682" Click="more_info_button_Click"/>
             <Button x:Name="log_bt" Content="Login" HorizontalAlignment="Left" Margin="1578,893,0,0" VerticalAlignment="Top" Width="206" Height="72" RenderTransformOrigin="0.5,0.5" FontSize="24" Click="log_bt_Click">
                 <Button.RenderTransform>
                     <TransformGroup>
@@ -38,7 +39,6 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="exit_bt" Content="X" HorizontalAlignment="Left" Margin="1881,0,0,0" VerticalAlignment="Top" Height="34" Width="39" Foreground="#FFF3EBEB" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="24" Click="exit_bt_Click" />
             <TextBlock HorizontalAlignment="Center" Margin="0,89,0,0" TextWrapping="Wrap" Text="MATATHON SKILLS 2016" Foreground="{StaticResource LightWhite}" VerticalAlignment="Top" FontSize="68" Width="864" TextAlignment="Center" FontWeight="Bold"/>
         </Grid>
         <Grid x:Name="Register0as0a0runner" d:IsLocked="True" d:IsHidden="True">
@@ -48,7 +48,7 @@
             <Button x:Name="old_runner" Content="Я учавствовал ранее" HorizontalAlignment="Center" Margin="0,325,0,0" VerticalAlignment="Top" Height="151" Width="720" FontStyle="Italic" Click="old_runner_Click"/>
             <Button x:Name="regis_bt" Content="Я новый участник" HorizontalAlignment="Center" Margin="0,520,0,0" VerticalAlignment="Top" Height="151" Width="720" FontStyle="Italic" Click="regis_bt_Click"/>
         </Grid>
-        <Grid x:Name="Login">
+        <Grid x:Name="Login" d:IsLocked="True" d:IsHidden="True">
             <Rectangle Height="148" Margin="20,40,20,0" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="323,76,0,0" TextWrapping="Wrap" Text="MATATHON SKILLS 2016" Foreground="{StaticResource LightWhite}" VerticalAlignment="Top" FontSize="68" Width="864" TextAlignment="Center" FontWeight="Bold"/>
             <Button Content="Назад" HorizontalAlignment="Left" Margin="66,80,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="Button_Click"/>
@@ -63,7 +63,7 @@
             <PasswordBox x:Name="pass_pb" FontSize="36" HorizontalAlignment="Left" Margin="673,628,0,0" VerticalAlignment="Top" Width="600" Height="60"/>
             <CheckBox x:Name="check_pass" Content="Показать пароль" HorizontalAlignment="Left" Margin="1296,649,0,0" VerticalAlignment="Top" Height="18" Width="132" Checked="check_pass_Checked" Unchecked="check_pass_Unchecked"/>
         </Grid>
-        <Grid x:Name="Register0as0a0runner0" d:IsHidden="True" d:IsLocked="True">
+        <Grid x:Name="Register0as0a0runner0" d:IsLocked="True" d:IsHidden="True">
             <Rectangle Height="148" Margin="20,40,20,0" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="323,76,0,0" TextWrapping="Wrap" Text="MATATHON SKILLS 2016" Foreground="{StaticResource LightWhite}" VerticalAlignment="Top" FontSize="68" Width="864" TextAlignment="Center" FontWeight="Bold"/>
             <Button Content="Назад" HorizontalAlignment="Left" Margin="66,80,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="Button_Click"/>
@@ -93,6 +93,30 @@
             <ComboBox x:Name="Country_cb" HorizontalAlignment="Left" Width="400" Height="43" FontSize="36" IsEditable="False" Margin="1322,700,0,0" VerticalAlignment="Top" BorderBrush="{DynamicResource LightWhite}" Background="{DynamicResource LightWhite}"/>
             <Button x:Name="Registration_bt" Content="Регистрация" HorizontalAlignment="Left" Margin="586,887,0,0" VerticalAlignment="Top" Height="68" Width="310"/>
             <Button x:Name="Canel_bt" Content="Отмена" HorizontalAlignment="Left" Margin="980,887,0,0" VerticalAlignment="Top" Height="68" Width="249" Click="Button_Click"/>
+        </Grid>
+        <Grid x:Name="Find0out0more0information" d:IsLocked="True" d:IsHidden="True">
+            <Rectangle Height="148" Margin="20,40,20,0" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="323,76,0,0" TextWrapping="Wrap" Text="MATATHON SKILLS 2016" Foreground="{StaticResource LightWhite}" VerticalAlignment="Top" FontSize="68" Width="864" TextAlignment="Center" FontWeight="Bold"/>
+            <Button Content="Назад" HorizontalAlignment="Left" Margin="66,80,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="Button_Click"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,225,0,0" Text="Подробная информация" VerticalAlignment="Top" Height="93" Width="860" FontSize="68" TextAlignment="Center" TextWrapping="Wrap"/>
+            <Button HorizontalAlignment="Left" Margin="231,386,0,0" VerticalAlignment="Top" Height="154" Width="682" FontSize="48">
+                <TextBlock Text="Marathon Skills 2016" TextAlignment="Center" FontStyle="Italic"/>
+            </Button>
+            <Button HorizontalAlignment="Left" Margin="231,566,0,0" VerticalAlignment="Top" Height="154" Width="682" FontSize="48">
+                <TextBlock Text="Предыдущие &#10; результаты" TextAlignment="Center" FontStyle="Italic"/>
+            </Button>
+            <Button HorizontalAlignment="Left" Margin="231,746,0,0" VerticalAlignment="Top" Height="154" Width="682" FontSize="48">
+                <TextBlock Text="BMI калькулятор" TextAlignment="Center" FontStyle="Italic"/>
+            </Button>
+            <Button HorizontalAlignment="Left" Margin="960,386,0,0" VerticalAlignment="Top" Height="154" Width="682" FontSize="48">
+                <TextBlock Text="Насколько долгий&#10;марафон" TextAlignment="Center" FontStyle="Italic"/>
+            </Button>
+            <Button HorizontalAlignment="Left" Margin="960,566,0,0" VerticalAlignment="Top" Height="154" Width="682" FontSize="48">
+                <TextBlock Text="Список благотворительных&#10;организаций" TextAlignment="Center" FontStyle="Italic"/>
+            </Button>
+            <Button HorizontalAlignment="Left" Margin="960,746,0,0" VerticalAlignment="Top" Height="154" Width="682" FontSize="48">
+                <TextBlock Text="BMR калькулятор" TextAlignment="Center" FontStyle="Italic"/>
+            </Button>
         </Grid>
     </Grid>
 </Window>
