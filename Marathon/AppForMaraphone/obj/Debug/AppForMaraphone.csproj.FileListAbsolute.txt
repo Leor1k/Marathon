@@ -39,3 +39,6 @@ C:\Users\medvedskijae\Desktop\Mbave\Marathon\Marathon\AppForMaraphone\obj\Debug\
 C:\Users\medvedskijae\Desktop\Mbave\Marathon\Marathon\AppForMaraphone\obj\Debug\AppForMaraphone.csproj.CoreCompileInputs.cache
 C:\Users\medvedskijae\Desktop\Mbave\Marathon\Marathon\AppForMaraphone\obj\Debug\AppForMaraphone.exe
 C:\Users\medvedskijae\Desktop\Mbave\Marathon\Marathon\AppForMaraphone\obj\Debug\AppForMaraphone.pdb
+C:\Users\medvedskijae\Desktop\Mbave\Marathon\Marathon\AppForMaraphone\obj\Debug\Resource\ImagesItem.g.cs
+C:\Users\medvedskijae\Desktop\Mbave\Marathon\Marathon\AppForMaraphone\obj\Debug\Resource\ImagesItem.baml
+C:\Users\medvedskijae\Desktop\Mbave\Marathon\Marathon\AppForMaraphone\obj\Debug\GeneratedInternalTypeHelper.g.cs

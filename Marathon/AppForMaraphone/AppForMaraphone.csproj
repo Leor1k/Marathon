@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Resource\ImagesItem.xaml.cs">
+      <DependentUpon>ImagesItem.xaml</DependentUpon>
+    </Compile>
     <Page Include="Forms\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -76,6 +79,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resource\Colors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\ImagesItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -118,5 +125,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resource\Images\airbus-a380.jpg" />
+    <Resource Include="Resource\Images\bus.jpg" />
+    <Resource Include="Resource\Images\capybara.jpg" />
+    <Resource Include="Resource\Images\f1-car.jpg" />
+    <Resource Include="Resource\Images\football-field.jpg" />
+    <Resource Include="Resource\Images\horse.png" />
+    <Resource Include="Resource\Images\jaguar.jpg" />
+    <Resource Include="Resource\Images\pair-of-havaianas.jpg" />
+    <Resource Include="Resource\Images\ronaldinho.jpg" />
+    <Resource Include="Resource\Images\sloth.jpg" />
+    <Resource Include="Resource\Images\slug.jpg" />
+    <Resource Include="Resource\Images\worm.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

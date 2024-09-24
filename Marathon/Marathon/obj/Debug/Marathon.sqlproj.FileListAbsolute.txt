@@ -32,9 +32,9 @@ C:\Users\medvedskijae\Desktop\Mbave\Marathon\Marathon\Marathon\bin\Debug\Maratho
 C:\Users\medvedskijae\Desktop\Mbave\Marathon\Marathon\Marathon\bin\Debug\Marathon.dll
 C:\Users\medvedskijae\Desktop\Mbave\Marathon\Marathon\Marathon\bin\Debug\Marathon.pdb
 C:\Users\medvedskijae\Desktop\Mbave\Marathon\Marathon\Marathon\obj\Debug\Marathon.sqlproj.AssemblyReference.cache
+C:\Users\medvedskijae\Desktop\Mbave\Marathon\Marathon\Marathon\obj\Debug\Marathon.dll
+C:\Users\medvedskijae\Desktop\Mbave\Marathon\Marathon\Marathon\obj\Debug\Marathon.pdb
 C:\Users\medvedskijae\Desktop\Mbave\Marathon\Marathon\Marathon\obj\Debug\Model.xml
 C:\Users\medvedskijae\Desktop\Mbave\Marathon\Marathon\Marathon\obj\Debug\refactor.xml
 C:\Users\medvedskijae\Desktop\Mbave\Marathon\Marathon\Marathon\obj\Debug\postdeploy.sql
 C:\Users\medvedskijae\Desktop\Mbave\Marathon\Marathon\Marathon\obj\Debug\predeploy.sql
-C:\Users\medvedskijae\Desktop\Mbave\Marathon\Marathon\Marathon\obj\Debug\Marathon.dll
-C:\Users\medvedskijae\Desktop\Mbave\Marathon\Marathon\Marathon\obj\Debug\Marathon.pdb

@@ -1,7 +1,9 @@
 ﻿using AppForMaraphone.Classes;
 using AppForMaraphone.Forms;
+using AppForMaraphone.Resource;
 using System;
 using System.Windows;
+using System.Windows.Controls;
 
 
 namespace AppForMaraphone
@@ -15,6 +17,7 @@ namespace AppForMaraphone
         {
             InitializeComponent();
             Grids.HideGrid(first_grid, matat_text, AllIn);
+            AddClick();
         }
         private void exit_bt_Click(object sender, RoutedEventArgs e)
         {
@@ -99,6 +102,42 @@ namespace AppForMaraphone
         private void more_info_button_Click(object sender, RoutedEventArgs e)
         {
             Grids.HideGrid(Find0out0more0information, matat_text, AllIn);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void longs_bt_Click(object sender, RoutedEventArgs e)
+        {
+            Grids.HideGrid(How0long0is0marathon,matat_text,AllIn);
+        }
+        private void AddClick()
+        {
+            foreach (var item in SpeedTest.Children)
+            {
+                if (typeof(ImagesItem) == item.GetType())
+                {
+                    ImagesItem images = (ImagesItem)item;
+                    images.selectItem.Click += SelectItem_Click;
+                }
+            }
+        }
+
+        private void SelectItem_Click(object sender, RoutedEventArgs e)
+        {
+            Button s = (Button)sender;
+            Canvas s1 = (Canvas)s.Parent;
+
+           foreach (var item in s1.Children )
+            {
+                if (typeof(Image) == item.GetType())
+                {
+                    Image image = (Image)item;
+                    selected_poin_photo = image;                 
+                }
+            }
         }
     }
 }

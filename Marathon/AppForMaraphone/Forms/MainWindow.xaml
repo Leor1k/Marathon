@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AppForMaraphone"
+        xmlns:us = "clr-namespace:AppForMaraphone.Resource"
         mc:Ignorable="d"
         Title="MainWindow" WindowState="Maximized" WindowStyle="None" Height="1080" Width="1920">
     <Grid x:Name="AllIn" Background="{DynamicResource backGround}">
@@ -14,7 +14,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="55,8,0,0" TextWrapping="Wrap" Text="Marathon Skills 2016" VerticalAlignment="Top" Foreground="{DynamicResource LightWhite}" FontSize="24"/>
         <TextBlock x:Name="matat_text" HorizontalAlignment="Left" Margin="304,6,0,0" TextWrapping="Wrap" Text="Marathon Skills 2016" VerticalAlignment="Top" Foreground="{DynamicResource LightWhite}" FontSize="24"/>
         <Button x:Name="exit_bt" Content="X" HorizontalAlignment="Left" Margin="1881,0,0,0" VerticalAlignment="Top" Height="34" Width="39" Foreground="#FFF3EBEB" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="24" Click="exit_bt_Click" />
-        <Grid x:Name="first_grid" d:IsLocked="True">
+        <Grid x:Name="first_grid" d:IsLocked="True" d:IsHidden="True">
             <Rectangle Height="270" Margin="20,40,20,0" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Center" Margin="0,190,0,0" Foreground="{StaticResource localText}" Text="Москва, Россия&#xA;среда 21 Октября 2016" VerticalAlignment="Top" FontStyle="Italic" FontSize="36" Width="413" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
                 <TextBlock.RenderTransform>
@@ -108,7 +108,7 @@
             <Button HorizontalAlignment="Left" Margin="231,746,0,0" VerticalAlignment="Top" Height="154" Width="682" FontSize="48">
                 <TextBlock Text="BMI калькулятор" TextAlignment="Center" FontStyle="Italic"/>
             </Button>
-            <Button HorizontalAlignment="Left" Margin="960,386,0,0" VerticalAlignment="Top" Height="154" Width="682" FontSize="48">
+            <Button x:Name="longs_bt" HorizontalAlignment="Left" Margin="960,386,0,0" VerticalAlignment="Top" Height="154" Width="682" FontSize="48" Click="longs_bt_Click">
                 <TextBlock Text="Насколько долгий&#10;марафон" TextAlignment="Center" FontStyle="Italic"/>
             </Button>
             <Button HorizontalAlignment="Left" Margin="960,566,0,0" VerticalAlignment="Top" Height="154" Width="682" FontSize="48">
@@ -117,6 +117,33 @@
             <Button HorizontalAlignment="Left" Margin="960,746,0,0" VerticalAlignment="Top" Height="154" Width="682" FontSize="48">
                 <TextBlock Text="BMR калькулятор" TextAlignment="Center" FontStyle="Italic"/>
             </Button>
+        </Grid>
+        <Grid x:Name="How0long0is0marathon">
+            <Rectangle Height="148" Margin="20,40,20,0" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="323,76,0,0" TextWrapping="Wrap" Text="MATATHON SKILLS 2016" Foreground="{StaticResource LightWhite}" VerticalAlignment="Top" FontSize="68" Width="864" TextAlignment="Center" FontWeight="Bold"/>
+            <Button Content="Назад" HorizontalAlignment="Left" Margin="66,80,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="Button_Click"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,225,0,0" Text="Насколько долгий марафон?" VerticalAlignment="Top" Height="93" Width="860" FontSize="48" TextAlignment="Center" TextWrapping="Wrap"/>
+            <TextBlock x:Name="point_name" HorizontalAlignment="Left" Margin="116,318,0,0" Text="F1 Car" VerticalAlignment="Top" Height="54" Width="860" FontSize="36" TextAlignment="Center" TextWrapping="Wrap"/>
+            <Image x:Name="selected_poin_photo" HorizontalAlignment="Left" Height="387" Margin="174,377,0,0" VerticalAlignment="Top"  Width="744" Source="/Resource/Images/f1-car.jpg" Stretch="Fill">
+                <Image.OpacityMask>
+                    <ImageBrush Stretch="None" TileMode="FlipY" ImageSource="/Resource/Images/f1-car.jpg"/>
+                </Image.OpacityMask>
+            </Image>
+            <TextBlock x:Name="point_name_Копировать" HorizontalAlignment="Left" Margin="116,789,0,0" Text="Максимальная скорость F1 Car 345km/h . Это займет CCC чтобы завершить 42-х километровый  марафон" VerticalAlignment="Top" Height="99" Width="860" FontSize="36" TextAlignment="Center" TextWrapping="Wrap"/>
+            <Rectangle x:Name="stack_speed" HorizontalAlignment="Left" Height="550" StrokeThickness ="5" Margin="1278,329,0,0" Stroke="{DynamicResource grayCol}" VerticalAlignment="Top" Width="459" Fill="{DynamicResource LightWhite}"/>
+            <Rectangle HorizontalAlignment="Left" Height="43" StrokeThickness ="5" Margin="1278,287,0,0" Stroke="{DynamicResource grayCol}" VerticalAlignment="Top" Width="186" Fill="{x:Null}"/>
+            <Button Content="Скорость" HorizontalAlignment="Left" Margin="1286,292,0,0" VerticalAlignment="Top" Width="170" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click_1" FontSize="24"/>
+            <Rectangle HorizontalAlignment="Left" Height="43" StrokeThickness ="5" Margin="1464,287,0,0" Stroke="{DynamicResource grayCol}" VerticalAlignment="Top" Width="200" Fill="{x:Null}"/>
+            <Button Content="Дистанция" HorizontalAlignment="Left" Margin="1472,291,0,0" VerticalAlignment="Top" Width="188" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click_1" FontSize="24"/>
+            <StackPanel x:Name="SpeedTest" Margin="1294,342,199,214">
+                <us:ImagesItem Header="F1 car" ColoredSourse="/Resource/Images/f1-car.jpg"/>
+                <us:ImagesItem Header="Slug" ColoredSourse="/Resource/Images/slug.jpg"/>
+                <us:ImagesItem Header="Horse" ColoredSourse="/Resource/Images/horse.png"/>
+                <us:ImagesItem Header="Sloth" ColoredSourse="/Resource/Images/sloth.jpg"/>
+                <us:ImagesItem Header="Capybara" ColoredSourse="/Resource/Images/capybara.jpg"/>
+                <us:ImagesItem Header="Jaguar" ColoredSourse="/Resource/Images/jaguar.jpg"/>
+                <us:ImagesItem Header="Worm" ColoredSourse="/Resource/Images/worm.jpg"/>
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>
