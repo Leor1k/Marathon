@@ -8,17 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/airbus-a380.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/bus.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/capybara.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/f1-car.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/football-field.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/horse.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/jaguar.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/pair-of-havaianas.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/ronaldinho.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/sloth.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/slug.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/worm.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/banco-banespa.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/ibirapuera-park-lake.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/marathon-image.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/marathon-skills-2016-marathon-map.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/teatro-municipal.jpg")]
 
 

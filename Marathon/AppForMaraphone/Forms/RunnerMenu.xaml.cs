@@ -12,6 +12,7 @@ namespace AppForMaraphone.Forms
         {
             InitializeComponent();
             Grids.HideGrid(Ranner0menu, matat_text, MainRunnerGrid);
+            kontaktGrid.Visibility = Visibility.Hidden;
         }
 
         private void back_to_first_button_Click(object sender, RoutedEventArgs e)
@@ -30,6 +31,16 @@ namespace AppForMaraphone.Forms
         {
             MainWindow main = new MainWindow();
             main.Show();
+        }
+
+        private void CloseKontatsBt_Click(object sender, RoutedEventArgs e)
+        {
+            kontaktGrid.Visibility = Visibility.Hidden;
+        }
+
+        private void ShowContacr_Click(object sender, RoutedEventArgs e)
+        {
+            kontaktGrid.Visibility = Visibility.Visible;
         }
     }
 }

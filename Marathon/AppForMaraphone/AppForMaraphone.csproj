@@ -124,7 +124,13 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resource\Images\banco-banespa.jpg" />
+    <Resource Include="Resource\Images\ibirapuera-park-lake.jpg" />
+    <Resource Include="Resource\Images\marathon-image.jpg" />
+    <Resource Include="Resource\Images\marathon-skills-2016-marathon-map.jpg" />
+    <Resource Include="Resource\Images\teatro-municipal.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource\Images\airbus-a380.jpg" />
     <Resource Include="Resource\Images\bus.jpg" />

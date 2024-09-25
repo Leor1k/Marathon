@@ -99,7 +99,7 @@
             <TextBlock HorizontalAlignment="Left" Margin="323,76,0,0" TextWrapping="Wrap" Text="MATATHON SKILLS 2016" Foreground="{StaticResource LightWhite}" VerticalAlignment="Top" FontSize="68" Width="864" TextAlignment="Center" FontWeight="Bold"/>
             <Button Content="Назад" HorizontalAlignment="Left" Margin="66,80,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="Button_Click"/>
             <TextBlock HorizontalAlignment="Center" Margin="0,225,0,0" Text="Подробная информация" VerticalAlignment="Top" Height="93" Width="860" FontSize="68" TextAlignment="Center" TextWrapping="Wrap"/>
-            <Button HorizontalAlignment="Left" Margin="231,386,0,0" VerticalAlignment="Top" Height="154" Width="682" FontSize="48">
+            <Button x:Name="show_map" HorizontalAlignment="Left" Margin="231,386,0,0" VerticalAlignment="Top" Height="154" Width="682" FontSize="48" Click="show_map_Click">
                 <TextBlock Text="Marathon Skills 2016" TextAlignment="Center" FontStyle="Italic"/>
             </Button>
             <Button HorizontalAlignment="Left" Margin="231,566,0,0" VerticalAlignment="Top" Height="154" Width="682" FontSize="48">
@@ -118,7 +118,7 @@
                 <TextBlock Text="BMR калькулятор" TextAlignment="Center" FontStyle="Italic"/>
             </Button>
         </Grid>
-        <Grid x:Name="How0long0is0marathon">
+        <Grid x:Name="How0long0is0marathon" d:IsLocked="True" d:IsHidden="True">
             <Rectangle Height="148" Margin="20,40,20,0" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="323,76,0,0" TextWrapping="Wrap" Text="MATATHON SKILLS 2016" Foreground="{StaticResource LightWhite}" VerticalAlignment="Top" FontSize="68" Width="864" TextAlignment="Center" FontWeight="Bold"/>
             <Button Content="Назад" HorizontalAlignment="Left" Margin="66,80,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="Button_Click"/>
@@ -129,14 +129,14 @@
                     <ImageBrush Stretch="None" TileMode="FlipY" ImageSource="/Resource/Images/f1-car.jpg"/>
                 </Image.OpacityMask>
             </Image>
-            <TextBlock x:Name="point_name_Копировать" HorizontalAlignment="Left" Margin="116,789,0,0" Text="Максимальная скорость F1 Car 345km/h . Это займет CCC чтобы завершить 42-х километровый  марафон" VerticalAlignment="Top" Height="99" Width="860" FontSize="36" TextAlignment="Center" TextWrapping="Wrap"/>
+            <TextBlock x:Name="discriotion" HorizontalAlignment="Left" Margin="116,789,0,0" Text="Максимальная скорость F1 Car 345km/h . Это займет CCC чтобы завершить 42-х километровый  марафон" VerticalAlignment="Top" Height="99" Width="860" FontSize="24" TextAlignment="Center" TextWrapping="Wrap"/>
             <Rectangle x:Name="stack_speed" HorizontalAlignment="Left" Height="550" StrokeThickness ="5" Margin="1278,329,0,0" Stroke="{DynamicResource grayCol}" VerticalAlignment="Top" Width="459" Fill="{DynamicResource LightWhite}"/>
             <Rectangle HorizontalAlignment="Left" Height="43" StrokeThickness ="5" Margin="1278,287,0,0" Stroke="{DynamicResource grayCol}" VerticalAlignment="Top" Width="186" Fill="{x:Null}"/>
-            <Button Content="Скорость" HorizontalAlignment="Left" Margin="1286,292,0,0" VerticalAlignment="Top" Width="170" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click_1" FontSize="24"/>
+            <Button x:Name="showSpeed" Content="Скорость" Style="{x:Null}" HorizontalAlignment="Left" Margin="1286,292,0,0" VerticalAlignment="Top" Width="170" Background="{x:Null}" BorderBrush="{x:Null}" Click="showSpeed_Click" FontSize="24"/>
             <Rectangle HorizontalAlignment="Left" Height="43" StrokeThickness ="5" Margin="1464,287,0,0" Stroke="{DynamicResource grayCol}" VerticalAlignment="Top" Width="200" Fill="{x:Null}"/>
-            <Button Content="Дистанция" HorizontalAlignment="Left" Margin="1472,291,0,0" VerticalAlignment="Top" Width="188" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click_1" FontSize="24"/>
-            <StackPanel x:Name="SpeedTest" Margin="1294,342,199,214">
-                <us:ImagesItem Header="F1 car" ColoredSourse="/Resource/Images/f1-car.jpg"/>
+            <Button x:Name="DistanseBt" Content="Дистанция" Style="{x:Null}" HorizontalAlignment="Left" Margin="1472,291,0,0" VerticalAlignment="Top" Width="188" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="24" Click="DistanseBt_Click"/>
+            <StackPanel x:Name="SpeedTest" Margin="1294,342,199,214" d:IsLocked="True" d:IsHidden="True">
+                <us:ImagesItem Header="F1 Car" ColoredSourse="/Resource/Images/f1-car.jpg"/>
                 <us:ImagesItem Header="Slug" ColoredSourse="/Resource/Images/slug.jpg"/>
                 <us:ImagesItem Header="Horse" ColoredSourse="/Resource/Images/horse.png"/>
                 <us:ImagesItem Header="Sloth" ColoredSourse="/Resource/Images/sloth.jpg"/>
@@ -144,6 +144,27 @@
                 <us:ImagesItem Header="Jaguar" ColoredSourse="/Resource/Images/jaguar.jpg"/>
                 <us:ImagesItem Header="Worm" ColoredSourse="/Resource/Images/worm.jpg"/>
             </StackPanel>
+            <StackPanel x:Name="DistanseStack" Margin="1294,342,199,214">
+                <us:ImagesItem Header="Bus" ColoredSourse="/Resource/Images/bus.jpg"/>
+                <us:ImagesItem Header="Pair of Havaianas" ColoredSourse="/Resource/Images/pair-of-havaianas.jpg"/>
+                <us:ImagesItem Header="Airbus A380" ColoredSourse="/Resource/Images/sloth.jpg"/>
+                <us:ImagesItem Header="Football Field" ColoredSourse="/Resource/Images/football-field.jpg"/>
+                <us:ImagesItem Header="Ronaldinho" ColoredSourse="/Resource/Images/ronaldinho.jpg"/>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="Find0out0more0information0">
+            <Rectangle Height="148" Margin="20,40,20,0" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="323,76,0,0" TextWrapping="Wrap" Text="MATATHON SKILLS 2016" Foreground="{StaticResource LightWhite}" VerticalAlignment="Top" FontSize="68" Width="864" TextAlignment="Center" FontWeight="Bold"/>
+            <Button Content="Назад" HorizontalAlignment="Left" Margin="66,80,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="Button_Click"/>
+            <TextBlock x:Name="point_name_Копировать" HorizontalAlignment="Center" Margin="0,193,0,0" Text="Информация о Marathon Skills 2016" VerticalAlignment="Top" Height="54" Width="860" FontSize="48" TextAlignment="Center" TextWrapping="Wrap"/>
+            <Button x:Name="ImageClick" Style="{x:Null}" HorizontalAlignment="Left" Margin="112,256,0,0" VerticalAlignment="Top" Height="318" Width="516" Click="ImageClick_Click">
+                <Image HorizontalAlignment="Center" Height="301" VerticalAlignment="Center" Width="492" Source="/Resource/Images/marathon-skills-2016-marathon-map.jpg" Stretch="Fill" StretchDirection="DownOnly"/>
+            </Button>
+            <Image HorizontalAlignment="Left" Height="166" Margin="112,592,0,0" VerticalAlignment="Top" Width="239" Source="/Resource/Images/marathon-image.jpg" Stretch="UniformToFill"/>
+            <Image HorizontalAlignment="Left" Height="166" Margin="389,592,0,0" VerticalAlignment="Top" Width="239" Source="/Resource/Images/banco-banespa.jpg" Stretch="Fill"/>
+            <Image HorizontalAlignment="Left" Height="166" Margin="112,798,0,0" VerticalAlignment="Top" Width="239" Source="/Resource/Images/ibirapuera-park-lake.jpg" Stretch="UniformToFill"/>
+            <Image HorizontalAlignment="Left" Height="166" Margin="389,798,0,0" VerticalAlignment="Top" Width="239" Source="/Resource/Images/teatro-municipal.jpg" Stretch="UniformToFill"/>
+            <TextBlock x:Name="point_name_Копировать1" HorizontalAlignment="Left" Margin="673,265,0,0" Text="О Marathon Skills 2016 &#xA;Marathon Skills - фестиваль бега, проводимый каждый год в разных частях мира. Может быть три зачета: Полный Марафон, Полумарафон и  забег для новичков - таким образом фестиваль подходит всем.&#xA;    В прошлых годах марафон был проведен в Осаке, Япония (2014); Лейпциг, Германия (2013); Ханой, Вьетнам (2012) и Йорк, Англия (2011).В этом году, Marathon Skills очень зрелищно, продет в  Сан-Паоло, Бразилия, он должен быть самым большим фестивалем бега. Это финансовый центр Бразилии и самый большой город в Южной Америке.Сан-Пауло увидят тысячи бегунов, которые будут бежать мимо небоскребов, зеленые парки и великолепная архитектура.&#xA;    Этот фестиваль привлек рекордное количество бегунов со всего мира.  особое внимание будет обращено на участников из Кении и Ямайки, поскольку мы надеемся увидеть победителя 2014 года. (Эфиоп закончил гонку за 45 минут 4 секунды.)&#xA;    События:&#xA;   - Программа 'Самба' Полный Марафон начнется в Руа-Ду-Американо в 6 утра.&#xA;   - Программа 'Джонго' Полумарафон начнет в 7 утра Бегуны будут стартовать от недалеко от   пересечения улицы Руа Ciniciata и Авенида.&#xA;   - Программа 'Капоэйра' в 5 км забег для новичков начнется в 15 часов Наши новички побегут от Мемориала Унинове.&#xA;Спасибо всем волонтерам, которые будут помогать нам проводить марафон!" VerticalAlignment="Top" Height="699" Width="1126" FontSize="24" TextWrapping="Wrap"/>
         </Grid>
     </Grid>
 </Window>

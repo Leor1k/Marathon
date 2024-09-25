@@ -27,8 +27,20 @@
             <Button x:Name="regis_bt_Копировать2" HorizontalAlignment="Left" Margin="265,540,0,0" VerticalAlignment="Top" Height="151" Width="646" FontStyle="Italic">
                 <TextBlock Text="Редактирование &#x0a;профиля" TextAlignment="Center"/>
             </Button>
-            <Button x:Name="regis_bt_Копировать3" Content="Контакты" HorizontalAlignment="Left" Margin="265,709,0,0" VerticalAlignment="Top" Height="151" Width="646" FontStyle="Italic"/>
+            <Button x:Name="ShowContacr" Content="Контакты" HorizontalAlignment="Left" Margin="265,709,0,0" VerticalAlignment="Top" Height="151" Width="646" FontStyle="Italic" Click="ShowContacr_Click"/>
             <Button x:Name="exit_bt" Content="X" HorizontalAlignment="Left" Margin="1881,0,0,0" VerticalAlignment="Top" Height="34" Width="39" Foreground="#FFF3EBEB" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="24" Click="exit_bt_Click" />
+            <Grid x:Name="kontaktGrid" Margin="322,314,322,162" d:IsHidden="True">
+                <Rectangle Stroke="{DynamicResource grayCol}" Fill="{DynamicResource LightWhite}" StrokeThickness="5"/>
+                <Button x:Name="CloseKontatsBt"  Style="{x:Null}" HorizontalAlignment="Left" Margin="1236,10,0,0" VerticalAlignment="Top" Height="30" Width="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="CloseKontatsBt_Click">
+                    <TextBlock x:Name="CloseKontats" Foreground="Red" Text="X" Width="28" TextAlignment="Center" FontSize="24" Height="26"/>
+                </Button>
+                <TextBlock HorizontalAlignment="Center" Margin="0,25,0,0" Text="Контакты" VerticalAlignment="Top" Height="81" Width="830" FontSize="48" TextAlignment="Center" TextWrapping="Wrap"/>
+                <TextBlock HorizontalAlignment="Center" Margin="0,111,0,0" Text="Для получения дополнительной информации  пожалуйста свяжитесь с координатором" VerticalAlignment="Top" Height="120" Width="1142" FontSize="36" TextWrapping="Wrap"/>
+                <TextBlock HorizontalAlignment="Left" Margin="0,236,0,0" Text="Телефон" VerticalAlignment="Top" Height="81" Width="313" FontSize="36" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold"/>
+                <TextBlock HorizontalAlignment="Left" Margin="0,322,0,0" Text="Email" VerticalAlignment="Top" Height="81" Width="256" FontSize="36" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold"/>
+                <TextBox HorizontalAlignment="Left" IsReadOnly="True" Margin="268,236,0,0" TextWrapping="Wrap" Text="+55 11 9988 7766" VerticalAlignment="Top" Width="335" FontSize="36" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{DynamicResource grayCol}"/>
+                <TextBox HorizontalAlignment="Left" IsReadOnly="True" Margin="268,317,0,0" TextWrapping="Wrap" Text="coordinators@marathonskills.org" VerticalAlignment="Top" Width="556" FontSize="36" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{DynamicResource grayCol}"/>
+            </Grid>
         </Grid>
     </Grid>
 </Window>

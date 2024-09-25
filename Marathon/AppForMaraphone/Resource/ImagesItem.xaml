@@ -18,9 +18,9 @@
                 </TransformGroup>
             </Canvas.RenderTransform>
             <Rectangle HorizontalAlignment="Center" Height="74" Stroke="{StaticResource grayCol}" StrokeThickness="4" VerticalAlignment="Top" Width="427" Fill="{DynamicResource LightWhite}"/>
+            <TextBlock x:Name="TextSourse" HorizontalAlignment="Left" TextWrapping="WrapWithOverflow" Text="{Binding Header}" VerticalAlignment="Center" Width="320" TextAlignment="Center" Canvas.Left="97" Canvas.Top="15" FontSize="36"/>
+            <Button x:Name="selectItem" Style="{x:Null}" Height="75" Width="427" BorderBrush="#33FFFFFF" Background="#33FFFFFF" Foreground="#33FFFFFF" OpacityMask="#33FFFFFF"/>
             <Image x:Name="ImageSRS" HorizontalAlignment="Left" Height="64" VerticalAlignment="Top" Width="76" Source="{Binding ColoredSourse}" StretchDirection="DownOnly" Stretch="Fill" Canvas.Left="4" Canvas.Top="4"/>
-            <TextBlock x:Name="TextSourse" HorizontalAlignment="Left" TextWrapping="WrapWithOverflow" Text="{Binding Header}" VerticalAlignment="Center" Width="232" TextAlignment="Center" Canvas.Left="140" Canvas.Top="23" FontSize="36"/>
-            <Button x:Name="selectItem" Style="{x:Null}" Height="75" Width="427" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
         </Canvas>
     </Grid>
 </UserControl>
