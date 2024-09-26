@@ -2,6 +2,9 @@
 using AppForMaraphone.Forms;
 using AppForMaraphone.Resource;
 using System;
+using System.Collections.Generic;
+using System.Dynamic;
+using System.Net.Mail;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -20,12 +23,12 @@ namespace AppForMaraphone
             AddClick();
             SelectDescription(point_name.Text);
             DistanseStack.Visibility = Visibility.Hidden;
+            loadCountry();
         }
         private void exit_bt_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-        }
-        
+        }  
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Grids.HideGrid(first_grid, matat_text, AllIn);
@@ -57,6 +60,7 @@ namespace AppForMaraphone
         private void regis_bt_Click(object sender, RoutedEventArgs e)
         {
             Grids.HideGrid(Register0as0a0runner0, matat_text, AllIn);
+            error_out.Text = "";
         }
         private void login_bt_Click(object sender, RoutedEventArgs e)
         {
@@ -100,17 +104,14 @@ namespace AppForMaraphone
                 MessageBox.Show($"Ошибка: {ex.Message}"); 
             }
         }
-
         private void more_info_button_Click(object sender, RoutedEventArgs e)
         {
             Grids.HideGrid(Find0out0more0information, matat_text, AllIn);
         }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
            
         }
-
         private void longs_bt_Click(object sender, RoutedEventArgs e)
         {
             Grids.HideGrid(How0long0is0marathon,matat_text,AllIn);
@@ -134,7 +135,6 @@ namespace AppForMaraphone
                 }
             }
         }
-
         private void SelectItem_Click(object sender, RoutedEventArgs e)
         {
             Button s = (Button)sender;
@@ -208,7 +208,6 @@ namespace AppForMaraphone
                 {
                     discriotion.Text = $"Максимальная скорость {point_name.Text} {BBB}km/h. Это займет {min} мин. чтобы завершить 42-х километровый  марафон";
                 }
-
             }
         }
         private void ShowCount(double BBB)
@@ -221,13 +220,11 @@ namespace AppForMaraphone
             SpeedTest.Visibility = Visibility.Visible;
             DistanseStack.Visibility = Visibility.Hidden;
         }
-
         private void DistanseBt_Click(object sender, RoutedEventArgs e)
         {
             DistanseStack.Visibility = Visibility.Visible;
             SpeedTest.Visibility = Visibility.Hidden;
         }
-
         private void show_map_Click(object sender, RoutedEventArgs e)
         {
             Grids.HideGrid(Find0out0more0information0, matat_text, AllIn);
@@ -235,6 +232,140 @@ namespace AppForMaraphone
         private void ImageClick_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Йоу");
+        }
+        private void Registration_bt_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                CheckReg();
+            }
+            catch (Exception ex)
+            {
+                error_out.Text = $"Ошибка: {ex.Message}"; 
+            }
+        }
+        public bool CheckEmail(string emailAddress)
+        {
+           
+            try
+            {
+                if (emailAddress.Length >0)
+                {
+                    MailAddress m = new MailAddress(emailAddress);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        public void CheckReg()
+        {
+            if (!CheckEmail(Email_tb.Text))
+            {
+                throw new Exception("Неверный формат электронной почты");
+            }
+            CheckPass(Password_tb.Text, repeat_password_tb.Text);  
+            if(Name_tb.Text.Length == 0)
+            {
+                throw new Exception("Поле 'Имя' обязательно к заполнению");
+            }
+            if (LastName.Text.Length == 0)
+            {
+                throw new Exception("Поле 'Фамилия' обязательно к заполнению");
+            }
+            DateTime dateValue;
+            if (!DateTime.TryParse(Date_birth.Text, out dateValue))
+            {
+                throw new Exception("Неверный формат даты");
+            }
+            else
+            {   
+                dateValue = Convert.ToDateTime(Date_birth.Text);
+                if (DateTime.Now.AddYears(-10) < dateValue)
+                {
+                    throw new Exception("Для регистрации, минимальный необходимый возраст 10 лет");
+                }          
+            }
+            if(string.IsNullOrEmpty(Gender_cb.Text))
+            {
+                throw new Exception("Поле 'Пол' обязательно к заполнению");
+            }
+            if (string.IsNullOrEmpty(Country_cb.Text))
+            {
+                throw new Exception("Поле 'Страна' обязательно к заполнению");
+            }
+
+
+        }
+        public void CheckPass(string firstPass, string secondPass)
+        {
+            if(firstPass.Length <5)
+            {
+                throw new Exception("Пароль должен состоять минимум и 6 символов.");
+            } 
+            bool IsLower = false;
+            bool NumberInString = false;
+            bool Symbol = false;
+            foreach (char ch in firstPass)
+            {
+                if (char.IsDigit(ch))
+                {
+                    NumberInString = true;
+                }
+                if (char.IsLower(ch))
+                {
+                    IsLower = true;
+                }
+                if (ch == '!' || ch == '@' || ch == '#' || ch == '$' || ch == '%' || ch == '^')
+                {
+                    Symbol = true;
+                }
+            }
+            if (NumberInString == false)
+            {
+                throw new Exception("Пароль должен содержать хотя бы одну цифру");
+            }
+            if(IsLower == false)
+            {
+                throw new Exception("Пароль должен содержать хотя бы одну прописную букву");
+            }
+            if (Symbol == false)
+            {
+                throw new Exception("Пароль должен содержать хотя бы однин специпльный символ: ! @ # $% ^ ");
+            }
+            if (firstPass != secondPass)
+            {
+                throw new Exception("Пароли должны совподать совподают");
+            }
+
+        }
+        private void Date_birth_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;  
+            if (!char.IsDigit(e.Text, 0))
+            {
+                e.Handled = true;
+                return;
+            }
+            if (textBox.Text.Length == 2 || textBox.Text.Length == 5)
+            {
+                textBox.Text += ".";
+                textBox.CaretIndex = textBox.Text.Length;
+            }
+        }
+        private void loadCountry ()
+        {
+            List<Country> list = DataBase.GetCountryList();
+            foreach (Country co in list)
+            {
+                Country_cb.Items.Add(co.Name);
+            }
         }
     }
 }

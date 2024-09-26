@@ -1,5 +1,6 @@
 ﻿using AppForMaraphone.Classes;
 using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace AppForMaraphone
@@ -43,6 +44,25 @@ namespace AppForMaraphone
                     }
                 }
             }
+        }
+        public static List<Country> GetCountryList()
+        {
+            List<Country> list = new List<Country>();
+            string query = "Select * from Country";
+            using (SqlConnection connection = new SqlConnection("Server =(localdb)\\MSSQLLocalDB; Database = Marathon; Trusted_Connection=True"))
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand(query, connection);         
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Country countr = new Country(reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
+                        list.Add(countr);
+                    }                 
+                }
+            }
+            return list;
         }
     }
 }

@@ -10,4 +10,10 @@ INSERT INTO [dbo].[User] ([Email], [Password], [FirstName], [LastName], [RoleId]
 (N'a.barbosa@hotmail.com', N'FtmMWBdW4sgG07w27Gwc0sJJupdRNJJbmTGRRxX8eKU59iR9BN7C9iiwisOa791X', N'ANGUS', N'BARBOSA', N'R'),
 (N'a.beaulieu@hotmail.com', N'W2aCwstNmitXh+1pTRY7FoKjNf596urREANdNVuryheySftBKvhuweR9+WPXpH+e', N'ANTON', N'BEAULIEU', N'R'),
 (N'a.bitsuie@ramoz.com', N'YEd4/jVPlBMM/l6WpADK7Bt/F/akftC9eVH6MgE8KoECWz5H5mG6ekDj4jtnroqx', N'APRIL', N'BITSUIE', N'R');
+INSERT INTO [dbo].[Country] ([CountryCode], [CountryName], [CountyFlag]) VALUES (643, N'Россия', N'flag_russia'),
+(826, N'Великобритания ', N'flag_united_kingdom'),
+(724, N'Испания', N'flag_spain'),
+(392, N'Япония', N'flag_japan'),
+(76, N'Бразилия', N'flag_brazil');
+
 
