@@ -82,10 +82,10 @@
             <TextBox x:Name="Name_tb" HorizontalAlignment="Left" Margin="441,724,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Height="42" FontSize="36" Text=""/>
             <ComboBox x:Name="Gender_cb" HorizontalAlignment="Left" Width="400" Height="44" FontSize="36" IsEditable="False" Margin="1322,450,0,0" VerticalAlignment="Top" BorderBrush="{DynamicResource LightWhite}" Background="{DynamicResource LightWhite}">
                 <ComboBoxItem>
-                    <TextBlock>Мужской</TextBlock>
+                    <TextBlock>Мужчина</TextBlock>
                 </ComboBoxItem>
                 <ComboBoxItem>
-                    <TextBlock>Женский</TextBlock>
+                    <TextBlock>Женщина</TextBlock>
                 </ComboBoxItem>
 
             </ComboBox>

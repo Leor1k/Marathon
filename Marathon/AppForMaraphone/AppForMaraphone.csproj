@@ -56,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Classes\Country.cs" />
+    <Compile Include="Classes\Runner.cs" />
     <Compile Include="Resource\ImagesItem.xaml.cs">
       <DependentUpon>ImagesItem.xaml</DependentUpon>
     </Compile>

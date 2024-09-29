@@ -42,3 +42,8 @@ C:\Users\medvedskijae\Desktop\Mbave\Marathon\Marathon\AppForMaraphone\obj\Debug\
 C:\Users\medvedskijae\Desktop\Mbave\Marathon\Marathon\AppForMaraphone\obj\Debug\Resource\ImagesItem.g.cs
 C:\Users\medvedskijae\Desktop\Mbave\Marathon\Marathon\AppForMaraphone\obj\Debug\Resource\ImagesItem.baml
 C:\Users\medvedskijae\Desktop\Mbave\Marathon\Marathon\AppForMaraphone\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Poncho\Desktop\projects\Marathon\Marathon\AppForMaraphone\obj\Debug\Forms\RunnerMenu.g.cs
+C:\Users\Poncho\Desktop\projects\Marathon\Marathon\AppForMaraphone\obj\Debug\Resource\ImagesItem.g.cs
+C:\Users\Poncho\Desktop\projects\Marathon\Marathon\AppForMaraphone\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Poncho\Desktop\projects\Marathon\Marathon\AppForMaraphone\obj\Debug\Forms\RunnerMenu.baml
+C:\Users\Poncho\Desktop\projects\Marathon\Marathon\AppForMaraphone\obj\Debug\Resource\ImagesItem.baml

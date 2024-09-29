@@ -3,7 +3,6 @@ using AppForMaraphone.Forms;
 using AppForMaraphone.Resource;
 using System;
 using System.Collections.Generic;
-using System.Dynamic;
 using System.Net.Mail;
 using System.Windows;
 using System.Windows.Controls;
@@ -16,6 +15,7 @@ namespace AppForMaraphone
     /// </summary>
     public partial class MainWindow : Window
     {
+        public List<Country> list;
         public MainWindow()
         {
             InitializeComponent();
@@ -238,11 +238,34 @@ namespace AppForMaraphone
             try
             {
                 CheckReg();
+                Runner runner = new Runner(
+                    Email_tb.Text,
+                    Password_tb.Text,
+                    Name_tb.Text,
+                    LastName.Text,
+                    'R',
+                    Gender_cb.Text,
+                    Convert.ToDateTime(Date_birth.Text),
+                    getCountryByName(Country_cb.Text)
+                    );
+                DataBase.InsertNewRunner(runner);
+
             }
             catch (Exception ex)
             {
                 error_out.Text = $"Ошибка: {ex.Message}"; 
             }
+        }
+        public Country getCountryByName(string countryName)
+        {
+            foreach(Country c in list)
+            {
+                if (c.Name == countryName)
+                {
+                    return c;
+                }
+            }
+            return null;
         }
         public bool CheckEmail(string emailAddress)
         {
@@ -252,6 +275,29 @@ namespace AppForMaraphone
                 if (emailAddress.Length >0)
                 {
                     MailAddress m = new MailAddress(emailAddress);
+                    string[] words = emailAddress.Split(new char[] { '@' });
+                    int findPoint = 0;
+                    foreach (var part in words)
+                    {
+                        if (part.Contains("."))
+                        {
+                            findPoint++;
+                        }
+                    }
+                    if (findPoint == 1)
+                    {
+                        string[] parts = words[words.Length-1].Split(new char[] {'.'});
+                        {
+                            if (parts[parts.Length-1].Length < 1)
+                            {
+                                return false;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
                     return true;
                 }
                 else
@@ -361,7 +407,7 @@ namespace AppForMaraphone
         }
         private void loadCountry ()
         {
-            List<Country> list = DataBase.GetCountryList();
+            list = DataBase.GetCountryList();
             foreach (Country co in list)
             {
                 Country_cb.Items.Add(co.Name);

@@ -260,5 +260,10 @@ namespace FromExelToInser
                 MessageBox.Show("Нет");
             }
         }
+
+        private void gopas_Click(object sender, RoutedEventArgs e)
+        {
+           pass.Text= HashPassword(pass.Text);
+        }
     }
 }
