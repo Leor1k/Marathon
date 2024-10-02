@@ -8,10 +8,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/banco-banespa.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/ibirapuera-park-lake.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/marathon-image.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/marathon-skills-2016-marathon-map.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/teatro-municipal.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/logocharity/arise-logo.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/logocharity/aves-do-brazil-logo.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/logocharity/clara-santos-oliveira-institute-logo.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/logocharity/conquer-cancer-brazil.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/logocharity/diabetes-brazil-logo.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/logocharity/heart-health-sao-paulo-logo.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/logocharity/human-rights-centre-logo.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/logocharity/oxfam-international-logo.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/logocharity/querstadtein-logo.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/logocharity/save-the-children-fund-logo.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/logocharity/stay-pumped-logo.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/logocharity/the-red-cross-logo.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/logocharity/upbeat-logo.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/images/logocharity/wwsm-rescue-logo.png")]
 
 

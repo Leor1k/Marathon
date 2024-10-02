@@ -31,6 +31,7 @@ namespace AppForMaraphone.Forms
         {
             MainWindow main = new MainWindow();
             main.Show();
+            this.Close();
         }
 
         private void CloseKontatsBt_Click(object sender, RoutedEventArgs e)
@@ -41,6 +42,16 @@ namespace AppForMaraphone.Forms
         private void ShowContacr_Click(object sender, RoutedEventArgs e)
         {
             kontaktGrid.Visibility = Visibility.Visible;
+        }
+
+        private void reg_on_marat_bt_Click(object sender, RoutedEventArgs e)
+        {
+            Grids.HideGrid(Register0for0an0event, matat_text, MainRunnerGrid);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

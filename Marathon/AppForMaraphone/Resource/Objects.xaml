@@ -12,4 +12,8 @@
             </Style>
         </Style.Resources>
     </Style>
+    <Style TargetType="TextBox">
+        <Setter Property="FontSize" Value="36"/>
+        <Setter Property="Foreground" Value="{StaticResource grayCol}"/>
+    </Style>
 </ResourceDictionary>

@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\Charity.cs" />
     <Compile Include="Classes\Country.cs" />
     <Compile Include="Classes\Runner.cs" />
     <Compile Include="Resource\ImagesItem.xaml.cs">
@@ -146,6 +147,22 @@
     <Resource Include="Resource\Images\sloth.jpg" />
     <Resource Include="Resource\Images\slug.jpg" />
     <Resource Include="Resource\Images\worm.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\LogoCharity\arise-logo.png" />
+    <Resource Include="Resource\Images\LogoCharity\aves-do-brazil-logo.png" />
+    <Resource Include="Resource\Images\LogoCharity\clara-santos-oliveira-institute-logo.png" />
+    <Resource Include="Resource\Images\LogoCharity\conquer-cancer-brazil.png" />
+    <Resource Include="Resource\Images\LogoCharity\diabetes-brazil-logo.png" />
+    <Resource Include="Resource\Images\LogoCharity\heart-health-sao-paulo-logo.png" />
+    <Resource Include="Resource\Images\LogoCharity\human-rights-centre-logo.png" />
+    <Resource Include="Resource\Images\LogoCharity\oxfam-international-logo.png" />
+    <Resource Include="Resource\Images\LogoCharity\querstadtein-logo.png" />
+    <Resource Include="Resource\Images\LogoCharity\save-the-children-fund-logo.png" />
+    <Resource Include="Resource\Images\LogoCharity\stay-pumped-logo.png" />
+    <Resource Include="Resource\Images\LogoCharity\the-red-cross-logo.png" />
+    <Resource Include="Resource\Images\LogoCharity\upbeat-logo.png" />
+    <Resource Include="Resource\Images\LogoCharity\wwsm-rescue-logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

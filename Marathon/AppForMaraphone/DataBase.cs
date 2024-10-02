@@ -45,6 +45,28 @@ namespace AppForMaraphone
                 }
             }
         }
+        public static bool ExistUser (string login)
+        {
+            string query = "SELECT * FROM dbo.[User] WHERE Email = @login";
+            using (SqlConnection connection = new SqlConnection("Server =(localdb)\\MSSQLLocalDB; Database = Marathon; Trusted_Connection=True"))
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@login", login);
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {                      
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+               
+            }
+        }
         public static List<Country> GetCountryList()
         {
             List<Country> list = new List<Country>();
@@ -66,28 +88,35 @@ namespace AppForMaraphone
         }
         public static void InsertNewRunner (Runner newRunner)
         {
-            string sqlExpression = 
-                "Declare @IdGender int = (Select Gender.GenderId from Gender where Gender.Gender = @gender)" +
-                "DECLARE @LastIdRunner int = (Select MAX(Runner.RunnerId) from Runner) " +
-                "INSERT INTO [dbo].[User] ([Email], [Password], [FirstName], [LastName], [RoleId]) " +
-                    "VALUES (@Email, @Password, @FirstName, @LastName, N'R') " +
-                "INSERT INTO [dbo].[Runner] ([RunnerId], [Email], [Gender], [DateOfBirth], [CountryCode]) " +
-                    "VALUES (@LastIdRunner+1,@Email , @IdGender, @DateBirth, @CountryCode);";
-
-            using (SqlConnection connection = new SqlConnection("Server =(localdb)\\MSSQLLocalDB; Database = Marathon; Trusted_Connection=True"))
+            if (ExistUser(newRunner.Email))
             {
-                connection.Open();
-                SqlCommand command = new SqlCommand(sqlExpression, connection);
-                command.Parameters.AddWithValue("@gender", newRunner.Gender.Trim());
-                command.Parameters.AddWithValue("@Email", newRunner.Email.Trim());
-                command.Parameters.AddWithValue("@Password", newRunner.Password.Trim());
-                command.Parameters.AddWithValue("@FirstName", newRunner.FirstName.Trim());
-                command.Parameters.AddWithValue("@LastName", newRunner.LastName.Trim());
-                command.Parameters.AddWithValue("@DateBirth", newRunner.DateBirth);
-                command.Parameters.AddWithValue("@CountryCode", newRunner.CountryData.CountryCode);
-                int number = command.ExecuteNonQuery();
-                MessageBox.Show("Регистрация успешна");
+                throw new Exception("Пользователь с такой электронной почтой уже существует");
             }
+            else
+            {
+                string sqlExpression =
+                   "Declare @IdGender int = (Select Gender.GenderId from Gender where Gender.Gender = @gender)" +
+                   "DECLARE @LastIdRunner int = (Select MAX(Runner.RunnerId) from Runner) " +
+                   "INSERT INTO [dbo].[User] ([Email], [Password], [FirstName], [LastName], [RoleId]) " +
+                       "VALUES (@Email, @Password, @FirstName, @LastName, N'R') " +
+                   "INSERT INTO [dbo].[Runner] ([RunnerId], [Email], [Gender], [DateOfBirth], [CountryCode]) " +
+                       "VALUES (@LastIdRunner+1,@Email , @IdGender, @DateBirth, @CountryCode);";
+
+                using (SqlConnection connection = new SqlConnection("Server =(localdb)\\MSSQLLocalDB; Database = Marathon; Trusted_Connection=True"))
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(sqlExpression, connection);
+                    command.Parameters.AddWithValue("@gender", newRunner.Gender.Trim());
+                    command.Parameters.AddWithValue("@Email", newRunner.Email.Trim());
+                    command.Parameters.AddWithValue("@Password", newRunner.Password.Trim());
+                    command.Parameters.AddWithValue("@FirstName", newRunner.FirstName.Trim());
+                    command.Parameters.AddWithValue("@LastName", newRunner.LastName.Trim());
+                    command.Parameters.AddWithValue("@DateBirth", newRunner.DateBirth);
+                    command.Parameters.AddWithValue("@CountryCode", newRunner.CountryData.CountryCode);
+                    int number = command.ExecuteNonQuery();
+                    MessageBox.Show("Регистрация успешна");
+                }
+            }   
         }
     }
 }

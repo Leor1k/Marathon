@@ -7,25 +7,27 @@
         mc:Ignorable="d"
         Title="RunnerMenu"  WindowState="Maximized" WindowStyle="None" Height="1080" Width="1920">
     <Grid x:Name="MainRunnerGrid" Background="{DynamicResource backGround}">
-        <Grid x:Name="Ranner0menu">
-            <Rectangle Margin="20,1000,20,13"/>
-            <Rectangle Height="960" Margin="20,40,20,0" Fill="{StaticResource LightWhite}" VerticalAlignment="Top" />
-            <TextBlock HorizontalAlignment="Center" Margin="0,1012,0,0" TextWrapping="Wrap" Text=".... до старта марафона!" VerticalAlignment="Top" Foreground="{DynamicResource LightWhite}" FontSize="36"/>
-            <Ellipse HorizontalAlignment="Left" Height="24" Fill="{StaticResource LightWhite}" Margin="20,10,0,0" VerticalAlignment="Top" Width="25"/>
-            <TextBlock HorizontalAlignment="Left" Margin="55,8,0,0" TextWrapping="Wrap" Text="Marathon Skills 2016" VerticalAlignment="Top" Foreground="{DynamicResource LightWhite}" FontSize="24"/>
-            <TextBlock x:Name="matat_text" HorizontalAlignment="Left" Margin="304,6,0,0" TextWrapping="Wrap" Text="Marathon Skills 2016" VerticalAlignment="Top" Foreground="{DynamicResource LightWhite}" FontSize="24"/>
-            <Rectangle Height="148" Margin="20,40,20,0" VerticalAlignment="Top"/>
-            <TextBlock HorizontalAlignment="Left" Margin="323,76,0,0" TextWrapping="Wrap" Text="MATATHON SKILLS 2016" Foreground="{StaticResource LightWhite}" VerticalAlignment="Top" FontSize="68" Width="864" TextAlignment="Center" FontWeight="Bold"/>
-            <Button x:Name="back_to_first_button" Content="Назад" HorizontalAlignment="Left" Margin="66,80,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="back_to_first_button_Click"/>
-            <Button x:Name="regis_bt"  HorizontalAlignment="Left" Margin="265,369,0,0" VerticalAlignment="Top" Height="151" Width="646" FontStyle="Italic">
-                <TextBlock TextAlignment="Center" Text="Регистрация на &#10;марафон"/>
+        <Canvas x:Name="StaticElement" HorizontalAlignment="Center" Height="1061" Margin="0,6,0,0" VerticalAlignment="Top" Width="1880" d:IsLocked="True">
+            <Ellipse HorizontalAlignment="Left" Height="24" Fill="{StaticResource LightWhite}" VerticalAlignment="Top" Width="25" Canvas.Top="4"/>
+            <Rectangle Height="960" Fill="{StaticResource LightWhite}" VerticalAlignment="Top" Canvas.Top="34" Width="1880" />
+            <Rectangle Height="67" Canvas.Top="994" Width="1880"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text=".... до старта марафона!" VerticalAlignment="Top" Foreground="{DynamicResource LightWhite}" FontSize="36" Canvas.Left="748" Canvas.Top="1006"/>
+            <Rectangle Height="148" VerticalAlignment="Top" Canvas.Top="34" Width="1880"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="MATATHON SKILLS 2016" Foreground="{StaticResource LightWhite}" VerticalAlignment="Top" FontSize="68" Width="864" TextAlignment="Center" FontWeight="Bold" Canvas.Left="303" Canvas.Top="70"/>
+            <Button x:Name="back_to_first_button" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Height="68" Width="186" Click="back_to_first_button_Click" Canvas.Left="46" Canvas.Top="74"/>
+            <Button x:Name="logOut" Content="Logout" HorizontalAlignment="Left" VerticalAlignment="Top" Height="68" Width="186" Click="logOut_Click" Canvas.Left="1650" Canvas.Top="70"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Marathon Skills 2016" VerticalAlignment="Top" Foreground="{DynamicResource LightWhite}" FontSize="24" Canvas.Left="35" Canvas.Top="2"/>
+            <TextBlock x:Name="matat_text" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Marathon Skills 2016" VerticalAlignment="Top" Foreground="{DynamicResource LightWhite}" FontSize="24" Canvas.Left="284"/>
+        </Canvas>
+        <Grid x:Name="Ranner0menu" d:IsLocked="True" d:IsHidden="True">
+            <Button x:Name="reg_on_marat_bt"  HorizontalAlignment="Left" Margin="265,369,0,0" VerticalAlignment="Top" Height="151" Width="646" FontStyle="Italic" Click="reg_on_marat_bt_Click">
+                <TextBlock TextAlignment="Center" Text="Регистрация на &#xA;марафон"/>
             </Button>
             <TextBlock HorizontalAlignment="Center" Margin="0,233,0,0" Text="Меню бегуна" VerticalAlignment="Top" Height="81" Width="830" FontSize="48" TextAlignment="Center" TextWrapping="Wrap"/>
-            <Button x:Name="logOut" Content="Logout" HorizontalAlignment="Left" Margin="1670,76,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="logOut_Click"/>
             <Button x:Name="regis_bt_Копировать" Content="Мои результаты" HorizontalAlignment="Left" Margin="960,369,0,0" VerticalAlignment="Top" Height="151" Width="646" FontStyle="Italic"/>
             <Button x:Name="regis_bt_Копировать1" Content="Мой спонсор" HorizontalAlignment="Left" Margin="960,540,0,0" VerticalAlignment="Top" Height="151" Width="646" FontStyle="Italic"/>
             <Button x:Name="regis_bt_Копировать2" HorizontalAlignment="Left" Margin="265,540,0,0" VerticalAlignment="Top" Height="151" Width="646" FontStyle="Italic">
-                <TextBlock Text="Редактирование &#x0a;профиля" TextAlignment="Center"/>
+                <TextBlock Text="Редактирование &#xA;профиля" TextAlignment="Center"/>
             </Button>
             <Button x:Name="ShowContacr" Content="Контакты" HorizontalAlignment="Left" Margin="265,709,0,0" VerticalAlignment="Top" Height="151" Width="646" FontStyle="Italic" Click="ShowContacr_Click"/>
             <Button x:Name="exit_bt" Content="X" HorizontalAlignment="Left" Margin="1881,0,0,0" VerticalAlignment="Top" Height="34" Width="39" Foreground="#FFF3EBEB" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="24" Click="exit_bt_Click" />
@@ -41,6 +43,61 @@
                 <TextBox HorizontalAlignment="Left" IsReadOnly="True" Margin="268,236,0,0" TextWrapping="Wrap" Text="+55 11 9988 7766" VerticalAlignment="Top" Width="335" FontSize="36" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{DynamicResource grayCol}"/>
                 <TextBox HorizontalAlignment="Left" IsReadOnly="True" Margin="268,317,0,0" TextWrapping="Wrap" Text="coordinators@marathonskills.org" VerticalAlignment="Top" Width="556" FontSize="36" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{DynamicResource grayCol}"/>
             </Grid>
+        </Grid>
+        <Grid x:Name="Register0for0an0event">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="960"/>
+                <ColumnDefinition Width="960"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Left" Margin="264,298,0,0" Text="Пожалуйста заполните всю информаацию, чтобы зарегестрироваться на Skills Matathon 2016 проводимом в Москве. Russia. С вами свяжуться после регистрации для уточнения оплаты и другой инормации." VerticalAlignment="Top" Height="143" Width="1392" FontSize="36" TextAlignment="Center" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
+            <TextBlock HorizontalAlignment="Left" Margin="530,213,0,0" Text="Регистрация на марафон" VerticalAlignment="Top" Height="85" Width="860" FontSize="68" TextAlignment="Center" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
+            <TextBlock HorizontalAlignment="Left" Margin="307,452,0,0" Text="Вид марафона" VerticalAlignment="Top" Height="60" Width="406" FontSize="45" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold"/>
+            <CheckBox Content="42km Полный марафон ($145)" HorizontalAlignment="Left" Margin="203,536,0,0" VerticalAlignment="Top" BorderBrush="#FF0A0000" Background="{x:Null}" Height="20" Width="204">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox Content="21km Аолумарафон ($75)" HorizontalAlignment="Left" Margin="203,601,0,0" VerticalAlignment="Top" BorderBrush="#FF0A0000" Background="{x:Null}" Height="20" Width="204">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox Content="5km Малая дистанция" HorizontalAlignment="Left" Margin="204,661,0,0" VerticalAlignment="Top" BorderBrush="#FF0A0000" Background="{x:Null}" Height="20" Width="204">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <TextBlock HorizontalAlignment="Left" Margin="256,726,0,0" Text="Детали спонсорства" VerticalAlignment="Top" Height="60" Width="508" FontSize="45" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold"/>
+            <TextBlock HorizontalAlignment="Left" Margin="273,797,0,0" Text="Взнос:" VerticalAlignment="Top" Height="48" Width="132" FontSize="36" TextAlignment="Center" TextWrapping="Wrap"/>
+            <ComboBox x:Name="Gender_cb" HorizontalAlignment="Left" Width="400" Height="44" FontSize="36" IsEditable="False" Margin="416,799,0,0" VerticalAlignment="Top" BorderBrush="{DynamicResource LightWhite}" Background="{DynamicResource LightWhite}">
+            </ComboBox>
+            <TextBlock HorizontalAlignment="Left" Margin="124,866,0,0" VerticalAlignment="Top" Height="48" Width="298" FontSize="36" TextAlignment="Center" TextWrapping="Wrap" Text="Сумма взноса:"/>
+            <TextBox HorizontalAlignment="Left" Margin="416,864,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="399"/>
+            <Button Content="Регистрация" HorizontalAlignment="Left" Margin="231,934,0,0" VerticalAlignment="Top" Width="278" Click="Button_Click"/>
+            <Button Content="Отмена" HorizontalAlignment="Left" Margin="530,934,0,0" VerticalAlignment="Top" Width="172"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,452,0,0" Text="Варианты комплектов" VerticalAlignment="Top" Height="60" Width="586" FontSize="45" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold" Grid.Column="1"/>
+            <RadioButton x:Name="complectA" Grid.Column="1" IsChecked="True" GroupName="Complect" HorizontalAlignment="Left" Margin="118,512,0,0" VerticalAlignment="Top">
+                <RadioButton.LayoutTransform>
+                    <ScaleTransform ScaleX="4" ScaleY="4" />
+                </RadioButton.LayoutTransform>
+                <RadioButton.Content>
+                    <TextBlock TextWrapping="Wrap" FontSize="8" Width="162"><Bold>Вариант А ($0): </Bold>Номер бегуна + RFID браслет.</TextBlock>
+                </RadioButton.Content>
+            </RadioButton>
+            <RadioButton x:Name="complectA_Копировать" Grid.Column="1" GroupName="Complect" HorizontalAlignment="Left" Margin="118,590,0,0" VerticalAlignment="Top">
+                <RadioButton.LayoutTransform>
+                    <ScaleTransform ScaleX="4" ScaleY="4" />
+                </RadioButton.LayoutTransform>
+                <TextBlock TextWrapping="Wrap" FontSize="8" Width="162"><Bold><Run Text="Вариант В ($20): "/></Bold><Run Text="Вариант А + бейсболка + бутылка воды."/></TextBlock>
+            </RadioButton>
+            <RadioButton x:Name="complectA_Копировать1" GroupName="Complect" HorizontalAlignment="Left" Margin="118,668,0,0" VerticalAlignment="Top" Grid.Column="1">
+                <RadioButton.LayoutTransform>
+                    <ScaleTransform ScaleX="4" ScaleY="4" />
+                </RadioButton.LayoutTransform>
+                <TextBlock TextWrapping="Wrap" FontSize="8" Width="162"><Bold><Run Text="Вариант С ($45): "/></Bold><Run Text="Вариант B + футболка + сувенирный буклет."/></TextBlock>
+            </RadioButton>
+            <TextBlock HorizontalAlignment="Center" Margin="0,756,0,0" Text="Регистрационный взнос" VerticalAlignment="Top" Height="60" Width="586" FontSize="45" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,806,0,0" Text="$185" VerticalAlignment="Top" Height="212" Width="586" FontSize="180" TextAlignment="Center" TextWrapping="Wrap" Grid.Column="1"/>
         </Grid>
     </Grid>
 </Window>
