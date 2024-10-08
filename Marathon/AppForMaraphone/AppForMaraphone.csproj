@@ -58,6 +58,9 @@
     <Compile Include="Classes\Charity.cs" />
     <Compile Include="Classes\Country.cs" />
     <Compile Include="Classes\Runner.cs" />
+    <Compile Include="Resource\ComboboxPart.xaml.cs">
+      <DependentUpon>ComboboxPart.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Resource\ImagesItem.xaml.cs">
       <DependentUpon>ImagesItem.xaml</DependentUpon>
     </Compile>
@@ -82,6 +85,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resource\Colors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\ComboboxPart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

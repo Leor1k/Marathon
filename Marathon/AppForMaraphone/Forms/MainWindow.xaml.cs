@@ -248,7 +248,8 @@ namespace AppForMaraphone
                     Convert.ToDateTime(Date_birth.Text),
                     getCountryByName(Country_cb.Text)
                     );
-                DataBase.InsertNewRunner(runner)
+                DataBase.InsertNewRunner(runner);
+
             }
             catch (Exception ex)
             {

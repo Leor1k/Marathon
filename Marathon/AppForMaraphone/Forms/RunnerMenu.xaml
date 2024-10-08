@@ -18,8 +18,9 @@
             <Button x:Name="logOut" Content="Logout" HorizontalAlignment="Left" VerticalAlignment="Top" Height="68" Width="186" Click="logOut_Click" Canvas.Left="1650" Canvas.Top="70"/>
             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Marathon Skills 2016" VerticalAlignment="Top" Foreground="{DynamicResource LightWhite}" FontSize="24" Canvas.Left="35" Canvas.Top="2"/>
             <TextBlock x:Name="matat_text" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Marathon Skills 2016" VerticalAlignment="Top" Foreground="{DynamicResource LightWhite}" FontSize="24" Canvas.Left="284"/>
+            <Button x:Name="exit_bt" Content="X" Height="34" Width="39" Foreground="#FFF3EBEB" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="24" Click="exit_bt_Click" HorizontalAlignment="Left" Canvas.Left="1860" VerticalAlignment="Top" Canvas.Top="-5" />
         </Canvas>
-        <Grid x:Name="Ranner0menu" d:IsLocked="True" d:IsHidden="True">
+        <Grid x:Name="Ranner0menu" d:IsHidden="True" d:IsLocked="True">
             <Button x:Name="reg_on_marat_bt"  HorizontalAlignment="Left" Margin="265,369,0,0" VerticalAlignment="Top" Height="151" Width="646" FontStyle="Italic" Click="reg_on_marat_bt_Click">
                 <TextBlock TextAlignment="Center" Text="Регистрация на &#xA;марафон"/>
             </Button>
@@ -30,7 +31,6 @@
                 <TextBlock Text="Редактирование &#xA;профиля" TextAlignment="Center"/>
             </Button>
             <Button x:Name="ShowContacr" Content="Контакты" HorizontalAlignment="Left" Margin="265,709,0,0" VerticalAlignment="Top" Height="151" Width="646" FontStyle="Italic" Click="ShowContacr_Click"/>
-            <Button x:Name="exit_bt" Content="X" HorizontalAlignment="Left" Margin="1881,0,0,0" VerticalAlignment="Top" Height="34" Width="39" Foreground="#FFF3EBEB" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="24" Click="exit_bt_Click" />
             <Grid x:Name="kontaktGrid" Margin="322,314,322,162" d:IsHidden="True">
                 <Rectangle Stroke="{DynamicResource grayCol}" Fill="{DynamicResource LightWhite}" StrokeThickness="5"/>
                 <Button x:Name="CloseKontatsBt"  Style="{x:Null}" HorizontalAlignment="Left" Margin="1236,10,0,0" VerticalAlignment="Top" Height="30" Width="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="CloseKontatsBt_Click">
@@ -52,52 +52,65 @@
             <TextBlock HorizontalAlignment="Left" Margin="264,298,0,0" Text="Пожалуйста заполните всю информаацию, чтобы зарегестрироваться на Skills Matathon 2016 проводимом в Москве. Russia. С вами свяжуться после регистрации для уточнения оплаты и другой инормации." VerticalAlignment="Top" Height="143" Width="1392" FontSize="36" TextAlignment="Center" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
             <TextBlock HorizontalAlignment="Left" Margin="530,213,0,0" Text="Регистрация на марафон" VerticalAlignment="Top" Height="85" Width="860" FontSize="68" TextAlignment="Center" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
             <TextBlock HorizontalAlignment="Left" Margin="307,452,0,0" Text="Вид марафона" VerticalAlignment="Top" Height="60" Width="406" FontSize="45" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold"/>
-            <CheckBox Content="42km Полный марафон ($145)" HorizontalAlignment="Left" Margin="203,536,0,0" VerticalAlignment="Top" BorderBrush="#FF0A0000" Background="{x:Null}" Height="20" Width="204">
+            <CheckBox Content="42km Полный марафон ($145)" HorizontalAlignment="Left" Margin="276,520,0,0" VerticalAlignment="Top" BorderBrush="#FF0A0000" Background="{x:Null}" Height="20" Width="204" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked">
                 <CheckBox.LayoutTransform>
-                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                    <ScaleTransform ScaleX="2.5" ScaleY="2.5" />
                 </CheckBox.LayoutTransform>
             </CheckBox>
-            <CheckBox Content="21km Аолумарафон ($75)" HorizontalAlignment="Left" Margin="203,601,0,0" VerticalAlignment="Top" BorderBrush="#FF0A0000" Background="{x:Null}" Height="20" Width="204">
+            <CheckBox Content="21km Полумарафон ($75)" HorizontalAlignment="Left" Margin="276,566,0,0" VerticalAlignment="Top" BorderBrush="#FF0A0000" Background="{x:Null}" Height="20" Width="204" Checked="CheckBox_Checked_1" Unchecked="CheckBox_Unchecked_1">
                 <CheckBox.LayoutTransform>
-                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                    <ScaleTransform ScaleX="2.5" ScaleY="2.5" />
                 </CheckBox.LayoutTransform>
             </CheckBox>
-            <CheckBox Content="5km Малая дистанция" HorizontalAlignment="Left" Margin="204,661,0,0" VerticalAlignment="Top" BorderBrush="#FF0A0000" Background="{x:Null}" Height="20" Width="204">
+            <CheckBox Content="5km Малая дистанция" HorizontalAlignment="Left" Margin="276,613,0,0" VerticalAlignment="Top" BorderBrush="#FF0A0000" Background="{x:Null}" Height="20" Width="204" Unchecked="CheckBox_Unchecked_2" Checked="CheckBox_Checked_2" >
                 <CheckBox.LayoutTransform>
-                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                    <ScaleTransform ScaleX="2.5" ScaleY="2.5" />
                 </CheckBox.LayoutTransform>
             </CheckBox>
-            <TextBlock HorizontalAlignment="Left" Margin="256,726,0,0" Text="Детали спонсорства" VerticalAlignment="Top" Height="60" Width="508" FontSize="45" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold"/>
-            <TextBlock HorizontalAlignment="Left" Margin="273,797,0,0" Text="Взнос:" VerticalAlignment="Top" Height="48" Width="132" FontSize="36" TextAlignment="Center" TextWrapping="Wrap"/>
-            <ComboBox x:Name="Gender_cb" HorizontalAlignment="Left" Width="400" Height="44" FontSize="36" IsEditable="False" Margin="416,799,0,0" VerticalAlignment="Top" BorderBrush="{DynamicResource LightWhite}" Background="{DynamicResource LightWhite}">
+            <TextBlock HorizontalAlignment="Left" Margin="256,674,0,0" Text="Детали спонсорства" VerticalAlignment="Top" Height="60" Width="508" FontSize="45" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold"/>
+            <TextBlock HorizontalAlignment="Left" Margin="272,749,0,0" Text="Взнос:" VerticalAlignment="Top" Height="48" Width="132" FontSize="36" TextAlignment="Center" TextWrapping="Wrap"/>
+            <ComboBox x:Name="selectedCharity_cb" HorizontalAlignment="Left" Width="399" Height="99" FontSize="36" IsEditable="False" Margin="416,749,0,0" VerticalAlignment="Top" BorderBrush="{DynamicResource LightWhite}" Background="{DynamicResource LightWhite}" SelectionChanged="selectedCharity_cb_SelectionChanged">
             </ComboBox>
             <TextBlock HorizontalAlignment="Left" Margin="124,866,0,0" VerticalAlignment="Top" Height="48" Width="298" FontSize="36" TextAlignment="Center" TextWrapping="Wrap" Text="Сумма взноса:"/>
             <TextBox HorizontalAlignment="Left" Margin="416,864,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="399"/>
-            <Button Content="Регистрация" HorizontalAlignment="Left" Margin="231,934,0,0" VerticalAlignment="Top" Width="278" Click="Button_Click"/>
+            <Button Content="Регистрация" HorizontalAlignment="Left" Margin="231,934,0,0" VerticalAlignment="Top" Width="278"/>
             <Button Content="Отмена" HorizontalAlignment="Left" Margin="530,934,0,0" VerticalAlignment="Top" Width="172"/>
             <TextBlock HorizontalAlignment="Center" Margin="0,452,0,0" Text="Варианты комплектов" VerticalAlignment="Top" Height="60" Width="586" FontSize="45" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold" Grid.Column="1"/>
-            <RadioButton x:Name="complectA" Grid.Column="1" IsChecked="True" GroupName="Complect" HorizontalAlignment="Left" Margin="118,512,0,0" VerticalAlignment="Top">
+            <RadioButton x:Name="complectA" Grid.Column="1" IsChecked="True" GroupName="Complect" HorizontalAlignment="Left" Margin="118,512,0,0" VerticalAlignment="Top" Checked="complectA_Checked">
                 <RadioButton.LayoutTransform>
                     <ScaleTransform ScaleX="4" ScaleY="4" />
                 </RadioButton.LayoutTransform>
                 <RadioButton.Content>
-                    <TextBlock TextWrapping="Wrap" FontSize="8" Width="162"><Bold>Вариант А ($0): </Bold>Номер бегуна + RFID браслет.</TextBlock>
+                    <TextBlock x:Name="zero" TextWrapping="Wrap" FontSize="8" Width="162"><Bold>Вариант А ($0): </Bold>Номер бегуна + RFID браслет.</TextBlock>
                 </RadioButton.Content>
             </RadioButton>
-            <RadioButton x:Name="complectA_Копировать" Grid.Column="1" GroupName="Complect" HorizontalAlignment="Left" Margin="118,590,0,0" VerticalAlignment="Top">
+            <RadioButton x:Name="complectB" Grid.Column="1" GroupName="Complect" HorizontalAlignment="Left" Margin="118,590,0,0" VerticalAlignment="Top" Checked="complectA_Копировать_Checked">
                 <RadioButton.LayoutTransform>
                     <ScaleTransform ScaleX="4" ScaleY="4" />
                 </RadioButton.LayoutTransform>
-                <TextBlock TextWrapping="Wrap" FontSize="8" Width="162"><Bold><Run Text="Вариант В ($20): "/></Bold><Run Text="Вариант А + бейсболка + бутылка воды."/></TextBlock>
+                <TextBlock x:Name="twenty" TextWrapping="Wrap" FontSize="8" Width="162"><Bold><Run Text="Вариант В ($20): "/></Bold><Run Text="Вариант А + бейсболка + бутылка воды."/></TextBlock>
             </RadioButton>
-            <RadioButton x:Name="complectA_Копировать1" GroupName="Complect" HorizontalAlignment="Left" Margin="118,668,0,0" VerticalAlignment="Top" Grid.Column="1">
+            <RadioButton x:Name="complectC" GroupName="Complect" HorizontalAlignment="Left" Margin="118,668,0,0" VerticalAlignment="Top" Grid.Column="1" Checked="complectC_Checked">
                 <RadioButton.LayoutTransform>
                     <ScaleTransform ScaleX="4" ScaleY="4" />
                 </RadioButton.LayoutTransform>
-                <TextBlock TextWrapping="Wrap" FontSize="8" Width="162"><Bold><Run Text="Вариант С ($45): "/></Bold><Run Text="Вариант B + футболка + сувенирный буклет."/></TextBlock>
+                <TextBlock x:Name="fortyfive" TextWrapping="Wrap" FontSize="8" Width="162"><Bold><Run Text="Вариант С ($45): "/></Bold><Run Text="Вариант B + футболка + сувенирный буклет."/></TextBlock>
             </RadioButton>
             <TextBlock HorizontalAlignment="Center" Margin="0,756,0,0" Text="Регистрационный взнос" VerticalAlignment="Top" Height="60" Width="586" FontSize="45" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold" Grid.Column="1"/>
-            <TextBlock HorizontalAlignment="Center" Margin="0,806,0,0" Text="$185" VerticalAlignment="Top" Height="212" Width="586" FontSize="180" TextAlignment="Center" TextWrapping="Wrap" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left" Margin="201,796,0,0" Text="$" VerticalAlignment="Top" Height="185" Width="142" FontSize="160" TextAlignment="Center" TextWrapping="Wrap" Grid.Column="1"/>
+            <Button x:Name="moreInfoAboutCharity_bt" Content="?" IsEnabled="False" HorizontalAlignment="Left"  Margin="853,775,0,0" VerticalAlignment="Top" Width="42" Background="{x:Null}" Click="moreInfoAboutCharity_bt_Click"/>
+            <TextBlock x:Name="SumInDollar" HorizontalAlignment="Left" Margin="322,799,0,0" VerticalAlignment="Top" Height="185" Width="374" FontSize="160" TextAlignment="Center" TextWrapping="Wrap" Grid.Column="1" Text="0"/>
+            <TextBlock HorizontalAlignment="Left" Margin="827,875,0,0" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" FontSize="24"/>
+            <Grid x:Name="MoreInfoGrid" Grid.Column="1" Visibility="Hidden" Margin="0,432,20,81">
+                <Rectangle Stroke="Black" StrokeThickness="10" Fill="{DynamicResource LightWhite}"/>
+                <Button x:Name="closeMoreInfo_bt" Style="{x:Null}" HorizontalAlignment="Left" Margin="874,10,0,0" VerticalAlignment="Top" Width="56" FontSize="72" Background="{x:Null}" Height="25" Click="closeMoreInfo_bt_Click">
+                    <TextBlock VerticalAlignment="Center" Text="-" Height="90"/>
+                </Button>
+                <Rectangle Margin="602,139,38,220" Stroke="Black"/>
+                <Image x:Name="image_mi_im" HorizontalAlignment="Left" Height="188" Margin="606,149,0,0" VerticalAlignment="Top" Width="292" StretchDirection="DownOnly"/>
+                <TextBlock x:Name="name_mi_tv" HorizontalAlignment="Center" Margin="0,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="322" FontSize="24" FontWeight="Bold" TextAlignment="Center"/>
+                <TextBlock x:Name="des_mi" HorizontalAlignment="Left" Margin="49,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Height="417" Width="512" FontSize="20"/>
+            </Grid>
         </Grid>
     </Grid>
 </Window>

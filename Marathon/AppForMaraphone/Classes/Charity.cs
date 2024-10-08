@@ -5,16 +5,16 @@ namespace AppForMaraphone.Classes
 {
     public class Charity
     {
+        public int CharId { get; set; } = 0;
         public string CharityName { get; } = null;
         public string Description { get; } = null;
-        public BitmapImage Image { get; } = null;
-        public Charity(string name, string discription, string imageName) 
+        public string PictureName { get; } = null;
+        public Charity(int id,string name, string discription, string imageName) 
         {
+            CharId = id;
             CharityName = name;
             Description = discription;
-            BitmapImage sss = new BitmapImage(
-            new Uri($"pack://application:,,,/AppForMaraphone;component/Resources/Images/LogoCharity/arise-logo.png"));
-            Image = sss;
+            PictureName = imageName;  
         }
     }
 }
