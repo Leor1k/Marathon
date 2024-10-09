@@ -52,17 +52,17 @@
             <TextBlock HorizontalAlignment="Left" Margin="264,298,0,0" Text="Пожалуйста заполните всю информаацию, чтобы зарегестрироваться на Skills Matathon 2016 проводимом в Москве. Russia. С вами свяжуться после регистрации для уточнения оплаты и другой инормации." VerticalAlignment="Top" Height="143" Width="1392" FontSize="36" TextAlignment="Center" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
             <TextBlock HorizontalAlignment="Left" Margin="530,213,0,0" Text="Регистрация на марафон" VerticalAlignment="Top" Height="85" Width="860" FontSize="68" TextAlignment="Center" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
             <TextBlock HorizontalAlignment="Left" Margin="307,452,0,0" Text="Вид марафона" VerticalAlignment="Top" Height="60" Width="406" FontSize="45" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold"/>
-            <CheckBox Content="42km Полный марафон ($145)" HorizontalAlignment="Left" Margin="276,520,0,0" VerticalAlignment="Top" BorderBrush="#FF0A0000" Background="{x:Null}" Height="20" Width="204" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked">
+            <CheckBox x:Name="km42" Content="42km Полный марафон ($145)" HorizontalAlignment="Left" Margin="276,520,0,0" VerticalAlignment="Top" BorderBrush="#FF0A0000" Background="{x:Null}" Height="20" Width="204" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked">
                 <CheckBox.LayoutTransform>
                     <ScaleTransform ScaleX="2.5" ScaleY="2.5" />
                 </CheckBox.LayoutTransform>
             </CheckBox>
-            <CheckBox Content="21km Полумарафон ($75)" HorizontalAlignment="Left" Margin="276,566,0,0" VerticalAlignment="Top" BorderBrush="#FF0A0000" Background="{x:Null}" Height="20" Width="204" Checked="CheckBox_Checked_1" Unchecked="CheckBox_Unchecked_1">
+            <CheckBox x:Name="km21" Content="21km Полумарафон ($75)" HorizontalAlignment="Left" Margin="276,566,0,0" VerticalAlignment="Top" BorderBrush="#FF0A0000" Background="{x:Null}" Height="20" Width="204" Checked="CheckBox_Checked_1" Unchecked="CheckBox_Unchecked_1">
                 <CheckBox.LayoutTransform>
                     <ScaleTransform ScaleX="2.5" ScaleY="2.5" />
                 </CheckBox.LayoutTransform>
             </CheckBox>
-            <CheckBox Content="5km Малая дистанция" HorizontalAlignment="Left" Margin="276,613,0,0" VerticalAlignment="Top" BorderBrush="#FF0A0000" Background="{x:Null}" Height="20" Width="204" Unchecked="CheckBox_Unchecked_2" Checked="CheckBox_Checked_2" >
+            <CheckBox x:Name="km5" Content="5km Малая дистанция ($20)" HorizontalAlignment="Left" Margin="276,613,0,0" VerticalAlignment="Top" BorderBrush="#FF0A0000" Background="{x:Null}" Height="20" Width="204" Unchecked="CheckBox_Unchecked_2" Checked="CheckBox_Checked_2" >
                 <CheckBox.LayoutTransform>
                     <ScaleTransform ScaleX="2.5" ScaleY="2.5" />
                 </CheckBox.LayoutTransform>
@@ -72,11 +72,11 @@
             <ComboBox x:Name="selectedCharity_cb" HorizontalAlignment="Left" Width="399" Height="99" FontSize="36" IsEditable="False" Margin="416,749,0,0" VerticalAlignment="Top" BorderBrush="{DynamicResource LightWhite}" Background="{DynamicResource LightWhite}" SelectionChanged="selectedCharity_cb_SelectionChanged">
             </ComboBox>
             <TextBlock HorizontalAlignment="Left" Margin="124,866,0,0" VerticalAlignment="Top" Height="48" Width="298" FontSize="36" TextAlignment="Center" TextWrapping="Wrap" Text="Сумма взноса:"/>
-            <TextBox HorizontalAlignment="Left" Margin="416,864,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="399"/>
-            <Button Content="Регистрация" HorizontalAlignment="Left" Margin="231,934,0,0" VerticalAlignment="Top" Width="278"/>
+            <TextBox x:Name="char_sum_tb" HorizontalAlignment="Left" Margin="416,864,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="399" PreviewTextInput="char_sum_tb_PreviewTextInput" TextChanged="char_sum_tb_TextChanged"/>
+            <Button Content="Регистрация" HorizontalAlignment="Left" Margin="231,934,0,0" VerticalAlignment="Top" Width="278" Click="Button_Click"/>
             <Button Content="Отмена" HorizontalAlignment="Left" Margin="530,934,0,0" VerticalAlignment="Top" Width="172"/>
             <TextBlock HorizontalAlignment="Center" Margin="0,452,0,0" Text="Варианты комплектов" VerticalAlignment="Top" Height="60" Width="586" FontSize="45" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold" Grid.Column="1"/>
-            <RadioButton x:Name="complectA" Grid.Column="1" IsChecked="True" GroupName="Complect" HorizontalAlignment="Left" Margin="118,512,0,0" VerticalAlignment="Top" Checked="complectA_Checked">
+            <RadioButton x:Name="complectA" Grid.Column="1" GroupName="Complect" HorizontalAlignment="Left" Margin="118,512,0,0" VerticalAlignment="Top" Checked="complectA_Checked">
                 <RadioButton.LayoutTransform>
                     <ScaleTransform ScaleX="4" ScaleY="4" />
                 </RadioButton.LayoutTransform>
@@ -97,9 +97,9 @@
                 <TextBlock x:Name="fortyfive" TextWrapping="Wrap" FontSize="8" Width="162"><Bold><Run Text="Вариант С ($45): "/></Bold><Run Text="Вариант B + футболка + сувенирный буклет."/></TextBlock>
             </RadioButton>
             <TextBlock HorizontalAlignment="Center" Margin="0,756,0,0" Text="Регистрационный взнос" VerticalAlignment="Top" Height="60" Width="586" FontSize="45" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold" Grid.Column="1"/>
-            <TextBlock HorizontalAlignment="Left" Margin="201,796,0,0" Text="$" VerticalAlignment="Top" Height="185" Width="142" FontSize="160" TextAlignment="Center" TextWrapping="Wrap" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left" Margin="204,806,0,0" Text="$" VerticalAlignment="Top" Height="118" Width="142" FontSize="120" TextAlignment="Center" TextWrapping="Wrap" Grid.Column="1"/>
             <Button x:Name="moreInfoAboutCharity_bt" Content="?" IsEnabled="False" HorizontalAlignment="Left"  Margin="853,775,0,0" VerticalAlignment="Top" Width="42" Background="{x:Null}" Click="moreInfoAboutCharity_bt_Click"/>
-            <TextBlock x:Name="SumInDollar" HorizontalAlignment="Left" Margin="322,799,0,0" VerticalAlignment="Top" Height="185" Width="374" FontSize="160" TextAlignment="Center" TextWrapping="Wrap" Grid.Column="1" Text="0"/>
+            <TextBlock x:Name="SumInDollar" HorizontalAlignment="Left" Margin="346,806,0,0" VerticalAlignment="Top" Height="122" Width="374" FontSize="120" TextAlignment="Center" TextWrapping="Wrap" Grid.Column="1" Text="0"/>
             <TextBlock HorizontalAlignment="Left" Margin="827,875,0,0" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" FontSize="24"/>
             <Grid x:Name="MoreInfoGrid" Grid.Column="1" Visibility="Hidden" Margin="0,432,20,81">
                 <Rectangle Stroke="Black" StrokeThickness="10" Fill="{DynamicResource LightWhite}"/>
@@ -111,6 +111,7 @@
                 <TextBlock x:Name="name_mi_tv" HorizontalAlignment="Center" Margin="0,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="322" FontSize="24" FontWeight="Bold" TextAlignment="Center"/>
                 <TextBlock x:Name="des_mi" HorizontalAlignment="Left" Margin="49,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Height="417" Width="512" FontSize="20"/>
             </Grid>
+            <TextBlock x:Name="error_out" HorizontalAlignment="Left" Margin="54,928,0,0" VerticalAlignment="Top" Height="58" Width="786" FontSize="18" TextAlignment="Center" TextWrapping="Wrap" Foreground="#FFFF3535" Grid.Column="1"/>
         </Grid>
     </Grid>
 </Window>

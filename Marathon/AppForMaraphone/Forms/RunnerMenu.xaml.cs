@@ -3,6 +3,7 @@ using AppForMaraphone.Resource;
 using System;
 using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 
 namespace AppForMaraphone.Forms
@@ -15,15 +16,18 @@ namespace AppForMaraphone.Forms
         private List<Charity> lists = DataBase.GetCharity();
         private int sum;
         private int rsum;
+        private int vsnos;
         public RunnerMenu(User enteredUser)
         {
 
-            InitializeComponent();    
+            InitializeComponent();
             Grids.HideGrid(Ranner0menu, matat_text, MainRunnerGrid);
             kontaktGrid.Visibility = Visibility.Hidden;
-            PreLoadCharity();         
+            PreLoadCharity();
+            complectA.IsChecked = true;
+            char_sum_tb.Text = "0";
         }
-        private void PreLoadCharity ()
+        private void PreLoadCharity()
         {
             foreach (Charity charity in lists)
             {
@@ -83,55 +87,131 @@ namespace AppForMaraphone.Forms
         }
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            sum += 145;
-            SumInDollar.Text = (sum + rsum).ToString();
+            CountPrice(145);
         }
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            sum -= 145;
-            SumInDollar.Text = (sum + rsum).ToString();
+            CountPrice(-145);
         }
-        public event Action<int> ValueChanged;
-
         private void CheckBox_Checked_1(object sender, RoutedEventArgs e)
         {
-            sum += 75;
-            SumInDollar.Text = (sum + rsum).ToString();
+            CountPrice(75);
         }
         private void CheckBox_Unchecked_1(object sender, RoutedEventArgs e)
         {
-            sum -= 75;
-            SumInDollar.Text = (sum + rsum).ToString();
+            CountPrice(-75);
         }
-
         private void CheckBox_Unchecked_2(object sender, RoutedEventArgs e)
         {
-            sum -= 20;
-            SumInDollar.Text = (sum + rsum).ToString(); ;
+            CountPrice(-20);
         }
-
         private void CheckBox_Checked_2(object sender, RoutedEventArgs e)
         {
-            sum += 20;
-            SumInDollar.Text = (sum + rsum).ToString();
+            CountPrice(20);
         }
-
         private void complectA_Checked(object sender, RoutedEventArgs e)
         {
             rsum = 0;
-            SumInDollar.Text = (sum + rsum).ToString();
+            CountPrice(0);
         }
-
         private void complectA_Копировать_Checked(object sender, RoutedEventArgs e)
         {
             rsum = 20;
-            SumInDollar.Text = (sum + rsum).ToString();
+            CountPrice(0);
         }
-
         private void complectC_Checked(object sender, RoutedEventArgs e)
         {
             rsum = 45;
-            SumInDollar.Text = (sum + rsum).ToString();
+            CountPrice(0);
+        }
+        private void CountPrice(int number)
+        {
+            sum += number;
+            SumInDollar.Text = (sum + rsum+vsnos).ToString();
+        }
+        private void char_sum_tb_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+                TextBox textBox = (TextBox)sender;
+                if (!char.IsDigit(e.Text, 0))
+                {
+                    e.Handled = true;
+                    return;
+                }             
+        }
+        private void char_sum_tb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                vsnos = Convert.ToInt32(char_sum_tb.Text);
+                CountPrice(0);
+            }
+            catch { }
+            if (char_sum_tb.Text.Length == 0)
+            {
+                char_sum_tb.Text = "0";
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                CheckRegOnMarat();
+            }
+            catch (Exception ex) 
+            {
+                error_out.Text = ex.Message;
+            }
+        }
+        private void CheckRegOnMarat()
+        {
+            if (!(km21.IsChecked == true || km42.IsChecked == true || km5.IsChecked == true))
+            {
+                throw new Exception("Для регестрации, необходимо выбрать хотя бы один вид марафона");
+            }
+            else if (selectedCharity_cb.SelectedItem == null)
+            {
+                throw new Exception("Для регестрации, необходимо выбрать благотворительную организацию");
+            }
+            else if (char_sum_tb.Text == string.Empty || (Convert.ToInt32(char_sum_tb.Text) == 0))
+            {
+                throw new Exception("Для регестрации, необходая сумма взноса минимум $1");
+            }
+            else
+            {    
+                string checkedrd = string.Empty;
+                if (rsum == 0)
+                {
+                    checkedrd = "Вариант А ($0): Номер бегуна + RFID браслет";
+                }
+                else if (rsum == 20)
+                {
+                    checkedrd = "Вариант В ($20): Вариант А + бейсболка + бутылка воды";
+                }
+                else
+                {
+                    checkedrd = "Вариант С ($45): Вариант B + футболка + сувенирный буклет";
+                }
+                string shure = "Вы уверенны что хотите зарегестрироваться на следующий/е марафоны:\n";
+                if (km42.IsChecked == true)
+                {
+                    shure += km42.Content + ";\n";
+                }
+                if (km21.IsChecked == true)
+                {
+                    shure += km21.Content + ";\n";
+                }
+                if (km5.IsChecked == true)
+                {
+                    shure += km5.Content + ";\n";
+                }
+                shure += $"С выбранным набором: {checkedrd}\n";
+                shure += $"где ваш взнос в размере {SumInDollar.Text}$ будет направлен в организацию {(selectedCharity_cb.SelectedItem as ComboboxPart).Header}?";
+                if (MessageBoxResult.Yes == MessageBox.Show(shure,"Подтвердить",MessageBoxButton.YesNo,MessageBoxImage.Question))
+                {
+                    MessageBox.Show("yes");
+                }
+            }
         }
     }
 }

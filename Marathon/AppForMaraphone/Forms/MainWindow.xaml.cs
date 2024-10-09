@@ -332,11 +332,19 @@ namespace AppForMaraphone
             }
             else
             {   
+                if (Date_birth.Text.Length!=10)
+                {
+                    throw new Exception("Некоректно введена дата рождения");
+                }
                 dateValue = Convert.ToDateTime(Date_birth.Text);
-                if (DateTime.Now.AddYears(-10) < dateValue)
+                if (DateTime.Now.AddYears(-10) < dateValue )
                 {
                     throw new Exception("Для регистрации, минимальный необходимый возраст 10 лет");
                 }          
+                else if (DateTime.Now.AddYears(-100) > dateValue)
+                {
+                    throw new Exception("Некоректно введена дата рождения");
+                }
             }
             if(string.IsNullOrEmpty(Gender_cb.Text))
             {
