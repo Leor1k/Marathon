@@ -288,10 +288,6 @@ INSERT INTO [dbo].[Gender] ([GenderId], [Gender]) VALUES (1, N'Мужчина'),
 (2, N'Женщина');
 INSERT INTO [dbo].[Runner] ([RunnerId], [Email], [Gender], [DateOfBirth], [CountryCode]) VALUES (1, N'a.bitsuie@ramoz.com', 1, N'2001-12-11', 76)
 
-
-
-
-
 ---------------------------------
 INSERT INTO [dbo].[Charity] ([CharityId], [ChatityName], [CharityDescription], [CharityLogo]) VALUES (1, N'ARISE', N'«Arise» поддерживает женщин и детей, которые пережили насилие в семье, что позволяет им 
 вернуться к нормальной жизни. Влияние насилия в семье имеет далеко идущие последствия, и 
@@ -395,3 +391,11 @@ WWSM нуждается в вашей помощи, чтобы поднять профиль Белый Усатой Паукообразной
 поразительным. Это где мы хотели быть активным - создать пространство, которое будет 
 способствовать встречи, обмен и осведомленность.
 Мы хотели бы вашей помощи, чтобы помочь бездомным в Берлине', N'querstadtein-logo');
+INSERT INTO [dbo].[RaceKitOption] ([RaceKitOptionId], [RaceKitIption], [Cost]) VALUES (1, N'Номер бегуна + RFID браслет', 0),
+(2, N'Вариант А + бейсболка + бутылка воды', 20),
+(3, N'Вариант В + футболка + сувенирный браслет', 45);
+INSERT INTO [dbo].[RegistrationStatus] ([RegistrationStatusId], [RegistrationStatus]) VALUES (1, N'Зарегестрирован'),
+ (2, N'Подтверждена оплата'),
+ (3, N'Выдан пакет'),
+ (4, N'Вышел на старт');
+ INSERT INTO [dbo].[Regisrtation] ([RegistrationId], [RannerId], [RegistrationDateTime], [RaceKitOption], [RegistrationStatus], [Cost], [Charity]) VALUES (1, 1, N'2021-11-11 00:00:00', 1, 1, 20, 1);

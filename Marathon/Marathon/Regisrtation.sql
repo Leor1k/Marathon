@@ -7,7 +7,6 @@
 	[RegistrationStatus] INT NOT NULL Foreign key references [RegistrationStatus] ([RegistrationStatusId]), 
     [Cost] FLOAT NOT NULL,
 	[Charity] INT NOT NULL Foreign key references [Charity] ([CharityId]), 
-    [SponsorshipTaget] NCHAR(10) NOT NULL,
 
 	
 

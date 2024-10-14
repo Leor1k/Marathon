@@ -26,6 +26,7 @@ namespace AppForMaraphone
                         if (Hashes.VerifyPassword(password, reader.GetString(1)))
                         {
                             User enteredUser = new User(
+                                                        reader.GetString(0),
                                                         reader.GetString(2),
                                                         reader.GetString(3),
                                                         Convert.ToChar(reader.GetString(4))
@@ -35,16 +36,16 @@ namespace AppForMaraphone
                         else
                         {
                             return null;
-                        }                  
+                        }
                     }
                     else
-                    {                  
+                    {
                         return null;
                     }
                 }
             }
         }
-        public static bool ExistUser (string login)
+        public static bool ExistUser(string login)
         {
             string query = "SELECT * FROM dbo.[User] WHERE Email = @login";
             using (SqlConnection connection = new SqlConnection("Server =(localdb)\\MSSQLLocalDB; Database = Marathon; Trusted_Connection=True"))
@@ -55,7 +56,7 @@ namespace AppForMaraphone
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     if (reader.HasRows)
-                    {                      
+                    {
                         return true;
                     }
                     else
@@ -63,7 +64,7 @@ namespace AppForMaraphone
                         return false;
                     }
                 }
-               
+
             }
         }
         public static List<Country> GetCountryList()
@@ -73,19 +74,19 @@ namespace AppForMaraphone
             using (SqlConnection connection = new SqlConnection("Server =(localdb)\\MSSQLLocalDB; Database = Marathon; Trusted_Connection=True"))
             {
                 connection.Open();
-                SqlCommand cmd = new SqlCommand(query, connection);         
+                SqlCommand cmd = new SqlCommand(query, connection);
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
                         Country countr = new Country(reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
                         list.Add(countr);
-                    }                 
+                    }
                 }
             }
             return list;
         }
-        public static void InsertNewRunner (Runner newRunner)
+        public static void InsertNewRunner(Runner newRunner)
         {
             if (ExistUser(newRunner.Email))
             {
@@ -115,9 +116,9 @@ namespace AppForMaraphone
                     int number = command.ExecuteNonQuery();
                     MessageBox.Show("Регистрация успешна");
                 }
-            }   
+            }
         }
-        public static List<Charity> GetCharity ()
+        public static List<Charity> GetCharity()
         {
             List<Charity> list = new List<Charity>();
             string query = "Select * from Charity";
@@ -131,12 +132,53 @@ namespace AppForMaraphone
                     {
                         //Country countr = new Country(reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
                         //list.Add(countr);
-                        Charity cccharity = new Charity(reader.GetInt32(0),reader.GetString(1),reader.GetString(2),reader.GetString(3));
+                        Charity cccharity = new Charity(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3));
                         list.Add(cccharity);
                     }
                 }
             }
             return list;
+        }
+        public static void CreateRegistration(Registration reg)
+        {
+            //DECLARE @LastIdRegistration int = (Select MAX(Regisrtation.RegistrationId) from Regisrtation) 
+            string sqlExpression =
+               "DECLARE @LastIdRegistration int = (Select MAX(Regisrtation.RegistrationId) from Regisrtation) " +
+               "INSERT INTO [dbo].[Regisrtation] ([RegistrationId], [RannerId], [RegistrationDateTime], [RaceKitOption], [RegistrationStatus], [Cost], [Charity]) " +
+               "VALUES (@LastIdRegistration+1,@runId, @DateReg, @Kit, @Status, @Cost, @Char);";
+
+            using (SqlConnection connection = new SqlConnection("Server =(localdb)\\MSSQLLocalDB; Database = Marathon; Trusted_Connection=True"))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(sqlExpression, connection);
+                //command.Parameters.AddWithValue("@gender", newRunner.Gender.Trim());
+                command.Parameters.AddWithValue("@runId", reg.RanerId);
+                command.Parameters.AddWithValue("@DateReg", reg.DateRegestration);
+                command.Parameters.AddWithValue("@Kit", reg.RaceKitOption);
+                command.Parameters.AddWithValue("@Status", 1);
+                command.Parameters.AddWithValue("@Cost", reg.Cost);
+                command.Parameters.AddWithValue("@Char", reg.SelectedCharity.CharId);
+                int number = command.ExecuteNonQuery();
+                MessageBox.Show("Регистрация успешна");
+            }
+        }
+        public static int GetIdByEmail(string Email)
+        {
+            string query = "Select Runner.RunnerId from Runner where Runner.Email = @Email";
+            using (SqlConnection connection = new SqlConnection("Server =(localdb)\\MSSQLLocalDB; Database = Marathon; Trusted_Connection=True"))
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@Email", Email);
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        return reader.GetInt32(0);
+                    }
+                }
+            }
+            return 0;
         }
     }
 }

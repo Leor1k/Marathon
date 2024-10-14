@@ -20,14 +20,14 @@
             <TextBlock x:Name="matat_text" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Marathon Skills 2016" VerticalAlignment="Top" Foreground="{DynamicResource LightWhite}" FontSize="24" Canvas.Left="284"/>
             <Button x:Name="exit_bt" Content="X" Height="34" Width="39" Foreground="#FFF3EBEB" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="24" Click="exit_bt_Click" HorizontalAlignment="Left" Canvas.Left="1860" VerticalAlignment="Top" Canvas.Top="-5" />
         </Canvas>
-        <Grid x:Name="Ranner0menu" d:IsHidden="True" d:IsLocked="True">
+        <Grid x:Name="Ranner0menu" d:IsLocked="True" d:IsHidden="True">
             <Button x:Name="reg_on_marat_bt"  HorizontalAlignment="Left" Margin="265,369,0,0" VerticalAlignment="Top" Height="151" Width="646" FontStyle="Italic" Click="reg_on_marat_bt_Click">
                 <TextBlock TextAlignment="Center" Text="Регистрация на &#xA;марафон"/>
             </Button>
             <TextBlock HorizontalAlignment="Center" Margin="0,233,0,0" Text="Меню бегуна" VerticalAlignment="Top" Height="81" Width="830" FontSize="48" TextAlignment="Center" TextWrapping="Wrap"/>
             <Button x:Name="regis_bt_Копировать" Content="Мои результаты" HorizontalAlignment="Left" Margin="960,369,0,0" VerticalAlignment="Top" Height="151" Width="646" FontStyle="Italic"/>
             <Button x:Name="regis_bt_Копировать1" Content="Мой спонсор" HorizontalAlignment="Left" Margin="960,540,0,0" VerticalAlignment="Top" Height="151" Width="646" FontStyle="Italic"/>
-            <Button x:Name="regis_bt_Копировать2" HorizontalAlignment="Left" Margin="265,540,0,0" VerticalAlignment="Top" Height="151" Width="646" FontStyle="Italic">
+            <Button x:Name="regis_bt_Копировать2" HorizontalAlignment="Left" Margin="265,540,0,0" VerticalAlignment="Top" Height="151" Width="646" FontStyle="Italic" Click="regis_bt_Копировать2_Click">
                 <TextBlock Text="Редактирование &#xA;профиля" TextAlignment="Center"/>
             </Button>
             <Button x:Name="ShowContacr" Content="Контакты" HorizontalAlignment="Left" Margin="265,709,0,0" VerticalAlignment="Top" Height="151" Width="646" FontStyle="Italic" Click="ShowContacr_Click"/>
@@ -44,7 +44,7 @@
                 <TextBox HorizontalAlignment="Left" IsReadOnly="True" Margin="268,317,0,0" TextWrapping="Wrap" Text="coordinators@marathonskills.org" VerticalAlignment="Top" Width="556" FontSize="36" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{DynamicResource grayCol}"/>
             </Grid>
         </Grid>
-        <Grid x:Name="Register0for0an0event">
+        <Grid x:Name="Register0for0an0event" d:IsLocked="True" d:IsHidden="True">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="960"/>
                 <ColumnDefinition Width="960"/>
@@ -112,6 +112,40 @@
                 <TextBlock x:Name="des_mi" HorizontalAlignment="Left" Margin="49,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Height="417" Width="512" FontSize="20"/>
             </Grid>
             <TextBlock x:Name="error_out" HorizontalAlignment="Left" Margin="54,928,0,0" VerticalAlignment="Top" Height="58" Width="786" FontSize="18" TextAlignment="Center" TextWrapping="Wrap" Foreground="#FFFF3535" Grid.Column="1"/>
+        </Grid>
+        <Grid x:Name="Registration0confirmation" d:IsLocked="True" d:IsHidden="True">
+            <TextBlock HorizontalAlignment="Center" Margin="0,213,0,0" Text="Спасибо за вашу регистрацию в качестве бегуна!" VerticalAlignment="Top" Height="169" Width="1448" FontSize="64" TextAlignment="Center" TextWrapping="Wrap"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,387,0,0" VerticalAlignment="Top" Height="85" Width="1704" FontSize="48" TextAlignment="Center" TextWrapping="Wrap" Text="Спасибо за вашу регистрацию  в качестве бегуна  в Marathon Skills 2016!"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,477,0,0" VerticalAlignment="Top" Height="85" Width="820" FontSize="48" TextAlignment="Center" TextWrapping="Wrap" Text="С вами свяжутся по поводу оплаты."/>
+            <Button Content="OK" HorizontalAlignment="Center" Margin="0,594,0,0" VerticalAlignment="Top" Width="214" FontSize="48" Click="Button_Click_1"/>
+        </Grid>
+        <Grid x:Name="Edit0runner0profile">
+            <TextBlock HorizontalAlignment="Center" Margin="0,213,0,0" VerticalAlignment="Top" Height="85" Width="860" FontSize="68" TextAlignment="Center" TextWrapping="Wrap" Text="Редактирование профиля"/>
+            <TextBlock HorizontalAlignment="Left" Margin="319,354,0,0" TextWrapping="Wrap" Text="Email:" VerticalAlignment="Top" FontSize="48"/>
+            <TextBlock HorizontalAlignment="Left" Margin="478,354,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="48" Text="emailExample"/>
+            <TextBlock HorizontalAlignment="Left" Margin="338,430,0,0" TextWrapping="Wrap" Text="Имя:" VerticalAlignment="Top" FontSize="48"/>
+            <TextBox x:Name="Change_Name" HorizontalAlignment="Left" Margin="468,434,0,0" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top" Width="322"/>
+            <TextBlock HorizontalAlignment="Left" Margin="234,0,0,0" TextWrapping="Wrap" Text="Фамилия:" VerticalAlignment="Center" FontSize="48"/>
+            <TextBox x:Name="Change_LastName" HorizontalAlignment="Left" Margin="468,0,0,0" TextWrapping="Wrap" Text="Фамилия" VerticalAlignment="Center" Width="322"/>
+            <TextBlock HorizontalAlignment="Left" Margin="345,599,0,0" TextWrapping="Wrap" Text="Пол:" VerticalAlignment="Top" FontSize="48"/>
+            <TextBox x:Name="change_date" HorizontalAlignment="Left" Margin="468,683,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="322" Text="1987-11-11"/>
+            <ComboBox x:Name="change_gender" HorizontalAlignment="Left" Margin="468,603,0,0" VerticalAlignment="Top" Width="322" Height="49" FontSize="36">
+                <ComboBoxItem>Мужской</ComboBoxItem>
+                <ComboBoxItem>Женский</ComboBoxItem>
+            </ComboBox>
+            <TextBlock HorizontalAlignment="Left" Margin="94,679,0,0" TextWrapping="Wrap" Text="Дата рождения:" VerticalAlignment="Top" FontSize="48"/>
+            <TextBlock HorizontalAlignment="Left" Margin="278,764,0,0" TextWrapping="Wrap" Text="Страна:" VerticalAlignment="Top" FontSize="48"/>
+            <ComboBox x:Name="change_country" HorizontalAlignment="Left" Margin="468,768,0,0" VerticalAlignment="Top" Width="322" Height="49" FontSize="36">
+            </ComboBox>
+            <TextBlock HorizontalAlignment="Left" Margin="1346,354,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="48" Text="Смена пароля"/>
+            <TextBlock HorizontalAlignment="Left" Margin="1146,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" Text="Оставьте эти поля, незаполненными, если вы не хотите изменять пароль." TextAlignment="Center" Width="711"/>
+            <TextBlock HorizontalAlignment="Left" Margin="1146,540,0,0" TextWrapping="Wrap" Text="Пароль:" VerticalAlignment="Top" FontSize="48"/>
+            <TextBox x:Name="change_password" HorizontalAlignment="Left" Margin="1346,540,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="432" Height="54"/>
+            <TextBlock HorizontalAlignment="Left" Margin="976,624,0,0" TextWrapping="Wrap" Text="Повтор пароля:" VerticalAlignment="Top" FontSize="48"/>
+            <TextBox x:Name="change_password_second" HorizontalAlignment="Left" Margin="1346,628,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="432" Height="54"/>
+            <TextBlock x:Name="error" HorizontalAlignment="Left" Margin="1057,759,0,0" VerticalAlignment="Top" Height="58" Width="786" FontSize="18" TextAlignment="Center" TextWrapping="Wrap" Foreground="#FFFF3535"/>
+            <Button x:Name="save_changes_bt" Content="Сохранить" HorizontalAlignment="Left" Margin="678,886,0,0" VerticalAlignment="Top" Height="59" Width="204" Click="save_changes_bt_Click"/>
+            <Button x:Name="canel_bt" Content="Отмена" HorizontalAlignment="Left" Margin="976,886,0,0" VerticalAlignment="Top" Height="59" Width="204" Click="canel_bt_Click"/>
         </Grid>
     </Grid>
 </Window>

@@ -17,22 +17,37 @@ namespace AppForMaraphone.Forms
         private int sum;
         private int rsum;
         private int vsnos;
+        private User enterUser;
+        private int selKit;
         public RunnerMenu(User enteredUser)
         {
-
             InitializeComponent();
             Grids.HideGrid(Ranner0menu, matat_text, MainRunnerGrid);
             kontaktGrid.Visibility = Visibility.Hidden;
             PreLoadCharity();
+            PreLoadCountry();
             complectA.IsChecked = true;
             char_sum_tb.Text = "0";
+            enterUser = enteredUser;
+        }
+        private void PreLoadCountry()
+        {
+            List<Country> www = new List<Country>();
+            www = DataBase.GetCountryList();
+            foreach (Country item in www)
+            {
+                change_country.Items.Add(item.Name);
+            }
+            Change_Name.Text = enterUser.FirstName;
+            Change_LastName.Text = enterUser.LastName;
+            change_gender.SelectedItem = enterUser.
         }
         private void PreLoadCharity()
         {
             foreach (Charity charity in lists)
             {
                 ComboboxPart cb = new ComboboxPart(charity);
-                selectedCharity_cb.Items.Add(cb);
+                selectedCharity_cb.Items.Add(cb);        
             }
         }
         private void back_to_first_button_Click(object sender, RoutedEventArgs e)
@@ -112,16 +127,19 @@ namespace AppForMaraphone.Forms
         private void complectA_Checked(object sender, RoutedEventArgs e)
         {
             rsum = 0;
+            selKit = 1;
             CountPrice(0);
         }
         private void complectA_Копировать_Checked(object sender, RoutedEventArgs e)
         {
             rsum = 20;
+            selKit = 2;
             CountPrice(0);
         }
         private void complectC_Checked(object sender, RoutedEventArgs e)
         {
             rsum = 45;
+            selKit = 3;
             CountPrice(0);
         }
         private void CountPrice(int number)
@@ -151,12 +169,27 @@ namespace AppForMaraphone.Forms
                 char_sum_tb.Text = "0";
             }
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 CheckRegOnMarat();
+                Charity charity = null;
+                foreach (Charity item in lists)
+                {
+                    ComboboxPart asas = selectedCharity_cb.SelectedItem as ComboboxPart;
+                    if (item.CharityName == asas.Header)
+                    {
+                        charity = item;
+                    }
+                }
+                Registration newReg = new Registration
+                    (
+                        DataBase.GetIdByEmail(enterUser.Email),
+                        DateTime.Now, selKit, (sum + rsum + vsnos), charity
+                    );
+                DataBase.CreateRegistration(newReg);
+                Grids.HideGrid(Registration0confirmation,matat_text,MainRunnerGrid);
             }
             catch (Exception ex) 
             {
@@ -211,6 +244,52 @@ namespace AppForMaraphone.Forms
                 {
                     MessageBox.Show("yes");
                 }
+            }
+        }
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Grids.HideGrid(Ranner0menu,matat_text,MainRunnerGrid);
+        }
+
+        private void regis_bt_Копировать2_Click(object sender, RoutedEventArgs e)
+        {
+            Grids.HideGrid(Edit0runner0profile,matat_text,MainRunnerGrid);
+        }
+        private void CheckEditMoments()
+        {
+            if (Change_Name.Text == string.Empty)
+            {
+                throw new Exception("Поле имя обязательно к заполнению");
+            }
+            if (Change_LastName.Text == string.Empty)
+            {
+                throw new Exception("Поле фамилия обязательно к заполнению");
+            }
+            if(change_date.Text == string.Empty)
+            {
+                throw new Exception("Поле дата рождения обязательно к заполнению");
+            }
+            if( change_password.Text!=string.Empty)
+            {
+                if (change_password_second.Text == string.Empty)
+                {
+                    throw new Exception("Если вы хотите поменять пароль, необходимо заполнить оба поля ввода пароля");
+                }
+            }
+        }
+        private void canel_bt_Click(object sender, RoutedEventArgs e)
+        {
+            Grids.HideGrid(Ranner0menu, matat_text, MainRunnerGrid);
+        }
+        private void save_changes_bt_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                CheckEditMoments();
+            }
+            catch (Exception ex)
+            {
+                error.Text = ex.Message;
             }
         }
     }

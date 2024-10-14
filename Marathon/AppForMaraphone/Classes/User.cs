@@ -2,8 +2,9 @@
 {
     public class User
     {
-        public User (string firstName, string lastName, char roleId)
+        public User (string email,string firstName, string lastName, char roleId)
         {
+            Email = email;
             RoleId = roleId;
             LastName = lastName;
             FirstName = firstName;
