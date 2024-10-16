@@ -180,5 +180,68 @@ namespace AppForMaraphone
             }
             return 0;
         }
+        public static Runner RunnerEnter(User enteredUser)
+        {
+            string query = "SELECT * FROM dbo.[Runner] WHERE Email = @email";
+            using (SqlConnection connection = new SqlConnection("Server =(localdb)\\MSSQLLocalDB; Database = Marathon; Trusted_Connection=True"))
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@email", enteredUser.Email.Trim());
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        string gender = string.Empty;
+                        if (reader.GetInt32(2) == 1)
+                        {
+                            gender = "Мужчина";
+                        }
+                        else
+                        {
+                            gender = "Женщина";
+                        }
+                        Runner ex = new Runner
+                            (
+                                enteredUser.Email, 
+                                enteredUser.Password, 
+                                enteredUser.FirstName, 
+                                enteredUser.LastName, 
+                                'R', 
+                                gender, 
+                                reader.GetDateTime(3), 
+                                GetCountryByCode(reader.GetInt32(4)));
+                        return ex;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
+        }
+        public static Country GetCountryByCode(int CountryCode)
+        {
+            List<Country> list = new List<Country>();
+            string query = "Select * from Country where  Country.CountryCode = @code";
+
+            using (SqlConnection connection = new SqlConnection("Server =(localdb)\\MSSQLLocalDB; Database = Marathon; Trusted_Connection=True"))
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@code", CountryCode);
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Country countr = new Country(reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
+                        return countr;
+                    }
+                }
+            }
+            return null;
+        }
     }
 }

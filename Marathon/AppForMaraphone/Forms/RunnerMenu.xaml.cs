@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace AppForMaraphone.Forms
@@ -17,18 +18,19 @@ namespace AppForMaraphone.Forms
         private int sum;
         private int rsum;
         private int vsnos;
-        private User enterUser;
+        //private User enterUser;
+        private Runner enteredRunner;
         private int selKit;
-        public RunnerMenu(User enteredUser)
+        public RunnerMenu(Runner er)
         {
             InitializeComponent();
+            enteredRunner = er;
             Grids.HideGrid(Ranner0menu, matat_text, MainRunnerGrid);
             kontaktGrid.Visibility = Visibility.Hidden;
             PreLoadCharity();
             PreLoadCountry();
             complectA.IsChecked = true;
             char_sum_tb.Text = "0";
-            enterUser = enteredUser;
         }
         private void PreLoadCountry()
         {
@@ -38,16 +40,26 @@ namespace AppForMaraphone.Forms
             {
                 change_country.Items.Add(item.Name);
             }
-            Change_Name.Text = enterUser.FirstName;
-            Change_LastName.Text = enterUser.LastName;
-            change_gender.SelectedItem = enterUser.
+            Change_Name.Text = enteredRunner.FirstName;
+            Change_LastName.Text = enteredRunner.LastName;
+            if (enteredRunner.Gender == "Мужчина")
+            {
+                change_gender.SelectedIndex = 1;
+            }
+            else
+            {
+                change_gender.SelectedIndex = 2;
+            }
+            change_date.Text = enteredRunner.DateBirth.ToString("dd.MM.yyyy");
+            change_country.SelectedItem = enteredRunner.CountryData.Name;
+            showEmail.Text = enteredRunner.Email;
         }
         private void PreLoadCharity()
         {
             foreach (Charity charity in lists)
             {
                 ComboboxPart cb = new ComboboxPart(charity);
-                selectedCharity_cb.Items.Add(cb);        
+                selectedCharity_cb.Items.Add(cb);
             }
         }
         private void back_to_first_button_Click(object sender, RoutedEventArgs e)
@@ -145,16 +157,16 @@ namespace AppForMaraphone.Forms
         private void CountPrice(int number)
         {
             sum += number;
-            SumInDollar.Text = (sum + rsum+vsnos).ToString();
+            SumInDollar.Text = (sum + rsum + vsnos).ToString();
         }
         private void char_sum_tb_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {
-                TextBox textBox = (TextBox)sender;
-                if (!char.IsDigit(e.Text, 0))
-                {
-                    e.Handled = true;
-                    return;
-                }             
+            TextBox textBox = (TextBox)sender;
+            if (!char.IsDigit(e.Text, 0))
+            {
+                e.Handled = true;
+                return;
+            }
         }
         private void char_sum_tb_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -185,13 +197,13 @@ namespace AppForMaraphone.Forms
                 }
                 Registration newReg = new Registration
                     (
-                        DataBase.GetIdByEmail(enterUser.Email),
+                        DataBase.GetIdByEmail(enteredRunner.Email),
                         DateTime.Now, selKit, (sum + rsum + vsnos), charity
                     );
                 DataBase.CreateRegistration(newReg);
-                Grids.HideGrid(Registration0confirmation,matat_text,MainRunnerGrid);
+                Grids.HideGrid(Registration0confirmation, matat_text, MainRunnerGrid);
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 error_out.Text = ex.Message;
             }
@@ -211,7 +223,7 @@ namespace AppForMaraphone.Forms
                 throw new Exception("Для регестрации, необходая сумма взноса минимум $1");
             }
             else
-            {    
+            {
                 string checkedrd = string.Empty;
                 if (rsum == 0)
                 {
@@ -240,7 +252,7 @@ namespace AppForMaraphone.Forms
                 }
                 shure += $"С выбранным набором: {checkedrd}\n";
                 shure += $"где ваш взнос в размере {SumInDollar.Text}$ будет направлен в организацию {(selectedCharity_cb.SelectedItem as ComboboxPart).Header}?";
-                if (MessageBoxResult.Yes == MessageBox.Show(shure,"Подтвердить",MessageBoxButton.YesNo,MessageBoxImage.Question))
+                if (MessageBoxResult.Yes == MessageBox.Show(shure, "Подтвердить", MessageBoxButton.YesNo, MessageBoxImage.Question))
                 {
                     MessageBox.Show("yes");
                 }
@@ -248,12 +260,11 @@ namespace AppForMaraphone.Forms
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Grids.HideGrid(Ranner0menu,matat_text,MainRunnerGrid);
+            Grids.HideGrid(Ranner0menu, matat_text, MainRunnerGrid);
         }
-
         private void regis_bt_Копировать2_Click(object sender, RoutedEventArgs e)
         {
-            Grids.HideGrid(Edit0runner0profile,matat_text,MainRunnerGrid);
+            Grids.HideGrid(Edit0runner0profile, matat_text, MainRunnerGrid);
         }
         private void CheckEditMoments()
         {
@@ -265,11 +276,11 @@ namespace AppForMaraphone.Forms
             {
                 throw new Exception("Поле фамилия обязательно к заполнению");
             }
-            if(change_date.Text == string.Empty)
+            if (change_date.Text == string.Empty)
             {
                 throw new Exception("Поле дата рождения обязательно к заполнению");
             }
-            if( change_password.Text!=string.Empty)
+            if (change_password.Text != string.Empty)
             {
                 if (change_password_second.Text == string.Empty)
                 {
@@ -286,10 +297,40 @@ namespace AppForMaraphone.Forms
             try
             {
                 CheckEditMoments();
+
             }
             catch (Exception ex)
             {
                 error.Text = ex.Message;
+            }
+        }
+        private void Change_Name_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (enteredRunner != null)
+            {
+                if (enteredRunner.FirstName != Change_Name.Text)
+                {
+                    Change_Name.Background = Brushes.AliceBlue;
+                }
+                else
+                {
+                    Change_Name.Background = Brushes.White;
+                }
+            }   
+        }
+
+        private void Change_LastName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (enteredRunner != null)
+            {
+                if (enteredRunner.LastName != Change_LastName.Text)
+                {
+                    Change_LastName.Background = Brushes.AliceBlue;
+                }
+                else
+                {
+                    Change_LastName.Background = Brushes.White;
+                }
             }
         }
     }

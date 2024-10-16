@@ -94,7 +94,8 @@ namespace AppForMaraphone
                 }
                 if (enteredUser.RoleId == 'R')
                 {
-                    RunnerMenu yeap = new RunnerMenu(enteredUser);
+                    Runner er = DataBase.RunnerEnter(enteredUser);
+                    RunnerMenu yeap = new RunnerMenu(er);
                     yeap.Show();
                     this.Close();       
                 }
@@ -268,8 +269,7 @@ namespace AppForMaraphone
             return null;
         }
         public bool CheckEmail(string emailAddress)
-        {
-           
+        {       
             try
             {
                 if (emailAddress.Length >0)

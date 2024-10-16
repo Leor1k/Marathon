@@ -122,11 +122,11 @@
         <Grid x:Name="Edit0runner0profile">
             <TextBlock HorizontalAlignment="Center" Margin="0,213,0,0" VerticalAlignment="Top" Height="85" Width="860" FontSize="68" TextAlignment="Center" TextWrapping="Wrap" Text="Редактирование профиля"/>
             <TextBlock HorizontalAlignment="Left" Margin="319,354,0,0" TextWrapping="Wrap" Text="Email:" VerticalAlignment="Top" FontSize="48"/>
-            <TextBlock HorizontalAlignment="Left" Margin="478,354,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="48" Text="emailExample"/>
+            <TextBlock x:Name="showEmail" HorizontalAlignment="Left" Margin="478,354,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="48" Text="emailExample"/>
             <TextBlock HorizontalAlignment="Left" Margin="338,430,0,0" TextWrapping="Wrap" Text="Имя:" VerticalAlignment="Top" FontSize="48"/>
-            <TextBox x:Name="Change_Name" HorizontalAlignment="Left" Margin="468,434,0,0" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top" Width="322"/>
+            <TextBox x:Name="Change_Name" HorizontalAlignment="Left" Margin="468,434,0,0" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top" Width="322" TextChanged="Change_Name_TextChanged"/>
             <TextBlock HorizontalAlignment="Left" Margin="234,0,0,0" TextWrapping="Wrap" Text="Фамилия:" VerticalAlignment="Center" FontSize="48"/>
-            <TextBox x:Name="Change_LastName" HorizontalAlignment="Left" Margin="468,0,0,0" TextWrapping="Wrap" Text="Фамилия" VerticalAlignment="Center" Width="322"/>
+            <TextBox x:Name="Change_LastName" HorizontalAlignment="Left" Margin="468,0,0,0" TextWrapping="Wrap" Text="Фамилия" VerticalAlignment="Center" Width="322" TextChanged="Change_LastName_TextChanged"/>
             <TextBlock HorizontalAlignment="Left" Margin="345,599,0,0" TextWrapping="Wrap" Text="Пол:" VerticalAlignment="Top" FontSize="48"/>
             <TextBox x:Name="change_date" HorizontalAlignment="Left" Margin="468,683,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="322" Text="1987-11-11"/>
             <ComboBox x:Name="change_gender" HorizontalAlignment="Left" Margin="468,603,0,0" VerticalAlignment="Top" Width="322" Height="49" FontSize="36">
