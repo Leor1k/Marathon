@@ -79,7 +79,7 @@ namespace AppForMaraphone
                 {
                     while (reader.Read())
                     {
-                        Country countr = new Country(reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
+                        Country countr = new Country(reader.GetInt32(0), reader.GetString(1).Trim(), reader.GetString(2).Trim());
                         list.Add(countr);
                     }
                 }
@@ -206,7 +206,6 @@ namespace AppForMaraphone
                         Runner ex = new Runner
                             (
                                 enteredUser.Email, 
-                                enteredUser.Password, 
                                 enteredUser.FirstName, 
                                 enteredUser.LastName, 
                                 'R', 

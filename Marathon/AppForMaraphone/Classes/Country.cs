@@ -9,8 +9,8 @@ namespace AppForMaraphone.Classes
         public Country(int code, string name, string photo)
         {
             CountryCode = code;
-            Name = name;
-            PhotoName = photo;
+            Name = name.Trim();
+            PhotoName = photo.Trim();
         }
     }
 }

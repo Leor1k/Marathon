@@ -56,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Classes\Charity.cs" />
+    <Compile Include="Classes\CheksProgam.cs" />
     <Compile Include="Classes\Country.cs" />
     <Compile Include="Classes\Registration.cs" />
     <Compile Include="Classes\Runner.cs" />

@@ -2,6 +2,7 @@
 using AppForMaraphone.Resource;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -38,21 +39,16 @@ namespace AppForMaraphone.Forms
             www = DataBase.GetCountryList();
             foreach (Country item in www)
             {
-                change_country.Items.Add(item.Name);
+                change_country.Items.Add(item.Name.Trim());
             }
+            change_gender.Items.Add("Мужчина");
+            change_gender.Items.Add("Женщина");
             Change_Name.Text = enteredRunner.FirstName;
             Change_LastName.Text = enteredRunner.LastName;
-            if (enteredRunner.Gender == "Мужчина")
-            {
-                change_gender.SelectedIndex = 1;
-            }
-            else
-            {
-                change_gender.SelectedIndex = 2;
-            }
             change_date.Text = enteredRunner.DateBirth.ToString("dd.MM.yyyy");
-            change_country.SelectedItem = enteredRunner.CountryData.Name;
             showEmail.Text = enteredRunner.Email;
+            change_country.SelectedItem = enteredRunner.CountryData.Name;
+            change_gender.SelectedItem = enteredRunner.Gender;
         }
         private void PreLoadCharity()
         {
@@ -279,13 +275,11 @@ namespace AppForMaraphone.Forms
             if (change_date.Text == string.Empty)
             {
                 throw new Exception("Поле дата рождения обязательно к заполнению");
-            }
-            if (change_password.Text != string.Empty)
+            }        
+            CheksProgam.CheckDate(change_date.Text);
+            if (!string.IsNullOrWhiteSpace(change_password.Text))
             {
-                if (change_password_second.Text == string.Empty)
-                {
-                    throw new Exception("Если вы хотите поменять пароль, необходимо заполнить оба поля ввода пароля");
-                }
+                CheksProgam.CheckPass(change_password.Text, change_password_second.Text);
             }
         }
         private void canel_bt_Click(object sender, RoutedEventArgs e)
@@ -297,7 +291,7 @@ namespace AppForMaraphone.Forms
             try
             {
                 CheckEditMoments();
-
+                MessageBox.Show(CreateSqlSquery());
             }
             catch (Exception ex)
             {
@@ -318,7 +312,6 @@ namespace AppForMaraphone.Forms
                 }
             }   
         }
-
         private void Change_LastName_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (enteredRunner != null)
@@ -332,6 +325,151 @@ namespace AppForMaraphone.Forms
                     Change_LastName.Background = Brushes.White;
                 }
             }
+        }
+        private void change_date_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (enteredRunner != null)
+            {
+                if (enteredRunner.DateBirth.ToString("dd.MM.yyyy") != change_date.Text)
+                {
+                    change_date.Background = Brushes.AliceBlue;
+                }
+                else
+                {
+                    change_date.Background = Brushes.White;
+                }
+            }
+        }
+        private void change_gender_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (enteredRunner != null)
+            {
+                if (enteredRunner.Gender != change_gender.SelectedItem.ToString())
+                {
+                    changet_gender.Fill= Brushes.AliceBlue;
+                }
+                else
+                {
+                    changet_gender.Fill = (Brush)this.TryFindResource("ButtonColor");
+                }
+            }
+        }       
+        private void change_country_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (enteredRunner != null)
+            {
+                if (enteredRunner.CountryData.Name != change_country.SelectedItem.ToString())
+                {
+                    changet_country.Fill= Brushes.AliceBlue;
+                }
+                else
+                {
+                    changet_country.Fill = (Brush)this.TryFindResource("ButtonColor");
+                }
+            }
+        }
+        private void change_password_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (enteredRunner != null)
+            {
+                if (!string.IsNullOrWhiteSpace(change_password.Text))
+                {
+                    changet_pass.Fill = Brushes.AliceBlue;
+                }
+                else
+                {
+                    changet_pass.Fill = (Brush)this.TryFindResource("ButtonColor");
+                }
+            }
+        }
+        private void change_date_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (!char.IsDigit(e.Text, 0))
+            {
+                e.Handled = true;
+                return;
+            }
+            if (textBox.Text.Length == 2 || textBox.Text.Length == 5)
+            {
+                textBox.Text += ".";
+                textBox.CaretIndex = textBox.Text.Length;
+            }
+        }
+        private string CreateSqlSquery()
+        {
+            string SqlQuery = "Update [User] set ";
+            
+            if (!string.IsNullOrWhiteSpace(change_password.Text))
+            {
+                SqlQuery += "[User].[Password] = @pass,";
+            }
+            if (Change_Name.Text != enteredRunner.FirstName)
+            {
+                SqlQuery += "[User].FirstName = @FirstName,";
+            }
+            if (Change_LastName.Text != enteredRunner.LastName)
+            {
+                SqlQuery += "[User].LastName = 2 ";
+            }
+
+            if (SqlQuery.Length > 34)
+            {
+                if (SqlQuery[SqlQuery.Length-1] == ',')
+                {
+                    SqlQuery = SqlQuery.Remove(SqlQuery.Length - 1, 1) + " ";
+                }
+                SqlQuery += "where [User].Email = @Email";
+            }
+            string SqlQuery2 = "Update Runner set ";
+            /*
+              Update Runner 
+              set Gender = 1,
+              CountryCode = 1,
+              DateOfBirth = N'2003-12-11'
+              where [Runner].Email = '1';
+             */
+            if (change_gender.Text != enteredRunner.Gender)
+            {
+                if (change_gender.Text == "Мужчина")
+                {
+                    SqlQuery2 += "Gender = 1,";
+                }
+                else
+                {
+                    SqlQuery2 += "Gender = 2,";
+                }
+            }
+            if (change_country.Text != enteredRunner.CountryData.Name)
+            {
+                SqlQuery2 += "CountryCode = @Code,";
+            }
+            if (change_date.Text != enteredRunner.DateBirth.ToString("dd.mm.yyyy"))
+            {
+                SqlQuery2 += "DateOfBirth = @DateTime ";
+            }
+            if (SqlQuery2.Length > 34)
+            {
+                if (SqlQuery2[SqlQuery.Length - 1] == ',')
+                {
+                    SqlQuery2 = SqlQuery2.Remove(SqlQuery2.Length - 1, 1) + " ";
+                }
+                SqlQuery2 += " where [Runner].Email = @Email";
+            }
+            string returnAllQuery = string.Empty;
+            if (SqlQuery.Length > 34)
+            {
+                returnAllQuery = SqlQuery;
+            }
+            if (SqlQuery2.Length > 34)
+            {
+                returnAllQuery += SqlQuery2;
+            }
+            if (returnAllQuery == string.Empty)
+            {
+                throw new Exception("Данные небыли измененны");
+            }
+            return returnAllQuery;
         }
     }
 }

@@ -120,6 +120,9 @@
             <Button Content="OK" HorizontalAlignment="Center" Margin="0,594,0,0" VerticalAlignment="Top" Width="214" FontSize="48" Click="Button_Click_1"/>
         </Grid>
         <Grid x:Name="Edit0runner0profile">
+            <Rectangle x:Name="changet_gender" HorizontalAlignment="Left" Height="91" Margin="456,582,0,0" VerticalAlignment="Top" Width="346" Fill="{DynamicResource ButtonColor}"/>
+            <Rectangle x:Name="changet_pass" HorizontalAlignment="Left" Height="185" Margin="1329,523,0,0" VerticalAlignment="Top" Width="466" Fill="{DynamicResource ButtonColor}"/>
+            <Rectangle x:Name="changet_country" HorizontalAlignment="Left" Height="92" Margin="456,747,0,0" VerticalAlignment="Top" Width="346" Fill="{DynamicResource ButtonColor}"/>
             <TextBlock HorizontalAlignment="Center" Margin="0,213,0,0" VerticalAlignment="Top" Height="85" Width="860" FontSize="68" TextAlignment="Center" TextWrapping="Wrap" Text="Редактирование профиля"/>
             <TextBlock HorizontalAlignment="Left" Margin="319,354,0,0" TextWrapping="Wrap" Text="Email:" VerticalAlignment="Top" FontSize="48"/>
             <TextBlock x:Name="showEmail" HorizontalAlignment="Left" Margin="478,354,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="48" Text="emailExample"/>
@@ -128,19 +131,15 @@
             <TextBlock HorizontalAlignment="Left" Margin="234,0,0,0" TextWrapping="Wrap" Text="Фамилия:" VerticalAlignment="Center" FontSize="48"/>
             <TextBox x:Name="Change_LastName" HorizontalAlignment="Left" Margin="468,0,0,0" TextWrapping="Wrap" Text="Фамилия" VerticalAlignment="Center" Width="322" TextChanged="Change_LastName_TextChanged"/>
             <TextBlock HorizontalAlignment="Left" Margin="345,599,0,0" TextWrapping="Wrap" Text="Пол:" VerticalAlignment="Top" FontSize="48"/>
-            <TextBox x:Name="change_date" HorizontalAlignment="Left" Margin="468,683,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="322" Text="1987-11-11"/>
-            <ComboBox x:Name="change_gender" HorizontalAlignment="Left" Margin="468,603,0,0" VerticalAlignment="Top" Width="322" Height="49" FontSize="36">
-                <ComboBoxItem>Мужской</ComboBoxItem>
-                <ComboBoxItem>Женский</ComboBoxItem>
-            </ComboBox>
+            <TextBox x:Name="change_date" MaxLength="10" HorizontalAlignment="Left" Margin="468,683,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="322" Text="1987-11-11" TextChanged="change_date_TextChanged" PreviewTextInput="change_date_PreviewTextInput"/>
+            <ComboBox x:Name="change_gender" HorizontalAlignment="Left" Margin="468,603,0,0" VerticalAlignment="Top" Width="322" Height="49" FontSize="36" SelectionChanged="change_gender_SelectionChanged"/>
             <TextBlock HorizontalAlignment="Left" Margin="94,679,0,0" TextWrapping="Wrap" Text="Дата рождения:" VerticalAlignment="Top" FontSize="48"/>
             <TextBlock HorizontalAlignment="Left" Margin="278,764,0,0" TextWrapping="Wrap" Text="Страна:" VerticalAlignment="Top" FontSize="48"/>
-            <ComboBox x:Name="change_country" HorizontalAlignment="Left" Margin="468,768,0,0" VerticalAlignment="Top" Width="322" Height="49" FontSize="36">
-            </ComboBox>
+            <ComboBox x:Name="change_country" HorizontalAlignment="Left" Margin="468,768,0,0" VerticalAlignment="Top" Width="322" Height="49" FontSize="36" SelectionChanged="change_country_SelectionChanged"/>
             <TextBlock HorizontalAlignment="Left" Margin="1346,354,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="48" Text="Смена пароля"/>
             <TextBlock HorizontalAlignment="Left" Margin="1146,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" Text="Оставьте эти поля, незаполненными, если вы не хотите изменять пароль." TextAlignment="Center" Width="711"/>
             <TextBlock HorizontalAlignment="Left" Margin="1146,540,0,0" TextWrapping="Wrap" Text="Пароль:" VerticalAlignment="Top" FontSize="48"/>
-            <TextBox x:Name="change_password" HorizontalAlignment="Left" Margin="1346,540,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="432" Height="54"/>
+            <TextBox x:Name="change_password" HorizontalAlignment="Left" Margin="1346,540,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="432" Height="54" TextChanged="change_password_TextChanged"/>
             <TextBlock HorizontalAlignment="Left" Margin="976,624,0,0" TextWrapping="Wrap" Text="Повтор пароля:" VerticalAlignment="Top" FontSize="48"/>
             <TextBox x:Name="change_password_second" HorizontalAlignment="Left" Margin="1346,628,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="432" Height="54"/>
             <TextBlock x:Name="error" HorizontalAlignment="Left" Margin="1057,759,0,0" VerticalAlignment="Top" Height="58" Width="786" FontSize="18" TextAlignment="Center" TextWrapping="Wrap" Foreground="#FFFF3535"/>
