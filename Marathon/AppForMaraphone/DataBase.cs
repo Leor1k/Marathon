@@ -242,5 +242,24 @@ namespace AppForMaraphone
             }
             return null;
         }
+        public static void UpDateRunner(Runner ur, string squery)
+        {
+            using (SqlConnection connection = new SqlConnection("Server =(localdb)\\MSSQLLocalDB; Database = Marathon; Trusted_Connection=True"))
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand(squery, connection);
+                if (ur.Password != null)
+                {
+                    cmd.Parameters.AddWithValue("@pass", ur.Password);
+                }
+                cmd.Parameters.AddWithValue("@FirstName", ur.FirstName);
+                cmd.Parameters.AddWithValue("@LastName", ur.LastName);
+                cmd.Parameters.AddWithValue("@Email", ur.Email);
+                cmd.Parameters.AddWithValue("@Code", ur.CountryData.CountryCode);
+                cmd.Parameters.AddWithValue("@DateTime", ur.DateBirth);
+                int number = cmd.ExecuteNonQuery();
+                Console.WriteLine($"Ваши Данные успешно обновленны");
+            }
+        }
     }
 }

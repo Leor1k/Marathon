@@ -3,24 +3,50 @@
   "WorkspaceRootPath": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\appformaraphone\\forms\\runnermenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|solutionrelative:appformaraphone\\forms\\runnermenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\medvedskijae\\AppData\\Local\\Temp\\dbo.EventType.data.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|c:\\users\\medvedskijae\\desktop\\mbave\\marathon\\marathon\\appformaraphone\\forms\\runnermenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|solutionrelative:appformaraphone\\forms\\runnermenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\medvedskijae\\AppData\\Local\\Temp\\dbo.Regisrtation.data.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|c:\\users\\medvedskijae\\desktop\\mbave\\marathon\\marathon\\appformaraphone\\forms\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|solutionrelative:appformaraphone\\forms\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|c:\\users\\medvedskijae\\desktop\\mbave\\marathon\\marathon\\appformaraphone\\classes\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|solutionrelative:appformaraphone\\classes\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|c:\\users\\medvedskijae\\desktop\\mbave\\marathon\\marathon\\appformaraphone\\resource\\imagesitem.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|solutionrelative:appformaraphone\\resource\\imagesitem.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|c:\\users\\medvedskijae\\desktop\\mbave\\marathon\\marathon\\appformaraphone\\classes\\runner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/Marathon/True/SqlTable/dbo.EventType.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|c:\\users\\medvedskijae\\desktop\\mbave\\marathon\\marathon\\appformaraphone\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|solutionrelative:appformaraphone\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|c:\\users\\medvedskijae\\desktop\\mbave\\marathon\\marathon\\appformaraphone\\resource\\runnercombo.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|solutionrelative:appformaraphone\\resource\\runnercombo.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|c:\\users\\medvedskijae\\desktop\\mbave\\marathon\\marathon\\appformaraphone\\resource\\runnercombo.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|solutionrelative:appformaraphone\\resource\\runnercombo.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|c:\\users\\medvedskijae\\desktop\\mbave\\marathon\\marathon\\appformaraphone\\forms\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|solutionrelative:appformaraphone\\forms\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\appformaraphone\\classes\\runner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D2296FD-81BF-46FC-B720-14BE3E174322}|AppForMaraphone\\AppForMaraphone.csproj|solutionrelative:appformaraphone\\classes\\runner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\medvedskijae\\AppData\\Local\\Temp\\dbo.EventType.data.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\medvedskijae\\AppData\\Local\\Temp\\dbo.EventType.data.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|ResultFrame"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\medvedskijae\\AppData\\Local\\Temp\\dbo.Regisrtation.data.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,60 +56,20 @@
       "DocumentGroups": [
         {
           "DockedHeight": 293,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RunnerMenu.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\Forms\\RunnerMenu.xaml.cs",
-              "RelativeDocumentMoniker": "AppForMaraphone\\Forms\\RunnerMenu.xaml.cs",
-              "ToolTip": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\Forms\\RunnerMenu.xaml.cs*",
-              "RelativeToolTip": "AppForMaraphone\\Forms\\RunnerMenu.xaml.cs*",
-              "ViewState": "AgIAAEsBAAAAAAAAAAAtwIsBAAANAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "DataBase.cs",
+              "DocumentMoniker": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\DataBase.cs",
+              "RelativeDocumentMoniker": "AppForMaraphone\\DataBase.cs",
+              "ToolTip": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\DataBase.cs*",
+              "RelativeToolTip": "AppForMaraphone\\DataBase.cs*",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAQwAsBAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T10:31:57.711Z",
+              "WhenOpened": "2024-10-24T07:28:26.508Z",
               "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RunnerMenu.xaml",
-              "DocumentMoniker": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\Forms\\RunnerMenu.xaml",
-              "RelativeDocumentMoniker": "AppForMaraphone\\Forms\\RunnerMenu.xaml",
-              "ToolTip": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\Forms\\RunnerMenu.xaml*",
-              "RelativeToolTip": "AppForMaraphone\\Forms\\RunnerMenu.xaml*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-16T07:52:02.499Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\Classes\\User.cs",
-              "RelativeDocumentMoniker": "AppForMaraphone\\Classes\\User.cs",
-              "ToolTip": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\Classes\\User.cs",
-              "RelativeToolTip": "AppForMaraphone\\Classes\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T06:50:49.888Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Runner.cs",
-              "DocumentMoniker": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\Classes\\Runner.cs",
-              "RelativeDocumentMoniker": "AppForMaraphone\\Classes\\Runner.cs",
-              "ToolTip": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\Classes\\Runner.cs",
-              "RelativeToolTip": "AppForMaraphone\\Classes\\Runner.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T06:50:30.836Z",
               "EditorCaption": ""
             },
             {
@@ -94,9 +80,104 @@
               "RelativeDocumentMoniker": "AppForMaraphone\\Forms\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\Forms\\MainWindow.xaml.cs",
               "RelativeToolTip": "AppForMaraphone\\Forms\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAPgAAAAAAAAAAAAswO0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAOkAAAAAAAAAAAA0wEsBAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-18T06:38:31.375Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "dbo.Regisrtation.data ",
+              "DocumentMoniker": "C:\\Users\\medvedskijae\\AppData\\Local\\Temp\\dbo.Regisrtation.data.sql",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\Temp\\dbo.Regisrtation.data.sql",
+              "ToolTip": "dbo.Regisrtation.data *",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-10-24T10:51:22.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "dbo.EventType.data ",
+              "DocumentMoniker": "C:\\Users\\medvedskijae\\AppData\\Local\\Temp\\dbo.EventType.data.sql",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\Temp\\dbo.EventType.data.sql",
+              "ToolTip": "dbo.EventType.data *",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-10-24T10:37:34.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "dbo.EventType [\u0414\u0430\u043D\u043D\u044B\u0435]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/Marathon/True/SqlTable/dbo.EventType.sql",
+              "ToolTip": "dbo.EventType [\u0414\u0430\u043D\u043D\u044B\u0435]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-10-24T10:37:32.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ImagesItem.xaml",
+              "DocumentMoniker": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\Resource\\ImagesItem.xaml",
+              "RelativeDocumentMoniker": "AppForMaraphone\\Resource\\ImagesItem.xaml",
+              "ToolTip": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\Resource\\ImagesItem.xaml",
+              "RelativeToolTip": "AppForMaraphone\\Resource\\ImagesItem.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-24T10:32:19.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RunnerCombo.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\Resource\\RunnerCombo.xaml.cs",
+              "RelativeDocumentMoniker": "AppForMaraphone\\Resource\\RunnerCombo.xaml.cs",
+              "ToolTip": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\Resource\\RunnerCombo.xaml.cs",
+              "RelativeToolTip": "AppForMaraphone\\Resource\\RunnerCombo.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T10:31:21.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RunnerCombo.xaml",
+              "DocumentMoniker": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\Resource\\RunnerCombo.xaml",
+              "RelativeDocumentMoniker": "AppForMaraphone\\Resource\\RunnerCombo.xaml",
+              "ToolTip": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\Resource\\RunnerCombo.xaml*",
+              "RelativeToolTip": "AppForMaraphone\\Resource\\RunnerCombo.xaml*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-24T10:31:07.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\Forms\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "AppForMaraphone\\Forms\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\Forms\\MainWindow.xaml",
+              "RelativeToolTip": "AppForMaraphone\\Forms\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-24T09:51:43.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Runner.cs",
+              "DocumentMoniker": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\Classes\\Runner.cs",
+              "RelativeDocumentMoniker": "AppForMaraphone\\Classes\\Runner.cs",
+              "ToolTip": "C:\\Users\\medvedskijae\\Desktop\\Mbave\\Marathon\\Marathon\\AppForMaraphone\\Classes\\Runner.cs",
+              "RelativeToolTip": "AppForMaraphone\\Classes\\Runner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T06:50:30.836Z",
               "EditorCaption": ""
             }
           ]

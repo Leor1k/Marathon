@@ -16,6 +16,7 @@ namespace AppForMaraphone.Forms
     public partial class RunnerMenu : Window
     {
         private List<Charity> lists = DataBase.GetCharity();
+        List<Country> www = new List<Country>();
         private int sum;
         private int rsum;
         private int vsnos;
@@ -35,12 +36,14 @@ namespace AppForMaraphone.Forms
         }
         private void PreLoadCountry()
         {
-            List<Country> www = new List<Country>();
             www = DataBase.GetCountryList();
             foreach (Country item in www)
             {
                 change_country.Items.Add(item.Name.Trim());
             }
+        }
+        private void InsertTextForChange()
+        {
             change_gender.Items.Add("Мужчина");
             change_gender.Items.Add("Женщина");
             Change_Name.Text = enteredRunner.FirstName;
@@ -260,6 +263,7 @@ namespace AppForMaraphone.Forms
         }
         private void regis_bt_Копировать2_Click(object sender, RoutedEventArgs e)
         {
+            InsertTextForChange();
             Grids.HideGrid(Edit0runner0profile, matat_text, MainRunnerGrid);
         }
         private void CheckEditMoments()
@@ -275,7 +279,7 @@ namespace AppForMaraphone.Forms
             if (change_date.Text == string.Empty)
             {
                 throw new Exception("Поле дата рождения обязательно к заполнению");
-            }        
+            }
             CheksProgam.CheckDate(change_date.Text);
             if (!string.IsNullOrWhiteSpace(change_password.Text))
             {
@@ -290,8 +294,48 @@ namespace AppForMaraphone.Forms
         {
             try
             {
-                CheckEditMoments();
-                MessageBox.Show(CreateSqlSquery());
+                CheckEditMoments();           
+                Country selectedCountry = null;
+                foreach (Country item in www)
+                {
+                    if (item.Name == change_country.Text)
+                    {
+                        selectedCountry = item;
+                    }
+                }
+                Runner updatedRunner = null;
+                if (string.IsNullOrWhiteSpace(change_password.Text))
+                {
+                    updatedRunner = new Runner
+                    (
+                    enteredRunner.Email,
+                    Change_Name.Text.Trim(),
+                    Change_LastName.Text.Trim(),
+                    enteredRunner.RoleId,
+                    change_gender.Text.Trim(),
+                    Convert.ToDateTime(change_date.Text),
+                    selectedCountry
+                    );
+                }
+                else
+                {
+                    updatedRunner = new Runner
+                                       (
+                                       enteredRunner.Email,
+                                       change_password.Text.Trim(),
+                                       Change_Name.Text.Trim(),
+                                       Change_LastName.Text.Trim(),
+                                       enteredRunner.RoleId,
+                                       change_gender.Text.Trim(),
+                                       Convert.ToDateTime(change_date.Text),
+                                       selectedCountry
+                                       );
+                }
+                DataBase.UpDateRunner(updatedRunner, CreateSqlSquery());
+                MessageBox.Show("Данные успешно обновленны");
+                enteredRunner = updatedRunner;
+                Grids.HideGrid(Ranner0menu, matat_text, MainRunnerGrid);
+                BackKolorAfterUpdate();
             }
             catch (Exception ex)
             {
@@ -310,7 +354,7 @@ namespace AppForMaraphone.Forms
                 {
                     Change_Name.Background = Brushes.White;
                 }
-            }   
+            }
         }
         private void Change_LastName_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -346,21 +390,21 @@ namespace AppForMaraphone.Forms
             {
                 if (enteredRunner.Gender != change_gender.SelectedItem.ToString())
                 {
-                    changet_gender.Fill= Brushes.AliceBlue;
+                    changet_gender.Fill = Brushes.AliceBlue;
                 }
                 else
                 {
                     changet_gender.Fill = (Brush)this.TryFindResource("ButtonColor");
                 }
             }
-        }       
+        }
         private void change_country_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (enteredRunner != null)
             {
                 if (enteredRunner.CountryData.Name != change_country.SelectedItem.ToString())
                 {
-                    changet_country.Fill= Brushes.AliceBlue;
+                    changet_country.Fill = Brushes.AliceBlue;
                 }
                 else
                 {
@@ -399,7 +443,6 @@ namespace AppForMaraphone.Forms
         private string CreateSqlSquery()
         {
             string SqlQuery = "Update [User] set ";
-            
             if (!string.IsNullOrWhiteSpace(change_password.Text))
             {
                 SqlQuery += "[User].[Password] = @pass,";
@@ -410,26 +453,19 @@ namespace AppForMaraphone.Forms
             }
             if (Change_LastName.Text != enteredRunner.LastName)
             {
-                SqlQuery += "[User].LastName = 2 ";
+                SqlQuery += "[User].LastName = @LastName ";
             }
 
             if (SqlQuery.Length > 34)
             {
-                if (SqlQuery[SqlQuery.Length-1] == ',')
+                if (SqlQuery[SqlQuery.Length - 1] == ',')
                 {
                     SqlQuery = SqlQuery.Remove(SqlQuery.Length - 1, 1) + " ";
                 }
-                SqlQuery += "where [User].Email = @Email";
+                SqlQuery += "where [User].Email = @Email;\n";
             }
             string SqlQuery2 = "Update Runner set ";
-            /*
-              Update Runner 
-              set Gender = 1,
-              CountryCode = 1,
-              DateOfBirth = N'2003-12-11'
-              where [Runner].Email = '1';
-             */
-            if (change_gender.Text != enteredRunner.Gender)
+            if (change_gender.SelectedItem.ToString() != enteredRunner.Gender)
             {
                 if (change_gender.Text == "Мужчина")
                 {
@@ -444,13 +480,13 @@ namespace AppForMaraphone.Forms
             {
                 SqlQuery2 += "CountryCode = @Code,";
             }
-            if (change_date.Text != enteredRunner.DateBirth.ToString("dd.mm.yyyy"))
+            if (change_date.Text != enteredRunner.DateBirth.ToString("dd.MM.yyyy"))
             {
                 SqlQuery2 += "DateOfBirth = @DateTime ";
             }
-            if (SqlQuery2.Length > 34)
+            if (SqlQuery2.Length > 21)
             {
-                if (SqlQuery2[SqlQuery.Length - 1] == ',')
+                if (SqlQuery2[SqlQuery2.Length - 1] == ',')
                 {
                     SqlQuery2 = SqlQuery2.Remove(SqlQuery2.Length - 1, 1) + " ";
                 }
@@ -467,9 +503,23 @@ namespace AppForMaraphone.Forms
             }
             if (returnAllQuery == string.Empty)
             {
-                throw new Exception("Данные небыли измененны");
-            }
+                throw new Exception("Нет данных для изменения");
+            }        
             return returnAllQuery;
+        }
+        private void BackKolorAfterUpdate()
+        {
+            changet_pass.Fill = (Brush)this.TryFindResource("ButtonColor");
+            changet_gender.Fill = (Brush)this.TryFindResource("ButtonColor");
+            changet_country.Fill = (Brush)this.TryFindResource("ButtonColor");
+            foreach (var item in Edit0runner0profile.Children)
+            {
+                if (item.GetType() == typeof(TextBox))
+                {
+                    TextBox it = item as TextBox;
+                    it.Background = Brushes.White;
+                }
+            }
         }
     }
 }

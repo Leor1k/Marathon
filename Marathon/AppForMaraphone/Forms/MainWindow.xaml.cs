@@ -16,6 +16,7 @@ namespace AppForMaraphone
     public partial class MainWindow : Window
     {
         public List<Country> list;
+        public List<Runner> runnerList;
         public MainWindow()
         {
             InitializeComponent();
@@ -250,7 +251,9 @@ namespace AppForMaraphone
                     getCountryByName(Country_cb.Text)
                     );
                 DataBase.InsertNewRunner(runner);
-
+                RunnerMenu alp = new RunnerMenu(runner);
+                this.Close();
+                alp.Show();
             }
             catch (Exception ex)
             {
@@ -315,6 +318,18 @@ namespace AppForMaraphone
             {
                 Country_cb.Items.Add(co.Name);
             }
+        }
+        private void IwontDonate_Click(object sender, RoutedEventArgs e)
+        {
+            Grids.HideGrid(Sponsor0a0runner, matat_text, AllIn);
+        }
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Grids.HideGrid(first_grid, matat_text, AllIn);
+        }
+        private void GetRunnerList ()
+        {
+            
         }
     }
 }

@@ -119,7 +119,7 @@
             <TextBlock HorizontalAlignment="Center" Margin="0,477,0,0" VerticalAlignment="Top" Height="85" Width="820" FontSize="48" TextAlignment="Center" TextWrapping="Wrap" Text="С вами свяжутся по поводу оплаты."/>
             <Button Content="OK" HorizontalAlignment="Center" Margin="0,594,0,0" VerticalAlignment="Top" Width="214" FontSize="48" Click="Button_Click_1"/>
         </Grid>
-        <Grid x:Name="Edit0runner0profile">
+        <Grid x:Name="Edit0runner0profile" d:IsHidden="True">
             <Rectangle x:Name="changet_gender" HorizontalAlignment="Left" Height="91" Margin="456,582,0,0" VerticalAlignment="Top" Width="346" Fill="{DynamicResource ButtonColor}"/>
             <Rectangle x:Name="changet_pass" HorizontalAlignment="Left" Height="185" Margin="1329,523,0,0" VerticalAlignment="Top" Width="466" Fill="{DynamicResource ButtonColor}"/>
             <Rectangle x:Name="changet_country" HorizontalAlignment="Left" Height="92" Margin="456,747,0,0" VerticalAlignment="Top" Width="346" Fill="{DynamicResource ButtonColor}"/>
@@ -145,6 +145,12 @@
             <TextBlock x:Name="error" HorizontalAlignment="Left" Margin="1057,759,0,0" VerticalAlignment="Top" Height="58" Width="786" FontSize="18" TextAlignment="Center" TextWrapping="Wrap" Foreground="#FFFF3535"/>
             <Button x:Name="save_changes_bt" Content="Сохранить" HorizontalAlignment="Left" Margin="678,886,0,0" VerticalAlignment="Top" Height="59" Width="204" Click="save_changes_bt_Click"/>
             <Button x:Name="canel_bt" Content="Отмена" HorizontalAlignment="Left" Margin="976,886,0,0" VerticalAlignment="Top" Height="59" Width="204" Click="canel_bt_Click"/>
+        </Grid>
+        <Grid x:Name="My0sponsorship">
+            <TextBlock HorizontalAlignment="Center" Margin="0,213,0,0" VerticalAlignment="Top" Height="85" Width="860" FontSize="68" TextAlignment="Center" TextWrapping="Wrap" Text="Мои спонсоры"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,298,0,0" VerticalAlignment="Top" Height="53" Width="1368" FontSize="48" TextAlignment="Center" TextWrapping="Wrap" Text="Здесь показаны все ваши спонсоры в Marathon Skills 2016"/>
+            <TextBlock HorizontalAlignment="Left" Margin="114,445,0,0" VerticalAlignment="Top" Height="90" Width="802" FontSize="36" TextAlignment="Center" TextWrapping="Wrap" Text="организация"/>
+            <Image HorizontalAlignment="Left" Height="276" Margin="374,535,0,0" VerticalAlignment="Top" Width="276"/>
         </Grid>
     </Grid>
 </Window>
