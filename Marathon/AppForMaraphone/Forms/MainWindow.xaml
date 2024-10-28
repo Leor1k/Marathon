@@ -12,7 +12,7 @@
             <ColumnDefinition Width="240*"/>
         </Grid.ColumnDefinitions>
         <Rectangle Margin="20,1000,20,13" Grid.ColumnSpan="2"/>
-        <Rectangle Height="960" Margin="20,40,20,0" Fill="{StaticResource LightWhite}" VerticalAlignment="Top" Grid.ColumnSpan="2" />
+        <Rectangle Height="960" Margin="20,40,20,0" Fill="{StaticResource LightWhite}" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="1876.7" />
         <TextBlock HorizontalAlignment="Left" Margin="768,1012,0,0" TextWrapping="Wrap" Text=".... до старта марафона!" VerticalAlignment="Top" Foreground="{DynamicResource LightWhite}" FontSize="36" Grid.ColumnSpan="2" Height="43" Width="384"/>
         <Ellipse HorizontalAlignment="Left" Height="24" Fill="{StaticResource LightWhite}" Margin="20,10,0,0" VerticalAlignment="Top" Width="25"/>
         <TextBlock HorizontalAlignment="Left" Margin="55,8,0,0" TextWrapping="Wrap" Text="Marathon Skills 2016" VerticalAlignment="Top" Foreground="{DynamicResource LightWhite}" FontSize="24" Height="29" Width="221"/>
@@ -182,29 +182,39 @@
             <TextBlock Margin="159,429,0,0" Text="Информация о спонсоре" VerticalAlignment="Top" Height="68" FontSize="48" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Left" Width="642"/>
             <TextBlock HorizontalAlignment="Left" Margin="127,512,0,0" Text="Ваше имя:" VerticalAlignment="Top" Height="52" Width="175" FontSize="36" TextAlignment="Right" TextWrapping="Wrap"/>
             <TextBlock HorizontalAlignment="Left" Margin="189,569,0,0" Text="Бегун:" VerticalAlignment="Top" Height="52" Width="113" FontSize="36" TextAlignment="Right" TextWrapping="Wrap"/>
-            <TextBlock HorizontalAlignment="Left" Margin="201,626,0,0" VerticalAlignment="Top" Height="52" Width="101" FontSize="36" TextAlignment="Right" Text="Карта:"/>
+            <TextBlock HorizontalAlignment="Left" Margin="36,627,0,0" VerticalAlignment="Top" Height="52" Width="272" FontSize="36" Text="Владелец карты:"/>
             <TextBlock HorizontalAlignment="Left" Margin="42,683,0,0" VerticalAlignment="Top" Height="52" Width="260" FontSize="36" TextAlignment="Right" TextWrapping="Wrap" Text="Номер карты#:"/>
             <TextBlock HorizontalAlignment="Left" Margin="42,740,0,0" VerticalAlignment="Top" Height="52" Width="260" FontSize="36" TextAlignment="Right" TextWrapping="Wrap" Text="Срок действия:"/>
             <TextBlock HorizontalAlignment="Left" Margin="42,797,0,0" VerticalAlignment="Top" Height="52" Width="260" FontSize="36" TextAlignment="Right" TextWrapping="Wrap" Text="СVC:"/>
             <TextBox x:Name="s_name_tb" HorizontalAlignment="Left" Margin="345,512,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="355"/>
             <TextBox x:Name="s_card_tb" HorizontalAlignment="Left" Margin="345,627,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="355"/>
-            <TextBox x:Name="s_numberCard_tb" MaxLength="19" HorizontalAlignment="Left" Margin="345,684,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="355"/>
-            <TextBox x:Name="s_srok1_tb" MaxLength="2" HorizontalAlignment="Left" Margin="345,741,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64"/>
-            <TextBox x:Name="s_srok2_tb" MaxLength="4" HorizontalAlignment="Left" Margin="448,741,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
-            <TextBox x:Name="s_cvc_tb" MaxLength="123" HorizontalAlignment="Left" Margin="345,798,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
-            <ComboBox x:Name="s_runner_tb" HorizontalAlignment="Left" Margin="345,574,0,0" VerticalAlignment="Top" Width="354" Height="42" FontSize="36"/>
+            <TextBox x:Name="s_numberCard_tb" MaxLength="19" HorizontalAlignment="Left" Margin="345,684,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="355" PreviewTextInput="s_numberCard_tb_PreviewTextInput"/>
+            <TextBox x:Name="s_srok1_tb" MaxLength="2" HorizontalAlignment="Left" Margin="345,741,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" PreviewTextInput="s_srok1_tb_PreviewTextInput"/>
+            <TextBox x:Name="s_srok2_tb" MaxLength="4" HorizontalAlignment="Left" Margin="448,741,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" PreviewTextInput="s_srok1_tb_PreviewTextInput"/>
+            <TextBox x:Name="s_cvc_tb" MaxLength="3" HorizontalAlignment="Left" Margin="345,798,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" PreviewTextInput="s_srok1_tb_PreviewTextInput"/>
+            <ComboBox x:Name="s_runner_tb" HorizontalAlignment="Left" Margin="345,574,0,0" VerticalAlignment="Top" Width="354" Height="42" FontSize="22" SelectionChanged="s_runner_tb_SelectionChanged"/>
             <TextBlock Margin="1125,429,0,0" Text="Благотворительность" VerticalAlignment="Top" Height="68" FontSize="48" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Left" Width="642"/>
-            <TextBlock HorizontalAlignment="Left" Margin="1321,505,0,0" Text="Фонд кошелёк" VerticalAlignment="Top" Height="52" Width="250" FontSize="36" TextAlignment="Center" TextWrapping="Wrap"/>
+            <TextBlock x:Name="s_selectedFond" HorizontalAlignment="Left" Margin="1175,500,0,0" Text="Фонд кошелёк" VerticalAlignment="Top" Height="52" Width="543" FontSize="36" TextAlignment="Center" TextWrapping="Wrap"/>
             <TextBlock Margin="1125,566,0,0" Text="Сумма пожертвования" VerticalAlignment="Top" Height="68" FontSize="48" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Left" Width="642"/>
-            <TextBlock HorizontalAlignment="Left" Margin="1346,652,0,0" TextWrapping="Wrap" Text="$50" VerticalAlignment="Top" FontSize="124"/>
-            <Button Content="-" HorizontalAlignment="Left" Margin="1253,799,0,0" VerticalAlignment="Top" Width="80"/>
-            <Button Content="+" HorizontalAlignment="Left" Margin="1587,799,0,0" VerticalAlignment="Top" Width="80"/>
-            <TextBox x:Name="s_srok2_tb_Копировать" HorizontalAlignment="Left" Margin="1360,796,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" TextAlignment="Center"/>
+            <TextBlock HorizontalAlignment="Left" Margin="1212,642,0,0" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" FontSize="124" Height="139"/>
+            <Button x:Name="minesten" Content="-" HorizontalAlignment="Left" Margin="1253,799,0,0" VerticalAlignment="Top" Width="80" Click="minesten_Click"/>
+            <Button x:Name="addten" Content="+" HorizontalAlignment="Left" Margin="1587,799,0,0" VerticalAlignment="Top" Width="80" Click="addten_Click"/>
+            <TextBox x:Name="s_srok2_tb_Копировать" HorizontalAlignment="Left" Margin="1360,796,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" TextAlignment="Center" PreviewTextInput="s_srok1_tb_PreviewTextInput" TextChanged="s_srok2_tb_Копировать_TextChanged"/>
             <Button Content="Отмена" HorizontalAlignment="Left" Margin="1669,928,0,0" VerticalAlignment="Top" Width="165" Click="Button_Click_2"/>
             <Button Content="Заплатить" HorizontalAlignment="Left" Margin="1446,928,0,0" VerticalAlignment="Top" Width="181"/>
+            <Button x:Name="more_info_bt" HorizontalAlignment="Left" Margin="1780,506,0,0" VerticalAlignment="Top" Width="40" Height="40" Background="{x:Null}" BorderBrush="{DynamicResource SpecialQuetion}" Foreground="#FF525252" Click="more_info_bt_Click">
+                <TextBlock Text="i" Foreground="{StaticResource SpecialQuetion}"/>
+            </Button>
+            <Grid x:Name="more_info_grid" Margin="269,286,253,176" d:IsHidden="True">
+                <Rectangle StrokeThickness="4" Stroke="{DynamicResource grayCol}" Fill="{DynamicResource LightWhite}"/>
+                <TextBlock x:Name="s_slectedchar" HorizontalAlignment="Center" Margin="0,28,0,0" Text="Организация" VerticalAlignment="Top" Height="68" Width="860" FontSize="48" TextAlignment="Center" TextWrapping="Wrap"/>
+                <Button x:Name="exit_moreinfo" Style="{x:Null}" HorizontalAlignment="Left" Margin="1353,4,0,0" VerticalAlignment="Top" Background="{x:Null}" Width="41" Height="33"  BorderBrush="{x:Null}" Click="exit_moreinfo_Click">
+                    <TextBlock Text="X" Foreground="Red" FontSize="24" TextAlignment="Center"/>
+                </Button>
+                <Image x:Name="selected_char_image" Margin="438,94,438,296"/>
+                <TextBlock x:Name="discriotion1" HorizontalAlignment="Center" Margin="0,338,0,0" VerticalAlignment="Top" Height="232" Width="1286" TextWrapping="Wrap" Text="Описание" FontSize="22"/>
+            </Grid>
+            <TextBlock x:Name="fullPrice" HorizontalAlignment="Left" Margin="1279,663,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="80" Height="88" Width="348" TextAlignment="Center"/>
         </Grid>
-        <Button Grid.Column="1" HorizontalAlignment="Left" Margin="633,506,0,0" VerticalAlignment="Top" Width="39" Height="40" Background="{x:Null}" BorderBrush="{DynamicResource SpecialQuetion}" Foreground="#FF525252">
-            <TextBlock Text="i" Foreground="{StaticResource SpecialQuetion}"></TextBlock>
-        </Button>
     </Grid>
 </Window>

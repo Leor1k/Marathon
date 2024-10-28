@@ -261,5 +261,26 @@ namespace AppForMaraphone
                 Console.WriteLine($"Ваши Данные успешно обновленны");
             }
         }
+        public static List<DonateData> GetDonateList()
+        {
+            string query = "Select dbo.[User].FirstName, dbo.[User].LastName, Runner.CountryCode, Country.CountryName, Regisrtation.Charity from dbo.[User]\r\nRight join Runner on dbo.[User].Email = Runner.Email\r\nLeft join Country on Runner.CountryCode = Country.CountryCode\r\nRight join Regisrtation on Runner.RunnerId = Regisrtation.RannerId";
+            List <DonateData> list = new List<DonateData>();
+            using (SqlConnection connection = new SqlConnection("Server =(localdb)\\MSSQLLocalDB; Database = Marathon; Trusted_Connection=True"))
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand(query, connection);
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        DonateData donate = new DonateData(reader.GetString(0),reader.GetString(1),reader.GetInt32(2),reader.GetString(3),reader.GetInt32(4));
+                        list.Add(donate);                  
+                    }
+                }
+            }
+            return list;
+        }
+        
+
     }
 }

@@ -3,9 +3,9 @@ using AppForMaraphone.Forms;
 using AppForMaraphone.Resource;
 using System;
 using System.Collections.Generic;
-using System.Net.Mail;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 
 namespace AppForMaraphone
@@ -15,8 +15,11 @@ namespace AppForMaraphone
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<Country> list;
-        public List<Runner> runnerList;
+        private List<Country> list;
+        private List<Runner> runnerList;
+        private List<DonateData> donateDatas;
+        private List<Charity> charities;
+        int btsim = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -25,6 +28,11 @@ namespace AppForMaraphone
             SelectDescription(point_name.Text);
             DistanseStack.Visibility = Visibility.Hidden;
             loadCountry();
+            LoadCharity();
+        }
+        private void LoadCharity ()
+        {
+            charities = DataBase.GetCharity();
         }
         private void exit_bt_Click(object sender, RoutedEventArgs e)
         {
@@ -322,6 +330,9 @@ namespace AppForMaraphone
         private void IwontDonate_Click(object sender, RoutedEventArgs e)
         {
             Grids.HideGrid(Sponsor0a0runner, matat_text, AllIn);
+            GetRunnerList();
+            more_info_grid.Visibility = Visibility.Hidden;
+            s_srok2_tb_Копировать.Text = "0";
         }
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
@@ -329,7 +340,100 @@ namespace AppForMaraphone
         }
         private void GetRunnerList ()
         {
+            s_runner_tb. Items.Clear();
+            donateDatas = DataBase.GetDonateList();
+            foreach (DonateData donItem in donateDatas)
+            {
+                s_runner_tb.Items.Add(donItem.GetStringDate());
+                s_runner_tb.SelectedItem = donItem.GetStringDate();
+            }
+        }
+        private void s_numberCard_tb_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (!char.IsDigit(e.Text, 0))
+            {
+                e.Handled = true;
+                return;
+            }
+            if (textBox.Text.Length == 4 || textBox.Text.Length == 9 || textBox.Text.Length == 14)
+            {
+                textBox.Text += " ";
+                textBox.CaretIndex = textBox.Text.Length;
+            }
+        }
+        private void s_srok1_tb_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (!char.IsDigit(e.Text, 0))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+        private void s_runner_tb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int i = 0;
+            string[] si = s_runner_tb.Text.Split(new char[] {' '});
+            foreach (DonateData dd in donateDatas)
+            {
+                if (dd.FirstNameRunner == si[0] && dd.LastNameRunner == si[1])
+                {
+                    i = dd.CharityCode;
+                }
+            }
+            foreach (Charity ch in charities)
+            {
+                if (i == ch.CharId)
+                {
+                    s_selectedFond.Text = ch.CharityName;
+                    s_slectedchar.Text = s_selectedFond.Text;
+                    discriotion1.Text = ch.Description;
+                    selected_char_image.Source = new BitmapImage(new Uri($"/Resource/Images/LogoCharity/{ch.PictureName}.png", UriKind.Relative));
+                }
+            }
             
         }
+
+        private void more_info_bt_Click(object sender, RoutedEventArgs e)
+        {
+            more_info_grid.Visibility = Visibility.Visible;
+        }
+
+        private void exit_moreinfo_Click(object sender, RoutedEventArgs e)
+        {
+            more_info_grid.Visibility = Visibility.Hidden;
+        }
+        private void s_srok2_tb_Копировать_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            countDonate();
+        }
+
+        private void addten_Click(object sender, RoutedEventArgs e)
+        {
+            btsim += 10;
+            countDonate();
+        }
+
+        private void minesten_Click(object sender, RoutedEventArgs e)
+        {
+            if ((Convert.ToInt32(s_srok2_tb_Копировать.Text) + btsim) - 10 >= 0)
+            {
+                btsim -= 10;
+            }
+            countDonate();
+        }
+        private void  countDonate()
+        {
+            try
+            {
+                fullPrice.Text = (Convert.ToInt32(s_srok2_tb_Копировать.Text) + btsim).ToString();
+            }
+            catch
+            {
+
+            }
+        }
+
     }
 }
