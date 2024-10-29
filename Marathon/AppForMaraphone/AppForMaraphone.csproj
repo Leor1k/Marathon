@@ -61,6 +61,7 @@
     <Compile Include="Classes\DonateData.cs" />
     <Compile Include="Classes\Registration.cs" />
     <Compile Include="Classes\Runner.cs" />
+    <Compile Include="Classes\SponsorShip.cs" />
     <Compile Include="Resource\ComboboxPart.xaml.cs">
       <DependentUpon>ComboboxPart.xaml</DependentUpon>
     </Compile>

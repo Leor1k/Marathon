@@ -18,7 +18,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="55,8,0,0" TextWrapping="Wrap" Text="Marathon Skills 2016" VerticalAlignment="Top" Foreground="{DynamicResource LightWhite}" FontSize="24" Height="29" Width="221"/>
         <TextBlock x:Name="matat_text" HorizontalAlignment="Left" Margin="304,6,0,0" TextWrapping="Wrap" Text="Marathon Skills 2016" VerticalAlignment="Top" Foreground="{DynamicResource LightWhite}" FontSize="24" Height="29" Width="221"/>
         <Button x:Name="exit_bt" Content="X" HorizontalAlignment="Left" Margin="921,0,0,0" VerticalAlignment="Top" Height="34" Width="39" Foreground="#FFF3EBEB" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="24" Click="exit_bt_Click" Grid.Column="1" />
-        <Grid x:Name="first_grid" d:IsHidden="True" d:IsLocked="True" Grid.ColumnSpan="2">
+        <Grid x:Name="first_grid" d:IsLocked="True" Grid.ColumnSpan="2" d:IsHidden="True">
             <Rectangle Height="270" Margin="20,40,20,0" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Center" Margin="0,190,0,0" Foreground="{StaticResource localText}" Text="Москва, Россия&#xA;среда 21 Октября 2016" VerticalAlignment="Top" FontStyle="Italic" FontSize="36" Width="413" TextAlignment="Center" TextWrapping="WrapWithOverflow" RenderTransformOrigin="0.5,0.5">
                 <TextBlock.RenderTransform>
@@ -45,14 +45,14 @@
             </Button>
             <TextBlock HorizontalAlignment="Center" Margin="0,89,0,0" TextWrapping="Wrap" Text="MATATHON SKILLS 2016" Foreground="{StaticResource LightWhite}" VerticalAlignment="Top" FontSize="68" Width="864" TextAlignment="Center" FontWeight="Bold"/>
         </Grid>
-        <Grid x:Name="Register0as0a0runner" d:IsHidden="True" d:IsLocked="True" Grid.ColumnSpan="2">
+        <Grid x:Name="Register0as0a0runner" d:IsLocked="True" Grid.ColumnSpan="2" d:IsHidden="True">
             <Rectangle Height="148" Margin="20,40,20,0" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="323,76,0,0" TextWrapping="Wrap" Text="MATATHON SKILLS 2016" Foreground="{StaticResource LightWhite}" VerticalAlignment="Top" FontSize="68" Width="864" TextAlignment="Center" FontWeight="Bold"/>
             <Button Content="Назад" HorizontalAlignment="Left" Margin="66,80,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="Button_Click"/>
             <Button x:Name="old_runner" Content="Я учавствовал ранее" HorizontalAlignment="Center" Margin="0,325,0,0" VerticalAlignment="Top" Height="151" Width="720" FontStyle="Italic" Click="old_runner_Click"/>
             <Button x:Name="regis_bt" Content="Я новый участник" HorizontalAlignment="Center" Margin="0,520,0,0" VerticalAlignment="Top" Height="151" Width="720" FontStyle="Italic" Click="regis_bt_Click"/>
         </Grid>
-        <Grid x:Name="Login" d:IsLocked="True" d:IsHidden="True" Grid.ColumnSpan="2">
+        <Grid x:Name="Login" d:IsLocked="True" Grid.ColumnSpan="2" d:IsHidden="True">
             <Rectangle Height="148" Margin="20,40,20,0" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="323,76,0,0" TextWrapping="Wrap" Text="MATATHON SKILLS 2016" Foreground="{StaticResource LightWhite}" VerticalAlignment="Top" FontSize="68" Width="864" TextAlignment="Center" FontWeight="Bold"/>
             <Button Content="Назад" HorizontalAlignment="Left" Margin="66,80,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="Button_Click"/>
@@ -67,7 +67,7 @@
             <PasswordBox x:Name="pass_pb" FontSize="36" HorizontalAlignment="Left" Margin="673,628,0,0" VerticalAlignment="Top" Width="600" Height="60"/>
             <CheckBox x:Name="check_pass" Content="Показать пароль" HorizontalAlignment="Left" Margin="1296,649,0,0" VerticalAlignment="Top" Height="18" Width="132" Checked="check_pass_Checked" Unchecked="check_pass_Unchecked"/>
         </Grid>
-        <Grid x:Name="Register0as0a0runner0" d:IsHidden="True" d:IsLocked="True" Grid.ColumnSpan="2">
+        <Grid x:Name="Register0as0a0runner0" Grid.ColumnSpan="2" d:IsHidden="True" d:IsLocked="True">
             <Rectangle Height="148" Margin="20,40,20,0" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="323,76,0,0" TextWrapping="Wrap" Text="MATATHON SKILLS 2016" Foreground="{StaticResource LightWhite}" VerticalAlignment="Top" FontSize="68" Width="864" TextAlignment="Center" FontWeight="Bold"/>
             <Button Content="Назад" HorizontalAlignment="Left" Margin="66,80,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="Button_Click"/>
@@ -101,7 +101,7 @@
             <TextBox x:Name="LastName" HorizontalAlignment="Left" Margin="442,804,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Height="42" FontSize="36" Text=""/>
             <TextBlock x:Name="error_out" HorizontalAlignment="Left" Margin="1100,698,0,0" VerticalAlignment="Top" Height="58" Width="786" FontSize="18" TextAlignment="Center" TextWrapping="Wrap" Foreground="#FFFF3535"/>
         </Grid>
-        <Grid x:Name="Find0out0more0information" d:IsLocked="True" d:IsHidden="True" Grid.ColumnSpan="2">
+        <Grid x:Name="Find0out0more0information" d:IsLocked="True" Grid.ColumnSpan="2" d:IsHidden="True">
             <Rectangle Height="148" Margin="20,40,20,0" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="323,76,0,0" TextWrapping="Wrap" Text="MATATHON SKILLS 2016" Foreground="{StaticResource LightWhite}" VerticalAlignment="Top" FontSize="68" Width="864" TextAlignment="Center" FontWeight="Bold"/>
             <Button Content="Назад" HorizontalAlignment="Left" Margin="66,80,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="Button_Click"/>
@@ -125,7 +125,7 @@
                 <TextBlock Text="BMR калькулятор" TextAlignment="Center" FontStyle="Italic"/>
             </Button>
         </Grid>
-        <Grid x:Name="How0long0is0marathon" d:IsLocked="True" d:IsHidden="True" Grid.ColumnSpan="2">
+        <Grid x:Name="How0long0is0marathon" d:IsLocked="True" Grid.ColumnSpan="2" d:IsHidden="True">
             <Rectangle Height="148" Margin="20,40,20,0" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="323,76,0,0" TextWrapping="Wrap" Text="MATATHON SKILLS 2016" Foreground="{StaticResource LightWhite}" VerticalAlignment="Top" FontSize="68" Width="864" TextAlignment="Center" FontWeight="Bold"/>
             <Button Content="Назад" HorizontalAlignment="Left" Margin="66,80,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="Button_Click"/>
@@ -159,7 +159,7 @@
                 <us:ImagesItem Header="Ronaldinho" ColoredSourse="/Resource/Images/ronaldinho.jpg"/>
             </StackPanel>
         </Grid>
-        <Grid x:Name="Find0out0more0information0" Grid.ColumnSpan="2" d:IsHidden="True" d:IsLocked="True">
+        <Grid x:Name="Find0out0more0information0" Grid.ColumnSpan="2" d:IsLocked="True" d:IsHidden="True">
             <Rectangle Height="148" Margin="20,40,20,0" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="323,76,0,0" TextWrapping="Wrap" Text="MATATHON SKILLS 2016" Foreground="{StaticResource LightWhite}" VerticalAlignment="Top" FontSize="68" Width="864" TextAlignment="Center" FontWeight="Bold"/>
             <Button Content="Назад" HorizontalAlignment="Left" Margin="66,80,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="Button_Click"/>
@@ -173,7 +173,7 @@
             <Image HorizontalAlignment="Left" Height="166" Margin="389,798,0,0" VerticalAlignment="Top" Width="239" Source="/Resource/Images/teatro-municipal.jpg" Stretch="UniformToFill"/>
             <TextBlock x:Name="point_name_Копировать1" HorizontalAlignment="Left" Margin="673,265,0,0" Text="О Marathon Skills 2016 &#xA;Marathon Skills - фестиваль бега, проводимый каждый год в разных частях мира. Может быть три зачета: Полный Марафон, Полумарафон и  забег для новичков - таким образом фестиваль подходит всем.&#xA;    В прошлых годах марафон был проведен в Осаке, Япония (2014); Лейпциг, Германия (2013); Ханой, Вьетнам (2012) и Йорк, Англия (2011).В этом году, Marathon Skills очень зрелищно, продет в  Сан-Паоло, Бразилия, он должен быть самым большим фестивалем бега. Это финансовый центр Бразилии и самый большой город в Южной Америке.Сан-Пауло увидят тысячи бегунов, которые будут бежать мимо небоскребов, зеленые парки и великолепная архитектура.&#xA;    Этот фестиваль привлек рекордное количество бегунов со всего мира.  особое внимание будет обращено на участников из Кении и Ямайки, поскольку мы надеемся увидеть победителя 2014 года. (Эфиоп закончил гонку за 45 минут 4 секунды.)&#xA;    События:&#xA;   - Программа 'Самба' Полный Марафон начнется в Руа-Ду-Американо в 6 утра.&#xA;   - Программа 'Джонго' Полумарафон начнет в 7 утра Бегуны будут стартовать от недалеко от   пересечения улицы Руа Ciniciata и Авенида.&#xA;   - Программа 'Капоэйра' в 5 км забег для новичков начнется в 15 часов Наши новички побегут от Мемориала Унинове.&#xA;Спасибо всем волонтерам, которые будут помогать нам проводить марафон!" VerticalAlignment="Top" Height="699" Width="1126" FontSize="24" TextWrapping="Wrap"/>
         </Grid>
-        <Grid x:Name="Sponsor0a0runner" Grid.ColumnSpan="2">
+        <Grid x:Name="Sponsor0a0runner" Grid.ColumnSpan="2" d:IsHidden="True">
             <Rectangle Height="148" Margin="20,40,20,0" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="323,76,0,0" TextWrapping="Wrap" Text="MATATHON SKILLS 2016" Foreground="{StaticResource LightWhite}" VerticalAlignment="Top" FontSize="68" Width="864" TextAlignment="Center" FontWeight="Bold"/>
             <Button Content="Назад" HorizontalAlignment="Left" Margin="66,80,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="Button_Click"/>
@@ -186,8 +186,8 @@
             <TextBlock HorizontalAlignment="Left" Margin="42,683,0,0" VerticalAlignment="Top" Height="52" Width="260" FontSize="36" TextAlignment="Right" TextWrapping="Wrap" Text="Номер карты#:"/>
             <TextBlock HorizontalAlignment="Left" Margin="42,740,0,0" VerticalAlignment="Top" Height="52" Width="260" FontSize="36" TextAlignment="Right" TextWrapping="Wrap" Text="Срок действия:"/>
             <TextBlock HorizontalAlignment="Left" Margin="42,797,0,0" VerticalAlignment="Top" Height="52" Width="260" FontSize="36" TextAlignment="Right" TextWrapping="Wrap" Text="СVC:"/>
-            <TextBox x:Name="s_name_tb" HorizontalAlignment="Left" Margin="345,512,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="355"/>
-            <TextBox x:Name="s_card_tb" HorizontalAlignment="Left" Margin="345,627,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="355"/>
+            <TextBox x:Name="s_name_tb" MaxLength="30" HorizontalAlignment="Left" Margin="345,512,0,0" VerticalAlignment="Top" Width="355"/>
+            <TextBox x:Name="s_card_tb" HorizontalAlignment="Left" Margin="345,627,0,0" VerticalAlignment="Top" Width="355"/>
             <TextBox x:Name="s_numberCard_tb" MaxLength="19" HorizontalAlignment="Left" Margin="345,684,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="355" PreviewTextInput="s_numberCard_tb_PreviewTextInput"/>
             <TextBox x:Name="s_srok1_tb" MaxLength="2" HorizontalAlignment="Left" Margin="345,741,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" PreviewTextInput="s_srok1_tb_PreviewTextInput"/>
             <TextBox x:Name="s_srok2_tb" MaxLength="4" HorizontalAlignment="Left" Margin="448,741,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" PreviewTextInput="s_srok1_tb_PreviewTextInput"/>
@@ -199,12 +199,13 @@
             <TextBlock HorizontalAlignment="Left" Margin="1212,642,0,0" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" FontSize="124" Height="139"/>
             <Button x:Name="minesten" Content="-" HorizontalAlignment="Left" Margin="1253,799,0,0" VerticalAlignment="Top" Width="80" Click="minesten_Click"/>
             <Button x:Name="addten" Content="+" HorizontalAlignment="Left" Margin="1587,799,0,0" VerticalAlignment="Top" Width="80" Click="addten_Click"/>
-            <TextBox x:Name="s_srok2_tb_Копировать" HorizontalAlignment="Left" Margin="1360,796,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" TextAlignment="Center" PreviewTextInput="s_srok1_tb_PreviewTextInput" TextChanged="s_srok2_tb_Копировать_TextChanged"/>
+            <TextBox x:Name="s_srok2_tb_Копировать" HorizontalAlignment="Left" Margin="1360,796,0,0" VerticalAlignment="Top" Width="201" TextAlignment="Center" PreviewTextInput="s_srok1_tb_PreviewTextInput" TextChanged="s_srok2_tb_Копировать_TextChanged"/>
             <Button Content="Отмена" HorizontalAlignment="Left" Margin="1669,928,0,0" VerticalAlignment="Top" Width="165" Click="Button_Click_2"/>
-            <Button Content="Заплатить" HorizontalAlignment="Left" Margin="1446,928,0,0" VerticalAlignment="Top" Width="181"/>
+            <Button x:Name="PayDonate_bt" Content="Заплатить" HorizontalAlignment="Left" Margin="1446,928,0,0" VerticalAlignment="Top" Width="181" Click="PayDonate_bt_Click"/>
             <Button x:Name="more_info_bt" HorizontalAlignment="Left" Margin="1780,506,0,0" VerticalAlignment="Top" Width="40" Height="40" Background="{x:Null}" BorderBrush="{DynamicResource SpecialQuetion}" Foreground="#FF525252" Click="more_info_bt_Click">
                 <TextBlock Text="i" Foreground="{StaticResource SpecialQuetion}"/>
             </Button>
+            <TextBlock x:Name="fullPrice" HorizontalAlignment="Left" Margin="1279,663,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="80" Height="88" Width="348" TextAlignment="Center"/>
             <Grid x:Name="more_info_grid" Margin="269,286,253,176" d:IsHidden="True">
                 <Rectangle StrokeThickness="4" Stroke="{DynamicResource grayCol}" Fill="{DynamicResource LightWhite}"/>
                 <TextBlock x:Name="s_slectedchar" HorizontalAlignment="Center" Margin="0,28,0,0" Text="Организация" VerticalAlignment="Top" Height="68" Width="860" FontSize="48" TextAlignment="Center" TextWrapping="Wrap"/>
@@ -214,7 +215,20 @@
                 <Image x:Name="selected_char_image" Margin="438,94,438,296"/>
                 <TextBlock x:Name="discriotion1" HorizontalAlignment="Center" Margin="0,338,0,0" VerticalAlignment="Top" Height="232" Width="1286" TextWrapping="Wrap" Text="Описание" FontSize="22"/>
             </Grid>
-            <TextBlock x:Name="fullPrice" HorizontalAlignment="Left" Margin="1279,663,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="80" Height="88" Width="348" TextAlignment="Center"/>
+            <TextBlock x:Name="error_out_donate" HorizontalAlignment="Left" Margin="130,869,0,0" VerticalAlignment="Top" Height="58" Width="786" FontSize="18" TextAlignment="Center" TextWrapping="Wrap" Foreground="#FFFF3535"/>
+        </Grid>
+        <Grid x:Name="Sponsorship0confirmation" Grid.ColumnSpan="2">
+            <Rectangle Height="148" Margin="20,40,20,0" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="323,76,0,0" TextWrapping="Wrap" Text="MATATHON SKILLS 2016" Foreground="{StaticResource LightWhite}" VerticalAlignment="Top" FontSize="68" Width="864" TextAlignment="Center" FontWeight="Bold"/>
+            <Button Content="Назад" HorizontalAlignment="Left" Margin="66,80,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="Button_Click"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,212,0,0" Text="Спасибо за вашу спонсорскую поддержку!" VerticalAlignment="Top" Height="80" Width="1214" FontSize="72" TextAlignment="Center" TextWrapping="Wrap"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,321,0,0" Text="Спасибо за вашу поддержку бегуна в Marathon skills 2016!
+                       Ваше пожертвование пойдёт в его благотворительную организацию " VerticalAlignment="Top" Height="105" Width="1392" FontSize="48" TextAlignment="Center" TextWrapping="Wrap"/>
+            <TextBlock x:Name="selecter_runner_name" Margin="0,451,0,0" Text="Имя" VerticalAlignment="Top" Height="68" FontSize="48" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Center" Width="1392"/>
+            <TextBlock HorizontalAlignment="Center" Text="Фонд кошелёк" VerticalAlignment="Top" Height="88" Width="530" FontSize="72" TextAlignment="Center" TextWrapping="Wrap" Margin="0,540,0,0"/>
+            <TextBlock HorizontalAlignment="Left" Text="0" VerticalAlignment="Top" Height="88" Width="628" FontSize="72" TextWrapping="Wrap" Margin="960,668,0,0"/>
+            <TextBlock HorizontalAlignment="Left" Text="$" VerticalAlignment="Top" Height="88" Width="96" FontSize="72" TextAlignment="Center" TextWrapping="Wrap" Margin="821,668,0,0"/>
+            <Button Content="Назад" HorizontalAlignment="Center" Margin="0,812,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="Button_Click"/>
         </Grid>
     </Grid>
 </Window>

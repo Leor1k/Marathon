@@ -141,7 +141,6 @@ namespace AppForMaraphone
         }
         public static void CreateRegistration(Registration reg)
         {
-            //DECLARE @LastIdRegistration int = (Select MAX(Regisrtation.RegistrationId) from Regisrtation) 
             string sqlExpression =
                "DECLARE @LastIdRegistration int = (Select MAX(Regisrtation.RegistrationId) from Regisrtation) " +
                "INSERT INTO [dbo].[Regisrtation] ([RegistrationId], [RannerId], [RegistrationDateTime], [RaceKitOption], [RegistrationStatus], [Cost], [Charity]) " +
@@ -280,7 +279,43 @@ namespace AppForMaraphone
             }
             return list;
         }
-        
+        public static void CreateSponsorShip (SponsorShip sp)
+        {
+            string sqlExpression =
+               "DECLARE @LastIdSponsor int = (Select MAX(Sponsorship.SponsorshipId) from Sponsorship) " +
+               "DECLARE @RegistrationId int = (Select Regisrtation.RegistrationId from Regisrtation where Regisrtation.RannerId = @RunnerId )" +
+               "INSERT INTO [dbo].[Sponsorship] ([SponsorshipId], [SponsorName], [RegistrationId], [Amount]) " +
+               "VALUES (@LastIdSponsor+1, @NameDonater, @RegistrationId, @Amount)";
+
+            using (SqlConnection connection = new SqlConnection("Server =(localdb)\\MSSQLLocalDB; Database = Marathon; Trusted_Connection=True"))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(sqlExpression, connection);
+                command.Parameters.AddWithValue("@NameDonater", sp.SponsorName);
+                command.Parameters.AddWithValue("@RunnerId", sp.RegistrationId);
+                command.Parameters.AddWithValue("@Amount", sp.Amount);
+                int number = command.ExecuteNonQuery();
+                MessageBox.Show("Регистрация успешна");
+            }
+        }
+        public static int getRunnerByFirstAndLastNeme()
+        {
+            string sqlExpression =
+              "Select Runner.RunnerId from Runner " +
+              "Inner join dbo.[User] on Runner.Email = dbo.[User].Email " +
+              "where dbo.[User].FirstName = 'Irishka' and dbo.[User].LastName = 'ChikiPiki' ";
+
+            using (SqlConnection connection = new SqlConnection("Server =(localdb)\\MSSQLLocalDB; Database = Marathon; Trusted_Connection=True"))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(sqlExpression, connection);
+                command.Parameters.AddWithValue("@NameDonater", sp.SponsorName);
+                command.Parameters.AddWithValue("@RunnerId", sp.RegistrationId);
+                command.Parameters.AddWithValue("@Amount", sp.Amount);
+                int number = command.ExecuteNonQuery();
+                MessageBox.Show("Регистрация успешна");
+            }
+        }
 
     }
 }

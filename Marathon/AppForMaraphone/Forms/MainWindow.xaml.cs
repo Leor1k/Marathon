@@ -3,6 +3,7 @@ using AppForMaraphone.Forms;
 using AppForMaraphone.Resource;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
@@ -331,6 +332,7 @@ namespace AppForMaraphone
         {
             Grids.HideGrid(Sponsor0a0runner, matat_text, AllIn);
             GetRunnerList();
+            error_out_donate.Text = string.Empty;
             more_info_grid.Visibility = Visibility.Hidden;
             s_srok2_tb_Копировать.Text = "0";
         }
@@ -373,15 +375,8 @@ namespace AppForMaraphone
         }
         private void s_runner_tb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            int i = 0;
-            string[] si = s_runner_tb.Text.Split(new char[] {' '});
-            foreach (DonateData dd in donateDatas)
-            {
-                if (dd.FirstNameRunner == si[0] && dd.LastNameRunner == si[1])
-                {
-                    i = dd.CharityCode;
-                }
-            }
+
+            int i = GetRunnerByName();
             foreach (Charity ch in charities)
             {
                 if (i == ch.CharId)
@@ -391,8 +386,19 @@ namespace AppForMaraphone
                     discriotion1.Text = ch.Description;
                     selected_char_image.Source = new BitmapImage(new Uri($"/Resource/Images/LogoCharity/{ch.PictureName}.png", UriKind.Relative));
                 }
+            }  
+        }
+        private int GetRunnerByName()
+        {
+            string[] si = s_runner_tb.Text.Split(new char[] { ' ' });
+            foreach (DonateData dd in donateDatas)
+            {
+                if (dd.FirstNameRunner == si[0] && dd.LastNameRunner == si[1])
+                {
+                    return dd.CharityCode;
+                }
             }
-            
+            return 0;
         }
 
         private void more_info_bt_Click(object sender, RoutedEventArgs e)
@@ -406,6 +412,10 @@ namespace AppForMaraphone
         }
         private void s_srok2_tb_Копировать_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (string.IsNullOrEmpty(s_srok2_tb_Копировать.Text))
+            {
+                s_srok2_tb_Копировать.Text = "0";
+            }
             countDonate();
         }
 
@@ -435,5 +445,79 @@ namespace AppForMaraphone
             }
         }
 
+        private void PayDonate_bt_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                CheckDonate();
+                SponsorShip newSponsor = new SponsorShip
+                    (
+                    s_name_tb.Text.Trim(),
+                    GetRunnerByName(),
+                    Convert.ToInt32(fullPrice.Text)
+                    );
+                DataBase.CreateSponsorShip(newSponsor);
+                Grids.HideGrid(Sponsorship0confirmation, matat_text, AllIn);
+            }
+            catch (Exception ex)
+            {
+                error_out_donate.Text = ex.Message;
+            }
+        }
+        private void CheckDonate()
+        {
+            if (string.IsNullOrEmpty(s_name_tb.Text.Trim()))
+            {
+                throw new Exception("Поле 'Имя' обязательно к заполнению");
+            }
+            if (string.IsNullOrEmpty(s_card_tb.Text.Trim()))
+            {
+                throw new Exception("Поле 'Владелец карты' обязательно к заполнению");
+            }
+            if (s_numberCard_tb.Text.Trim().Length !=19)
+            {
+                throw new Exception("Поле 'Номер карты' должно состоять из 16 цифр");
+            }
+            if (s_srok1_tb.Text.Trim().Length != 2)
+            {
+                throw new Exception("Первое поле 'Срок действия' должно состоять из 2 цифр");
+            }
+            else
+            {
+                int i = Convert.ToInt16(s_srok1_tb.Text.Trim());
+                if (i > 12 || i < 1)
+                {
+                    throw new Exception("Некорректный формат первого поля срока действия карты");
+                }
+            }
+            if (s_srok2_tb.Text.Trim().Length !=4)
+            {
+                throw new Exception("Второе поле 'Срок действия' должно состоять из 2 цифр");
+            }
+            else
+            {
+                int i = Convert.ToInt16(s_srok2_tb.Text.Trim());
+                int n = Convert.ToInt16(DateTime.Now.Year);
+                if (i < n || i > n+7)
+                {
+                    throw new Exception("Некорректный формат второго поля срока действия карты");
+                }
+            }
+            if (string.IsNullOrEmpty(s_cvc_tb.Text.Trim()))
+            {
+                throw new Exception("Поле 'CVC' обязательно к заполнению.");
+            }
+            else
+            {
+                if (s_cvc_tb.Text.Trim().Length!=3)
+                {
+                    throw new Exception("Поле 'CVC' должно состоять из 3 цифр");
+                }
+            }
+            if (Convert.ToInt32(fullPrice.Text.Trim()) < 1)
+            {
+                throw new Exception("Ваш взнос должен быть хотя бы 1$");
+            }
+        }
     }
 }
