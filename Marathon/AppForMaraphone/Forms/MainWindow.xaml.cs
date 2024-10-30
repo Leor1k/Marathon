@@ -450,14 +450,17 @@ namespace AppForMaraphone
             try
             {
                 CheckDonate();
+                string[] si = s_runner_tb.Text.Split(new char[] { ' ' });
                 SponsorShip newSponsor = new SponsorShip
                     (
                     s_name_tb.Text.Trim(),
-                    GetRunnerByName(),
+                    DataBase.getRunnerByFirstAndLastNeme(si[0], si[1]),
                     Convert.ToInt32(fullPrice.Text)
                     );
                 DataBase.CreateSponsorShip(newSponsor);
                 Grids.HideGrid(Sponsorship0confirmation, matat_text, AllIn);
+                selecter_runner_name.Text = s_runner_tb.Text;
+                finalDonate_tb.Text = fullPrice.Text;
             }
             catch (Exception ex)
             {

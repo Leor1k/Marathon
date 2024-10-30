@@ -2,7 +2,6 @@
 using AppForMaraphone.Resource;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -520,6 +519,11 @@ namespace AppForMaraphone.Forms
                     it.Background = Brushes.White;
                 }
             }
+        }
+
+        private void open_MySponsrship_Click(object sender, RoutedEventArgs e)
+        {
+            Grids.HideGrid()
         }
     }
 }

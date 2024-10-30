@@ -217,7 +217,7 @@
             </Grid>
             <TextBlock x:Name="error_out_donate" HorizontalAlignment="Left" Margin="130,869,0,0" VerticalAlignment="Top" Height="58" Width="786" FontSize="18" TextAlignment="Center" TextWrapping="Wrap" Foreground="#FFFF3535"/>
         </Grid>
-        <Grid x:Name="Sponsorship0confirmation" Grid.ColumnSpan="2">
+        <Grid x:Name="Sponsorship0confirmation" Grid.ColumnSpan="2" d:IsHidden="True" d:IsLocked="True">
             <Rectangle Height="148" Margin="20,40,20,0" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="323,76,0,0" TextWrapping="Wrap" Text="MATATHON SKILLS 2016" Foreground="{StaticResource LightWhite}" VerticalAlignment="Top" FontSize="68" Width="864" TextAlignment="Center" FontWeight="Bold"/>
             <Button Content="Назад" HorizontalAlignment="Left" Margin="66,80,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="Button_Click"/>
@@ -226,7 +226,7 @@
                        Ваше пожертвование пойдёт в его благотворительную организацию " VerticalAlignment="Top" Height="105" Width="1392" FontSize="48" TextAlignment="Center" TextWrapping="Wrap"/>
             <TextBlock x:Name="selecter_runner_name" Margin="0,451,0,0" Text="Имя" VerticalAlignment="Top" Height="68" FontSize="48" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Center" Width="1392"/>
             <TextBlock HorizontalAlignment="Center" Text="Фонд кошелёк" VerticalAlignment="Top" Height="88" Width="530" FontSize="72" TextAlignment="Center" TextWrapping="Wrap" Margin="0,540,0,0"/>
-            <TextBlock HorizontalAlignment="Left" Text="0" VerticalAlignment="Top" Height="88" Width="628" FontSize="72" TextWrapping="Wrap" Margin="960,668,0,0"/>
+            <TextBlock x:Name="finalDonate_tb" HorizontalAlignment="Left" Text="0" VerticalAlignment="Top" Height="88" Width="628" FontSize="72" TextWrapping="Wrap" Margin="960,668,0,0"/>
             <TextBlock HorizontalAlignment="Left" Text="$" VerticalAlignment="Top" Height="88" Width="96" FontSize="72" TextAlignment="Center" TextWrapping="Wrap" Margin="821,668,0,0"/>
             <Button Content="Назад" HorizontalAlignment="Center" Margin="0,812,0,0" VerticalAlignment="Top" Height="68" Width="186" Click="Button_Click"/>
         </Grid>

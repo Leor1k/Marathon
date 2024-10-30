@@ -1,8 +1,10 @@
 ﻿using AppForMaraphone.Classes;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Windows;
+using System.Windows.Documents;
 
 namespace AppForMaraphone
 {
@@ -298,22 +300,26 @@ namespace AppForMaraphone
                 MessageBox.Show("Регистрация успешна");
             }
         }
-        public static int getRunnerByFirstAndLastNeme()
+        public static int getRunnerByFirstAndLastNeme(string First, string Last)
         {
             string sqlExpression =
               "Select Runner.RunnerId from Runner " +
               "Inner join dbo.[User] on Runner.Email = dbo.[User].Email " +
-              "where dbo.[User].FirstName = 'Irishka' and dbo.[User].LastName = 'ChikiPiki' ";
-
+              "where dbo.[User].FirstName = @first and dbo.[User].LastName = @last ";
             using (SqlConnection connection = new SqlConnection("Server =(localdb)\\MSSQLLocalDB; Database = Marathon; Trusted_Connection=True"))
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand(sqlExpression, connection);
-                command.Parameters.AddWithValue("@NameDonater", sp.SponsorName);
-                command.Parameters.AddWithValue("@RunnerId", sp.RegistrationId);
-                command.Parameters.AddWithValue("@Amount", sp.Amount);
-                int number = command.ExecuteNonQuery();
-                MessageBox.Show("Регистрация успешна");
+                command.Parameters.AddWithValue("@first", First);
+                command.Parameters.AddWithValue("@last", Last);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        return reader.GetInt32(0);  
+                    }
+                }
+                return 0;
             }
         }
 
